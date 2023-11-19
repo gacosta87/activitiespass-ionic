@@ -1,0 +1,69 @@
+# You can keep your repository small and manageable with a .gitignore file.
+# Prevent build artifacts, large binary files, and other large file types
+# such as log files, media files, and executables from slowing down your workflow.
+#
+# If you need to keep large files in Bitbucket, consider introducing
+# Git Large File Storage (Git LFS) as part of your workflow.
+#
+# Learn more about .gitignore:
+#     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+# Learn more about Git LFS for large files:
+#     https://www.atlassian.com/git/tutorials/git-lfs
+
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+
+
+frontend/*.sw[mnpcod]
+frontend/.tmp
+frontend/*.tmp
+frontend/*.tmp.*
+frontend/.angular
+frontend/*.sublime-project
+frontend/*.sublime-workspace
+frontend/.DS_Store
+frontend/Thumbs.db
+frontend/UserInterfaceState.xcuserstate
+frontend/$RECYCLE.BIN/
+frontend/*.log
+frontend/log.txt
+frontend/npm-debug.log*
+frontend/.idea
+frontend/.ionic
+frontend/.sass-cache
+frontend/.sourcemaps
+frontend/.versions
+frontend/.vscode
+frontend/coverage
+frontend/dist
+frontend/node_modules
+frontend/platforms
+frontend/plugins
+frontend/www
+
+
+api/node_modules
+api/vendor
+api/public/hot
+api/public/storage
+api/storage/*.key
+api/vendor
+api/.idea
+api/.vagrant
+api/Homestead.json
+api/Homestead.yaml
+api/npm-debug.log
+api/yarn-error.log
+api/.env
+
+
+
+
+
+
+
+
+
+
+
