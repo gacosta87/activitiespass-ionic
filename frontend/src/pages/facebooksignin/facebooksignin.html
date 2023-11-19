@@ -1,0 +1,177 @@
+<ion-header>
+      <ion-toolbar>
+            <ion-title style="margin-left: -26px;"  text-center>{{'configurarasistente_f1' | translate }}</ion-title>
+            <ion-buttons slot="start">
+                <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+            </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview" >
+         <br>
+
+        <div style="height: 100px; width: 100%; margin-bottom: 70px; text-align: center;">
+              <img style="width: 200px; height: 200px;" class="" src="./assets/logos/2dh7m99.jpg" height="300px" width="300px;">
+        </div>
+
+        <div *ngIf="this.conf_activacion=='1'" padding style="padding-top: 0px; margin-top: 110px; margin-bottom: -25px;">
+              <ion-button expand="block" color="light" (click)="facebookSignIn()" type="button">
+                  <ion-icon src="assets/icon/facebook.svg"  style="margin-left: 5px;" slot="start"></ion-icon>
+                  <ion-label slot="start">{{'perfilinicotext6' | translate }}</ion-label>
+              </ion-button>
+        </div>
+
+        <div *ngIf="this.conf_activacion=='2'" padding style="padding-top: 0px; margin-top: 110px; margin-bottom: -25px;">
+              <ion-button expand="block" color="light" (click)="facebookLogout()" type="button">
+                  <ion-icon src="assets/icon/facebook.svg"  style="margin-left: 5px;" slot="start"></ion-icon>
+                  <ion-label slot="start">{{'menutext8' | translate }}</ion-label>
+              </ion-button>
+        </div>
+
+        <div *ngIf="this.conf_activacion=='2'"> 
+              <div no-padding class="top-img" style="margin-top: 5px;">
+                {{'herramientas' | translate }}
+              </div>
+              <div avoid-super-tabs="true" id="destacado-wapper" class="destacado-wapper" *ngFor="let item of datos;">
+
+                    <div class="div-destacado">
+                        <img (click)="asistentealimentar()" class="img-destacado"  src="./assets/logos/asistente3.png">
+                        <br>
+                        <b class="destacado-nombre">{{ 'configurarasistente12' | translate }}</b>
+                    </div>  
+
+                    <div class="div-destacado">
+                        <img (click)="miwhatsapp()" class="img-destacado"  src="./assets/logos/whatsapp.jpeg">
+                        <br>
+                        <b class="destacado-nombre">{{ 'facebooksignal1' | translate }}</b>
+                    </div> 
+
+                    <div class="div-destacado">
+                        <img (click)="estadisticasredes()" class="img-destacado"  src="./assets/logos/estadisticas2.jpg">
+                        <br>
+                        <b class="destacado-nombre">{{ 'estadisticasredes1' | translate }}</b>
+                    </div> 
+
+                     <div class="div-destacado" *ngIf="item.produtos_servicios_ofrecidos!='' && item.produtos_servicios_ofrecidos!=null ">
+                        <img (click)="asistente(item.id)" class="img-destacado"  src="./assets/logos/asistente2.png">
+                        <br>
+                        <b class="destacado-nombre">{{ 'chatinteractivo3' | translate }}</b>
+                    </div> 
+              </div>
+        </div>
+
+        <div padding style="padding-top: 20px;padding-bottom: 10px;" *ngIf="this.p_idioma=='es'">
+                    <br>
+                    <p style="line-height: 20px; font-size: 14px;">
+                      <span style="font-weight: bold; font-size: 16px;">Beneficios de conectar tus cuentas de Facebook Business, Instagram Business y WhatsApp Business a Activitiespass:</span><br><br>
+
+                      1. Ahorro de tiempo: Al tener todas tus cuentas empresariales en un solo lugar, disminuyes el tiempo que gastas en cambiar de plataforma.<br><br>
+
+                      2. Automatización: Con el asistente virtual de Activitiespass, puedes automatizar las respuestas a tus clientes a través de múltiples plataformas, lo que te permite enfocarte en otras tareas importantes.<br><br>
+
+                      3. Mejor atención al cliente: Acceder a tus cuentas de mensajería empresarial te permite responder de manera rápida y eficiente a tus clientes en tiempo real.<br><br>
+
+
+                      <span style="font-weight: bold; font-size: 16px;">Pasos para conectar tu cuentas Bussines de Meta con Activitiespass:</span><br><br>
+
+                      Paso 1: Selecciona la opción "Login con Facebook Business".<br><br>
+
+                      Paso 2: Ingresa tus credenciales de Facebook Business para acceder a tus cuentas de Facebook, Instagram y WhatsApp Business.<br><br>
+
+                      Paso 3: Confirma que deseas conectar tus cuentas de Instagram y WhatsApp Business a la aplicación Activitiespass.<br><br>
+
+                      Paso 4: Configura las respuestas automáticas que deseas que el asistente virtual proporcione a tus clientes a través de las diferentes plataformas.<br><br>
+
+                      Paso 5: Guarda los ajustes y activa el asistente virtual de Activitiespass.<br><br>
+
+
+                      <span style="font-weight: bold; font-size: 16px;">Requisitos para conectar Instagram Business:</span><br><br>
+
+                      1. Para conectar tu cuenta de Instagram con Activitiespass, es necesario que tengas una cuenta de Instagram Business y que esté asociada a una página de Facebook.<br><br>
+
+                      2. Confirma que tu cuenta de Instagram Business esté correctamente configurada para recibir y responder a mensajes.<br><br>
+
+                      3. Asegúrate que tu cuenta de Instagram esté conectada a una Fan Page de Facebook y que se haya activado la opción de acceso a los mensajes.<br><br>
+
+
+                      <span style="font-weight: bold; font-size: 16px;">Pasos específicos para conectar WhatsApp Business:</span><br><br>
+
+                      1. El número de teléfono que estás utilizando no debe estar conectado a ninguna otra cuenta de WhatsApp.<br><br>
+
+                      2. Debes tener una cuenta de bussiness de Facebook.<br><br>
+
+                      3. Debes tener una cuenta de administrador de negocios bussines de Facebook.<br><br>
+
+                      4. Debes tiener acceso al número de teléfono y puedes verificarlo a través de SMS o llamada de voz durante el proceso de registro. <br><br>
+
+
+                      Nota: Recuerda que, si tienes alguna duda o problema para conectar tus cuentas empresariales a la aplicación Activitiespass o configurarlas para recibir y responder mensajes, puedes contactar con el equipo de soporte de Activitiespass para recibir ayuda adicional. ¡Gracias por utilizar nuestra aplicación para mejorar la atención al cliente de tu negocio! 
+                    </p>
+        </div>
+
+        <div padding style="padding-top: 20px;padding-bottom: 10px;" *ngIf="this.p_idioma!='es'">
+                    <br>
+                    <p style="line-height: 20px; font-size: 14px;">
+                     <span style="font-weight: bold; font-size: 16px;">Benefits of connecting your Facebook Business, Instagram Business and WhatsApp Business accounts to Activitiespass:</span><br><br>
+
+                      1. Save time: By having all your business accounts in one place, you reduce the time you spend switching platforms.<br><br>
+
+                      2. Automation: With the Activitiespass virtual assistant, you can automate responses to your customers across multiple platforms, allowing you to focus on other important tasks.<br><br>
+
+                      3. Better customer service: Accessing your business messaging accounts allows you to respond quickly and efficiently to your customers in real time.<br><br>
+
+
+                      <span style="font-weight: bold; font-size: 16px;">Steps to connect your Meta Business accounts with Activitiespass:</span><br><br>
+
+                      Step 1: Select the option "Login with Facebook Business".<br><br>
+
+                      Step 2: Enter your Facebook Business credentials to access your Facebook, Instagram, and WhatsApp Business accounts.<br><br>
+
+                      Step 3: Confirm that you want to connect your Instagram and WhatsApp Business accounts to the Activitiespass app.<br><br>
+
+                      Step 4: Configure the automatic responses that you want the virtual assistant to provide to your customers through the different platforms.<br><br>
+
+                      Step 5: Save the settings and activate the Activitiespass Virtual Assistant.<br><br>
+
+
+                      <span style="font-weight: bold; font-size: 16px;">Requirements to connect Instagram Business:</span><br><br>
+
+                      1. To connect your Instagram account with Activitiespass, you need to have an Instagram Business account and that it is associated with a Facebook page.<br><br>
+
+                      2. Confirm that your Instagram Business account is correctly set up to receive and reply to messages.<br><br>
+
+                      3. Make sure that your Instagram account is connected to a Facebook Fan Page and that the option to access messages has been activated.<br><br>
+
+
+                      <span style="font-weight: bold; font-size: 16px;">Specific steps to connect WhatsApp Business:</span><br><br>
+
+                      1. The phone number you are using must not be connected to any other WhatsApp account.<br><br>
+
+                      2. You must have a Facebook business account.<br><br>
+
+                      3. You must have a Facebook business manager account.<br><br>
+
+                      4. You must have access to the phone number and you can verify it via SMS or voice call during the registration process. <br><br>
+
+
+                      Note: Remember that if you have any questions or problems connecting your business accounts to the Activitiespass app or configuring them to receive and reply to messages, you can contact the Activitiespass support team for further assistance. Thank you for using our app to improve customer service for your business!
+                    </p>
+        </div>  
+        <br>
+        <div *ngIf="this.conf_activacion=='1'" padding style="padding-top: 0px; ">
+              <ion-button expand="block" color="light" (click)="facebookSignIn()" type="button">
+                  <ion-icon src="assets/icon/facebook.svg"  style="margin-left: 5px;" slot="start"></ion-icon>
+                  <ion-label slot="start">{{'perfilinicotext6' | translate }}</ion-label>
+              </ion-button>
+        </div>
+
+        <div *ngIf="this.conf_activacion=='2'" padding style="padding-top: 0px; ">
+              <ion-button expand="block" color="light" (click)="facebookLogout()" type="button">
+                  <ion-icon src="assets/icon/facebook.svg"  style="margin-left: 5px;" slot="start"></ion-icon>
+                  <ion-label slot="start">{{'menutext8' | translate }}</ion-label>
+              </ion-button>
+        </div>
+
+        <br><br><br><br><br><br>
+
+</ion-content>
+

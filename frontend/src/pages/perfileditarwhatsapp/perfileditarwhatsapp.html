@@ -1,0 +1,91 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px;"  text-center>{{'facebooksignal1' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+         <!--- <button slot="end" class="save" id="boton_envio" onClick="this.disabled=true;" (click)="EnForm.ngSubmit.emit()"  [disabled]="!myForm.valid" type="submit">
+            <ion-icon name="save-outline"></ion-icon>
+            <ion-label style="font-size: 12px;">{{'guardar' | translate }}</ion-label>
+          </button>-->
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview">
+<form #EnForm="ngForm" style="height: 100%;" [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+          <ion-grid no-padding *ngFor="let item of datos;" >
+                    <div padding  text-center style="margin-top:0px; padding-bottom: 0px;">
+                              <ion-row>
+                                  <ion-col col-12 style="text-align: -webkit-center;">
+                                      <ion-avatar  style="height: 120px; width: 120px; margin-bottom:20px;">
+                                        <img style="width: 120px; height: 120px;" class="" *ngIf="image1!='' && image1!=null "  [src]="image1" >
+                                        <img style="width: 120px; height: 120px;" class="" *ngIf="image1=='' || image1==null "  src="./assets/logos/avatar.png" >
+                                      </ion-avatar>
+                                  </ion-col>
+                              </ion-row>
+                    </div>
+
+                    <div *ngIf="this.siguiente==1">
+                                    <div padding style="padding-top: 0px;">
+                                            <p style="line-height: 20px; font-size: 14px;">
+                                                {{'configurarwhatsapp1' | translate }}
+                                            </p>
+                                            <p style="line-height: 20px; font-size: 14px;">
+                                                {{'configurarwhatsapp2' | translate }}
+                                            </p>
+                                    </div>
+
+                                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                                <ion-item>
+                                                    <ion-label style="white-space: normal; margin-top: 0px;margin-bottom: 32px;" class="label-item" position="floating">{{'perfilverificada1_3' | translate }}</ion-label>
+                                                    <ion-select formControlName="codigo_pais"  [(ngModel)]="item.codigo_pais" okText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" id="solicita">
+                                                          <div *ngFor="let item2 of listapaises;">
+                                                              <ion-select-option value="{{item2.phone_code}}">+{{ item2.phone_code }} {{ item2.nombre }}</ion-select-option>
+                                                          </div>
+                                                      </ion-select>
+                                                </ion-item>
+                                    </div>
+                                   
+                                    <div padding style="padding-top: 5px;padding-bottom: 0px; margin-top: 20px;">
+                                                <ion-item>
+                                                    <ion-label style="white-space: normal; margin-top: 0px;margin-bottom: 32px;" class="label-item" position="floating">{{'editarperfiltext4' | translate }}</ion-label>
+                                                    <ion-input [(ngModel)]="item.telefono" formControlName="telefono" type="tel"></ion-input>
+                                                </ion-item>
+                                    </div>
+                    </div>
+                    <div *ngIf="this.siguiente==2">
+                                    <div padding style="padding-top: 0px;">
+                                            <p style="line-height: 20px; font-size: 14px;">
+                                                {{'configurarwhatsapp3' | translate }}
+                                            </p>
+                                    </div>
+
+                                    <div padding style="padding-top: 5px;padding-bottom: 0px; text-align:-webkit-center;">
+                                                <ion-item style="width: 190px;">
+                                                    <ion-label style="white-space: normal; margin-top: 0px;margin-bottom: 32px;" class="label-item" position="floating">{{'codigodeverificacion' | translate }}</ion-label>
+                                                    <ion-input  formControlName="codigo_valida" type="numeric" style="width: 158px;"></ion-input>
+                                                </ion-item>
+                                    </div>
+                    </div>
+          </ion-grid>
+</form>
+</ion-content>
+
+
+
+
+<ion-footer class="ion-no-border" *ngFor="let item of datos;" >  
+  <ion-toolbar *ngIf="this.siguiente==2">
+    <div padding>
+        <ion-button expand="block" type="submit" id="boton_envio"  style="text-transform: none;" color="secondary" (click)="EnForm.ngSubmit.emit()">
+             <ion-label style="font-size: 12px;">{{'guardar' | translate }}</ion-label>
+        </ion-button>
+    </div>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="this.siguiente==1">
+    <div padding>
+        <ion-button expand="block" type="submit" id="boton_envio"  [disabled]="!myForm.valid" style="text-transform: none;" color="secondary" (click)="continuar()">
+             <ion-label style="font-size: 12px;">{{'siguiente' | translate }}</ion-label>
+        </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

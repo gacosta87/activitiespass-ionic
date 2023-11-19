@@ -1,0 +1,213 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+   		<ion-col col-10>
+			    <form #EnForm="ngForm"  [formGroup]="myForm" (ngSubmit)="enviarformulario_2('3')">
+			    <ion-searchbar [(ngModel)]="this.texto_"  formControlName="texto" style="--box-shadow:0px; " type="text"  animated="true" showCancelButton="focus"  placeholder="{{'Buscar' | translate }}" clearInput></ion-searchbar>
+			    
+			    </form>
+	    </ion-col>
+	    <ion-col col-2>
+	    		<button class="buscar-b" id="boton_envio" onClick="this.disabled=true;" (click)="EnForm.ngSubmit.emit()" [disabled]="!myForm.valid"  type="submit">
+			      <ion-icon style="font-size: 26px; margin-left: 10px; margin-top: -5px;" name="send" ></ion-icon> 
+			    </button>
+	    </ion-col>
+	</ion-row>
+  </ion-toolbar>     
+</ion-header>
+<ion-content #scrollElement1 id="scrollElement1" [scrollEvents]="true">
+			<ion-refresher  slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          ppullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles">
+        </ion-refresher-content>
+      </ion-refresher>
+      <ion-slides #mySliderpublicidad2 avoid-super-tabs="true" [options]="slideOpts_publi"  loop="true"  pager="false" paginationType="arrows">
+              <ion-slide *ngFor="let item_publicidad of this.conf_banner_2" >
+                  <img class="publicidad_img" (click)="linkperfil_publicidad(item_publicidad.mycar_id)"src="{{this.imgurl2}}{{item_publicidad.url_banner}}">
+              </ion-slide>
+      </ion-slides>
+			<div *ngIf="this.tendencia!='1'">
+							<!--
+								<ion-label label-destacados-etiquetas *ngIf="this.data2!=null && this.data2.length>0" style="margin-top: 20px;"><b>{{'etiquedastendencias' | translate }}</b></ion-label>
+					          	<div style="" *ngFor="let item2 of this.data2;" class="buscar-list">
+					                <ion-row >
+						                <ion-col col-2  style="padding-bottom: 0px; text-align: center; padding-top: 10px;">
+						                    <img class="img-destacado"  src="./assets/logos/hashtag.png"> 
+						                </ion-col>
+						                <ion-col col-10  style="padding-bottom: 0px;font-size: 14px; color: #9a9494;">
+						                     <div style="margin-top: 10px; margin-bottom: 5px;" [innerHTML] = "this.hashtagsinhora(item2.denominacion)"></div>
+						                     {{item2.cuentapublicidad}}+ {{'publiosoluci' | translate }}
+						                </ion-col>
+					              	</ion-row>
+					          	</div>
+					     -->
+					          	<!--
+					          	<div padding style="padding-top:10px; padding-bottom:0px;"  *ngIf="this.data2!=null && this.data2.length==0">
+					              		<ion-label title-sub>{{'nodataetiquetausuarios' | translate }}</ion-label>
+					            </div>
+											-->
+
+								<ion-label label-destacados *ngIf="this.data_new_users!=null && this.data_new_users.length>0" style="margin-top: 20px;margin-bottom: 15px;"><b>{{'usuariossugeridos' | translate }}</b></ion-label>
+							    <div avoid-super-tabs="true" id="destacado-wapper" class="destacado-wapper" *ngIf="this.data_new_users!=null && this.data_new_users.length!=0">
+						         	<div *ngFor="let itemnew of this.data_new_users"  >
+						         		  <div id="usuarioseguir{{itemnew.id}}" class="div-destacado">
+							              <div style="margin-top: 5px; height: 25px;">
+		                            <div *ngIf="itemnew.usuarios[0].verificacion_1=='1' && itemnew.usuarios[0].verificacion_2=='1' && itemnew.usuarios[0].verificacion_3=='1' && itemnew.usuarios[0].verificacion_4=='1' && itemnew.usuarios[0].verificacion_5=='1'" class="noverificada">   
+		                                {{'verificada3' | translate }} 
+		                            </div>
+		                            <div *ngIf="itemnew.usuarios[0].verificacion_1=='2' && itemnew.usuarios[0].verificacion_2=='1' && itemnew.usuarios[0].verificacion_3=='1' && itemnew.usuarios[0].verificacion_4=='1' && itemnew.usuarios[0].verificacion_5=='1'" class="noverificada">   
+		                                {{'verificada3' | translate }} 
+		                            </div>
+		                            <div *ngIf="itemnew.usuarios[0].verificacion_1=='2' && itemnew.usuarios[0].verificacion_2=='2' && itemnew.usuarios[0].verificacion_3!='3' && itemnew.usuarios[0].verificacion_4=='3' && itemnew.usuarios[0].verificacion_5!='3'"  class="verificada1"> 
+		                                {{'verificada12' | translate }} 
+		                            </div>
+		                             <div *ngIf="itemnew.usuarios[0].verificacion_1=='2' && itemnew.usuarios[0].verificacion_2=='2' && itemnew.usuarios[0].verificacion_3!='3' && itemnew.usuarios[0].verificacion_4!='3' && itemnew.usuarios[0].verificacion_5!='3'"  class="verificada1"> 
+		                                {{'verificada12' | translate }} 
+		                            </div>
+		                            <div *ngIf="itemnew.usuarios[0].verificacion_1=='2' && itemnew.usuarios[0].verificacion_2=='2' && itemnew.usuarios[0].verificacion_3=='3' && (itemnew.usuarios[0].verificacion_4!='3' || itemnew.usuarios[0].verificacion_4=='3' ) && itemnew.usuarios[0].verificacion_5!='3'"  class="verificada2"> 
+		                                {{'verificada13' | translate }} 
+		                            </div>
+		                            <div *ngIf="itemnew.usuarios[0].verificacion_1=='2' && itemnew.usuarios[0].verificacion_2=='2' && itemnew.usuarios[0].verificacion_3=='3' && itemnew.usuarios[0].verificacion_4=='3' && itemnew.usuarios[0].verificacion_5=='3'"  class="verificada3"> 
+		                                {{'verificada14' | translate }} 
+		                            </div>
+                          	</div>
+                          	<br> 
+                          	<img (click)="linkperfil(itemnew.id)" class="img-destacado" *ngIf="itemnew.foto2!='' && itemnew.foto2!=null" src="{{itemnew.foto_77}}">
+						              	<img (click)="linkperfil(itemnew.id)" class="img-destacado" *ngIf="itemnew.foto2=='' || itemnew.foto2==null" src="./assets/logos/avatar.png">
+						              	<ion-row>
+						              		<ion-col col-12>
+						              			<b class="destacado-nombre" style="white-space: nowrap; font-weight: bolder !important;">{{itemnew.usuarios[0].username}}</b>
+						              		</ion-col>
+						              	</ion-row>
+						              	<ion-row>
+						              		<ion-col col-12 style="    height: 40px;">
+									              	<b class="destacado-nombre-categoria" *ngIf="itemnew.categoria_id!=null">{{ itemnew.categoria_id }}</b>
+									     				</ion-col>
+						              	</ion-row>
+						              	<ion-button type="Button" expand="" style="width: 100px; margin-top: 0px;height: 26px;" (click)="favoritoadd(itemnew.id)" color="secondary">{{'seguir' | translate }}</ion-button>
+						          	</div>
+						          </div>
+							    </div>
+								 <!--<div style="" *ngFor="let item of this.data;" class="buscar-list">
+					                <ion-row (click)="linkperfil(item.id)" >
+						                <ion-col col-2  style="padding-bottom: 0px; text-align: center; padding-top: 10px;">
+						                  	<img class="img-destacado" *ngIf="item.foto2!='' && item.foto2!=null" src="{{item.foto2}}">
+						                    <img class="img-destacado" *ngIf="item.foto2=='' || item.foto2==null" src="./assets/logos/avatar.png">
+						                </ion-col>
+						                <ion-col col-10  style="padding-bottom: 0px;">
+						                     <b>@{{item.username}}</b>
+						                </ion-col>
+					              	</ion-row>
+					          	</div> -->
+								<ion-label label-destacados *ngIf="this.data!=null && this.data.length>0 && this.tendencia=='3'"  style="margin-top: 20px;margin-bottom: 15px;"><b>{{'Usuarios' | translate }}</b></ion-label>
+							    <div avoid-super-tabs="true" id="destacado-wapper" class="destacado-wapper" *ngIf="this.data!=null && this.data.length!=0 && this.tendencia=='3'">
+						         	<div  *ngFor="let item of this.data" >
+						         		<div id="usuarioseguir{{item.id}}" class="div-destacado">
+						              	<div style="margin-top: 5px; height: 25px;">
+		                             <div *ngIf="item.verificacion_1=='1' && item.verificacion_2=='1' && item.verificacion_3=='1' && item.verificacion_4=='1' && item.verificacion_5=='1'" class="noverificada">   
+		                                {{'verificada3' | translate }} 
+		                            </div>
+		                             <div *ngIf="item.verificacion_1=='2' && item.verificacion_2=='1' && item.verificacion_3=='1' && item.verificacion_4=='1' && item.verificacion_5=='1'" class="noverificada">   
+		                                {{'verificada3' | translate }} 
+		                            </div>
+		                            <div *ngIf="item.verificacion_1=='2' && item.verificacion_2=='2' && item.verificacion_3!='3' && item.verificacion_4=='3' && item.verificacion_5!='3'"  class="verificada1"> 
+		                                {{'verificada12' | translate }} 
+		                            </div>
+		                             <div *ngIf="item.verificacion_1=='2' && item.verificacion_2=='2' && item.verificacion_3!='3' && item.verificacion_4!='3' && item.verificacion_5!='3'"  class="verificada1"> 
+		                                {{'verificada12' | translate }} 
+		                            </div>
+		                            <div *ngIf="item.verificacion_1=='2' && item.verificacion_2=='2' && item.verificacion_3=='3' && (item.verificacion_4!='3' || item.verificacion_4=='3' ) && item.verificacion_5!='3'"  class="verificada2"> 
+		                                {{'verificada13' | translate }} 
+		                            </div>
+		                            <div *ngIf="item.verificacion_1=='2' && item.verificacion_2=='2' && item.verificacion_3=='3' && item.verificacion_4=='3' && item.verificacion_5=='3'"  class="verificada3"> 
+		                                {{'verificada14' | translate }} 
+		                            </div>
+                          	</div>
+                          	<br>
+                          	<img (click)="linkperfil(item.id)"  class="img-destacado" *ngIf="item.foto2!='' && item.foto2!=null" src="{{item.foto_77}}">
+						              	<img (click)="linkperfil(item.id)"  class="img-destacado" *ngIf="item.foto2=='' || item.foto2==null" src="./assets/logos/avatar.png">
+						              	<ion-row>
+						              		<ion-col col-12>
+						              			<b class="destacado-nombre" style="white-space: nowrap; font-weight: bolder !important;">{{item.username}}</b>
+						              		</ion-col>
+						              	</ion-row>
+						              	<ion-row>
+						              		<ion-col col-12 style="    height: 40px;">
+								              	<b class="destacado-nombre-categoria" *ngIf="item.categoria_id!=null">{{ item.categoria_id }}</b>
+						              		</ion-col>
+						              	</ion-row>
+						              	<ion-button type="Button" expand="" style="width: 100px; margin-top: 0px;height: 26px;" (click)="favoritoadd(item.id)" color="secondary">{{'seguir' | translate }}</ion-button>
+						          	</div>
+						          </div>
+							    </div>
+							    <!--
+					          	<div padding style="padding-top:10px; padding-bottom:0px;"  *ngIf="this.data!=null && this.data.length==0">
+					              		<ion-label title-sub>{{'nodatausuarios' | translate }}</ion-label>
+					              		<br>
+					            </div>
+								-->
+			          	
+					          	
+					          	<br>
+          	</div>          	
+		    <!--
+		    <div padding style="padding-top:10px; padding-bottom:0px;"  *ngIf="this.data_new_users!=null && this.data_new_users.length==0">
+              		<ion-label title-sub>{{'nodataetiquetausuarios' | translate }}</ion-label>
+              		<br>
+            </div>--> 
+            <div class="div-publicacion_espacio">
+          	<ion-label label-destacados *ngIf="this.data3!=null" style="margin-bottom: 15px;"><b>{{'publiosoluci' | translate }}</b></ion-label>
+          	<ion-row>
+          				<div *ngFor="let item2 of this.data3;  let i=index" style="display: contents;">
+			                        <ion-col class="cel-post grande" col-12 *ngIf="i==0 || i==7 || i==14 || i==21">
+				                                  <ngx-progressive-image-loader style="width: 100%; height: 100%;filter: brightness(1.0) saturate(1.3);">
+				                                  		<div *ngIf="(item2.ruta_video_1!='' && item2.ruta_video_1!=null)" class="inf_video" (click)="maspost(item2.id)">
+				                                        <ion-icon name="film-outline"></ion-icon>
+				                                      </div>
+				                                      <img
+				                                        (click)="maspost(item2.id)"
+				                                        [src]="item2.imagen1"
+				                                        [placeholderImageSrc]="'./assets/fondos/placeholder.png'"
+				                                        ngxProgressiveImage
+				                                      />
+			                                    </ngx-progressive-image-loader>
+			                                    <ion-label title-sub style="margin-left: 5px;margin-top: 3px;margin-bottom: 7px;text-align: left;font-size: 14px;">
+			                                      <b style="margin-left: 0px; font-weight: normal;" *ngIf="item2.precio_oferta==0 && item2.precio_oferta!=null">{{item2.isomoneda}} {{item2.precio | currency:' '}}</b>
+			                                      <b style="margin-left: 0px; font-weight: normal;" *ngIf="item2.precio_oferta!=0 && item2.precio_oferta!=null">{{item2.isomoneda}} {{item2.precio_oferta | currency:' '}}</b>
+			                                      <b style="color: #a1a9b9; margin-left: 5px;font-weight: normal; text-decoration: line-through;" *ngIf="item2.precio_oferta!=0 && item2.precio_oferta!=null">{{item2.isomoneda}} {{item2.precio | currency:' '}}</b>
+			                                    </ion-label>
+			                        </ion-col>
+			                        <ion-col class="cel-post" col-6 *ngIf="i!=0 && i!=7 && i!=14 && i!=21">			                        			
+			                                    <ngx-progressive-image-loader style="width: 100%; height: 100%;filter: brightness(1.0) saturate(1.3);">
+			                                    	<div *ngIf="(item2.ruta_video_1!='' && item2.ruta_video_1!=null)" class="inf_video" (click)="maspost(item2.id)">
+			                                        <ion-icon name="film-outline"></ion-icon>
+			                                      </div>
+			                                      <img
+			                                        (click)="maspost(item2.id)"
+			                                        [src]="item2.imagen1_m"
+			                                        [placeholderImageSrc]="'./assets/fondos/placeholder.png'"
+			                                        ngxProgressiveImage
+			                                      />
+			                                    </ngx-progressive-image-loader>
+			                                    <ion-label title-sub style="margin-left: 5px;margin-top: 3px;margin-bottom: 7px;text-align: left;font-size: 12px;">
+			                                      <b style="margin-left: 0px; font-weight: normal;" *ngIf="item2.precio_oferta==0 && item2.precio_oferta!=null">{{item2.isomoneda}} {{item2.precio | currency:' '}}</b>
+			                                      <b style="margin-left: 0px; font-weight: normal;" *ngIf="item2.precio_oferta!=0 && item2.precio_oferta!=null">{{item2.isomoneda}} {{item2.precio_oferta | currency:' '}}</b>
+			                                      <b style="color: #a1a9b9; margin-left: 5px;font-weight: normal; text-decoration: line-through;" *ngIf="item2.precio_oferta!=0 && item2.precio_oferta!=null">{{item2.isomoneda}} {{item2.precio | currency:' '}}</b>
+			                                    </ion-label>
+			                        </ion-col>
+										</div>
+							</ion-row>
+						</div>
+          	<div padding style="padding-top:10px; padding-bottom:0px;"  *ngIf="this.data3!=null && this.data3.length==0">
+              		<ion-label title-sub>{{'nodatapubliosoluci' | translate }}</ion-label>
+            </div>
+          	<br>
+			<ion-infinite-scroll style="margin-bottom: 0px;" threshold="50px" (ionInfinite)="loadData($event)">
+		          <ion-infinite-scroll-content
+		            loadingSpinner="bubbles"
+		            loadingText="{{'cargando' | translate }}...">
+		          </ion-infinite-scroll-content>
+		    </ion-infinite-scroll>
+</ion-content>    

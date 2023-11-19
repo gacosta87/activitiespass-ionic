@@ -1,0 +1,262 @@
+<ion-header translucent *ngFor="let item2 of this.datos">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+      <ion-row >
+        <ion-col col-2  (click)="linkperfil(item2.mycar_id)" style=" text-align: center; padding-top:14px;">
+          <img style="height:35px; width:35px; border-radius: 50%;"  *ngIf="item2.usuarios.foto2!='' && item2.usuarios.foto2!=null" src="{{item2.usuarios.foto_35}}">
+          <img style="height:35px; width:35px; border-radius: 50%;"  *ngIf="item2.usuarios.foto2=='' || item2.usuarios.foto2==null" src="./assets/logos/avatar.png">
+        </ion-col>
+        <ion-col col-9  (click)="linkperfil(item2.mycar_id)" style="padding-top: 6px; padding-left: 0px; font-size: 14px;">
+         <ion-label style="margin-top: 6px; font-size: 14px;"><b>{{item2.usuarios.username}}</b></ion-label>
+          <!--<div class="rate_div_mostrar_titulo">
+            <rating [rate]="item2. " readonly="true"></rating>
+          </div>-->
+          <div style="margin-top: 5px; height: 25px;">
+              <div *ngIf="item2.usuarios.verificacion_1=='1' && item2.usuarios.verificacion_2=='1' && item2.usuarios.verificacion_3=='1' && item2.usuarios.verificacion_4=='1' && item2.usuarios.verificacion_5=='1'" class="noverificada">   
+                  {{'verificada3' | translate }} 
+              </div>
+              <div *ngIf="item2.usuarios.verificacion_1=='2' && item2.usuarios.verificacion_2=='1' && item2.usuarios.verificacion_3=='1' && item2.usuarios.verificacion_4=='1' && item2.usuarios.verificacion_5=='1'" class="noverificada">   
+                  {{'verificada3' | translate }} 
+              </div>
+              <div *ngIf="item2.usuarios.verificacion_1=='2' && item2.usuarios.verificacion_2=='2' && item2.usuarios.verificacion_3!='3' && item2.usuarios.verificacion_4=='3' && item2.usuarios.verificacion_5!='3'"  class="verificada1"> 
+                  {{'verificada12' | translate }} 
+              </div>
+               <div *ngIf="item2.usuarios.verificacion_1=='2' && item2.usuarios.verificacion_2=='2' && item2.usuarios.verificacion_3!='3' && item2.usuarios.verificacion_4!='3' && item2.usuarios.verificacion_5!='3'"  class="verificada1"> 
+                  {{'verificada12' | translate }} 
+              </div>
+              <div *ngIf="item2.usuarios.verificacion_1=='2' && item2.usuarios.verificacion_2=='2' && item2.usuarios.verificacion_3=='3' && (item2.usuarios.verificacion_4!='3' || item2.usuarios.verificacion_4=='3' ) && item2.usuarios.verificacion_5!='3'"  class="verificada2"> 
+                  {{'verificada13' | translate }} 
+              </div>
+              <div *ngIf="item2.usuarios.verificacion_1=='2' && item2.usuarios.verificacion_2=='2' && item2.usuarios.verificacion_3=='3' && item2.usuarios.verificacion_4=='3' && item2.usuarios.verificacion_5=='3'"  class="verificada3"> 
+                  {{'verificada14' | translate }} 
+              </div>
+          </div>
+        </ion-col>
+        <ion-col col-1 style="padding-top: 28px; padding-left: 0px;">
+            <ion-icon class="menu-icon" (click)="publicmenu($event, item2.id, item2.usuarios.id)" name="ellipsis-vertical"></ion-icon>
+      </ion-col>
+      </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content [scrollEvents]="true" (ionScroll)="didScroll()" >
+<div *ngFor="let item2 of this.datos">
+    <div *ngIf="item2.rt_publicacione_id!=null && item2.rt_publicacione_id!=''">
+              <ion-row *ngFor="let item3 of item2.rtuser" style="padding-left: 10px; margin-top: 5px; border-bottom: 0px; border: 1px solid #e0e0e0;">
+                    <ion-col col-2  (click)="linkperfil(item3.mycar_id)" style=" text-align: center;">
+                        <img style="height:25px; width:25px; border-radius: 50%;"  *ngIf="item3.foto2!='' && item3.foto2!=null" src="{{item3.foto_35}}">
+                        <img style="height:25px; width:25px; border-radius: 50%;"  *ngIf="item3.foto2=='' || item3.foto2==null" src="./assets/logos/avatar.png">
+                    </ion-col>
+                    <ion-col col-9  (click)="linkperfil(item3.mycar_id)" style="padding-top: 6px; padding-left: 0px; font-size: 14px;">
+                        <ion-label style="margin-top: 6px;"><b>{{item3.username}}</b></ion-label>
+                    </ion-col>
+              </ion-row>
+    </div>
+    <div class="div-publicacion">
+        <div *ngIf="item2.tipo=='2'">
+                                  <div class="div-publicacion-content" (click)="doubleClick(item2.id, item2.mycar_id)">
+                                            <div class="uso" *ngIf="item2.nuevo_usado=='1'"><div class="uso_mascara">{{'nuevo' | translate }} </div></div>
+                                            <div class="uso" *ngIf="item2.nuevo_usado=='2'"><div class="uso_mascara">{{'usado' | translate }} </div></div>
+                                            <ion-slides style="" speed="4000" avoid-super-tabs="true" #mySlider [options]="slideOpts" loop="false" pager="true">
+                                                <ion-slide ion-slide *ngIf="item2.ruta_video_1!='' && item2.ruta_video_1!=null">
+                                                  <video autoplay loop #player playsinline preload="auto"  poster="./assets/fondos/loading.gif">
+                                                    <source [src]="item2.ruta_video_1" type="video/mp4">
+                                                  </video>
+                                                  <!--
+                                                  <div class="bar">
+                                                      <ion-button (click)="playOnSide(player)" color="light" fill="clear">
+                                                          <ion-icon slot="icon-only" name="open"></ion-icon>
+                                                      </ion-button>
+                                                  </div>
+                                                -->
+                                                </ion-slide>
+                                                <ion-slide ion-slide *ngIf="item2.imagen1!='' && item2.imagen1!=null">
+                                                <ngx-progressive-image-loader style="width: 100%; filter: brightness(1.0) saturate(1.3);">
+                                                  <img
+                                                    [src]="item2.imagen1"
+                                                    [placeholderImageSrc]="item2.thumbnail1"
+                                                    ngxProgressiveImage
+                                                  />
+                                                </ngx-progressive-image-loader>
+                                                </ion-slide>
+                                                <ion-slide ion-slide *ngIf="item2.imagen2!='' && item2.imagen2!=null">
+                                                <ngx-progressive-image-loader style="width: 100%; filter: brightness(1.0) saturate(1.3);">
+                                                  <img
+                                                    [src]="item2.imagen2"
+                                                    [placeholderImageSrc]="item2.thumbnail2"
+                                                    ngxProgressiveImage
+                                                  />
+                                                </ngx-progressive-image-loader>
+                                                </ion-slide>
+                                                <ion-slide ion-slide *ngIf="item2.imagen3!='' && item2.imagen3!=null">
+                                                <ngx-progressive-image-loader style="width: 100%; filter: brightness(1.0) saturate(1.3);">
+                                                  <img
+                                                    [src]="item2.imagen3"
+                                                    [placeholderImageSrc]="item2.thumbnail3"
+                                                    ngxProgressiveImage
+                                                  />
+                                                </ngx-progressive-image-loader>
+                                                </ion-slide>
+                                            </ion-slides>
+                                            <ion-icon class="div-publicacion-content-like-gif" id="iconlike2{{this.itemid}}" name="heart"></ion-icon>
+                                            <!--<div class="ruta_local2" (click)="iralmapa(item2.latitud, item2.longitud)" *ngIf="item2.longitud!='' && item2.longitud!=null">
+                                               <img  src="./assets/logos/maps.png" style="width:70px">
+                                            </div>-->
+                                  </div>
+                                  <div class="div-publicacion-footer-megusta" style="height: 34px;">
+                                            <div *ngIf="item2.precio!=0 && item2.precio!=null" style="position: absolute; font-size: 14px;">
+                                              <!--<b *ngIf="item2.precio_oferta!=0 && item2.precio_oferta!=null">{{'publicaciontipo2' | translate }}:</b> -->
+                                                  <b style="font-weight: normal;margin-left: 0px;" *ngIf="item2.precio_oferta==0 && item2.precio_oferta!=null">{{item2.isomoneda}} {{item2.precio | currency:' '}}</b>
+                                                  <b style="font-weight: normal;margin-left: 0px;" *ngIf="item2.precio_oferta!=0 && item2.precio_oferta!=null">{{item2.isomoneda}} {{item2.precio_oferta | currency:' '}}</b>
+                                                  <b style="color: #a1a9b9; font-weight: normal; text-decoration: line-through;margin-left: 5px;" *ngIf="item2.precio_oferta!=0 && item2.precio_oferta!=null">{{item2.isomoneda}} {{item2.precio | currency:' '}}</b>
+                                            </div>
+                                            <div class="creacion"> {{ this.zonahoraria(item2.created) }}</div>
+                                  </div>                
+                                  <div class="div-publicacion-social">
+                                                 <ion-row>
+                                                    <ion-col col-3 style="text-align: -webkit-center; ">
+                                                          <table>
+                                                          <tr>
+                                                            <td>
+                                                                <ion-icon *ngIf="item2.cmegustame=='1'" (click)="like(item2.id, item2.mycar_id)" id="icon2{{this.itemid }}" name="heart-outline" style="color: #d32d2d !important;"></ion-icon>
+                                                                <ion-icon *ngIf="item2.cmegustame=='2'" (click)="like(item2.id, item2.mycar_id)" id="icon2{{this.itemid }}" name="heart" style="color: #d32d2d !important;"></ion-icon>
+                                                            </td>
+                                                            <td style="padding-top: 10px; color: #d32d2d;">
+                                                                <b id="megusta2{{this.itemid}}" (click)="like(item2.id, item2.mycar_id)">{{item2.cmegusta}}</b>
+                                                                <div style="display:none" id="cmegusta2{{this.itemid}}">{{item2.cmegusta}}</div>
+                                                            </td>
+                                                          </tr>
+                                                        </table>
+                                                    </ion-col>
+                                                    <ion-col col-3 style="text-align: -webkit-center;">
+                                                          <table>
+                                                          <tr>
+                                                            <td>
+                                                                  <ion-icon name="cellular-outline"></ion-icon>
+                                                            </td>
+                                                            <td style="padding-top: 10px; padding-left: 3px;">
+                                                                  <b id="megusta2_1{{item2.id}}">{{item2.alcance}}</b>
+                                                            </td>
+                                                          </tr>
+                                                        </table>
+                                                    </ion-col>
+                                                    <ion-col col-3 style="text-align: -webkit-center;">
+                                                          <table>
+                                                          <tr>
+                                                            <td>
+                                                                  <ion-icon name="chatbubble-outline" (click)="comentario(item2.id)"></ion-icon>
+                                                            </td>
+                                                            <td  style="padding-top: 10px; padding-left: 3px;">
+                                                                  <b id="megusta2_2{{item2.id}}">{{item2.ccomentarios}}</b>
+                                                            </td>
+                                                          </tr>
+                                                        </table>
+                                                    </ion-col>
+                                                    <ion-col col-3 style="text-align: -webkit-center;">
+                                                         <table>
+                                                          <tr>
+                                                            <td>
+                                                              <ion-icon name="share-social-outline" (click)="compartirpublic(item2.id, item2.usuario_id)" ></ion-icon>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                          </tr>
+                                                        </table>
+                                                    </ion-col>
+                                                 </ion-row>
+
+                                    </div>                                       
+                                    <div class="div-publicacion-footer-post">                                              
+                                              <!-- COMENTARIOS DE CREADOR-->
+                                              <b class="parrafo-pie"  id="texto2"  style=" font-weight: normal; line-height: 20px;" [innerHTML] = "this.hashtag('<b>'+item2.titulo+':</b>&nbsp;'+item2.texto)"></b>
+                                             <!-- COMENTARIOS DE OTROS-->
+                                              <b class="parrafo-pie-menos"  id="ctexto"  style="font-weight: normal; line-height: 20px;" [innerHTML] = "this.hashtag('<b>'+item2.ucomentarios+'</b>&nbsp;'+item2.tcomentarios)"></b>
+                                              <a id="cverm" *ngIf="item2.cmas=='2'"      style="font-size:14px !important;color: #666666 !important;"      (click)="comentario(item2.id)">{{'vermas' | translate }}</a>
+
+                                              <div *ngIf="item2.ccomentarios!=''" style="margin-top: 10px; margin-bottom: 7px;">
+                                                  <a style="font-size: 14px !important;color: #666666 !important;" *ngIf="item2.ccomentarios=='1'" (click)="comentario(item2.id)">{{'ver' | translate }} {{item2.ccomentarios}} {{'comentario' | translate }}</a>
+                                                  <a style="font-size: 14px !important;color: #666666 !important;" *ngIf="item2.ccomentarios!='1'" (click)="comentario(item2.id)">{{'verlos' | translate }} {{item2.ccomentarios}} {{'comentarios' | translate }}</a>
+                                              </div>
+
+                                    </div>
+
+        </div>
+    </div>
+    <div translucent *ngFor="let item2 of this.datos">
+        <ion-label label-destacados *ngIf="this.datos_publicaciones!=null && this.datos_publicaciones.length>0" style="margin-top: 10px;margin-bottom: 15px;"><b>{{'publicacionesdelvendendor' | translate }} @{{item2.usuarios.username}}</b></ion-label>
+        <div avoid-super-tabs="true" id="destacado-wapper_sugerencia" class="destacado-wapper_sugerencia" *ngIf="this.datos_publicaciones!=null && this.datos_publicaciones.length>0">
+            <div *ngFor="let item3 of this.datos_publicaciones let i=index">
+                <div class="div-destacado_sugerencia">
+                      <ion-row>
+                          <ion-col class="cel-post" col-12 style="    height: 40px;">
+                                <ngx-progressive-image-loader style="width: 100%; height: 100%;filter: brightness(1.0) saturate(1.3);">
+                                  <div *ngIf="(item3.ruta_video_1!='' && item3.ruta_video_1!=null)" class="inf_video" (click)="mas(item3.id)">
+                                    <ion-icon name="film-outline"></ion-icon>
+                                  </div>
+                                  <img
+                                    (click)="mas(item3.id)"
+                                    [src]="item3.imagen1_m"
+                                    [placeholderImageSrc]="item3.thumbnail1"
+                                    ngxProgressiveImage  
+                                  />
+                                </ngx-progressive-image-loader>
+                                    <ion-label title-sub style="margin-left: 5px;margin-top: 3px;margin-bottom: 7px;text-align: left;font-size: 12px;">
+                                      <b style="margin-left: 0px; font-weight: normal;" *ngIf="item3.precio_oferta==0 && item3.precio_oferta!=null">{{item3.isomoneda}} {{item3.precio | currency:' '}}</b>
+                                      <b style="margin-left: 0px; font-weight: normal;" *ngIf="item3.precio_oferta!=0 && item3.precio_oferta!=null">{{item3.isomoneda}} {{item3.precio_oferta | currency:' '}}</b>
+                                      <b style="color: #a1a9b9; margin-left: 5px;font-weight: normal; text-decoration: line-through;" *ngIf="item3.precio_oferta!=0 && item3.precio_oferta!=null">{{item3.isomoneda}} {{item3.precio | currency:' '}}</b>
+                                    </ion-label>
+                          </ion-col>
+                      </ion-row>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div padding style="padding-bottom:10px; padding-top:10px; margin-top: 30px;">
+    <ion-row>
+          <ion-col col-12>
+                <h6><b label-valoraciones>{{'perfilinfotext2' | translate }}</b></h6>
+          </ion-col>
+      </ion-row>
+    </div> 
+    <div padding  style="padding-top:0px; padding-bottom:30px;" *ngFor="let item2 of this.datos_calificacion;">
+        <ion-row>
+          <ion-col col-12>
+                <div title-valoracion>
+                <ion-icon slot="start" name="person" style="margin-right: 10px;"></ion-icon>
+                  <a style="font-size: 16px !important;" href="#/perfilmycar/{{item2.usuarios.mycar_id}}">@{{item2.usuarios.username}}</a> - {{item2.created | date:"dd/MM/yyyy"}}
+                </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4>
+                <div class="rate_div_valoracion">
+                  <ion-row>
+                    <ion-col col-8>
+                      <rating [rate]="item2.puntaje" readonly="true" size="default"></rating>
+                    </ion-col>
+                    <ion-col col-4 rating-valoracion>
+                      {{item2.puntaje}}/5
+                    </ion-col>
+                  </ion-row>
+                </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+                <div descripcion-valoracion>{{item2.descripcion}}</div>
+          </ion-col>
+        </ion-row>
+    </div>
+    <div padding style="padding-top:30px; line-height: 25px;"  *ngIf="this.datos_calificacion.length==0">
+      <ion-label title-sub>{{'perfilinfotext3' | translate }}</ion-label>                            
+    </div>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+</div>
+</ion-content>

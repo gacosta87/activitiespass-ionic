@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>{{'restablecer' | translate }}</ion-title>
+    <ion-buttons slot="start">
+                <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="myview">
+<ion-grid>
+    <form #EnForm="ngForm"  [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+          <div padding>
+            <ion-label stacked style="color:#172833;  text-align:justify;    white-space: normal; font-size: 17px;"><b>{{'heolvidadocontrasena' | translate }}</b></ion-label>
+          </div>
+          <div padding style="padding-top:0px;">
+            <ion-label stacked style="color:#172833;  text-align:justify;    white-space: normal; font-size: 12px;">{{'textocodigoseguridaen' | translate }}</ion-label>
+          </div>
+          <div padding style="margin-top: 0px;padding-bottom: 16px;">
+                <ion-item>
+                    <ion-icon name="mail" slot="start" style="margin-right: 12px;"></ion-icon>
+                    <ion-input placeholder="{{'direcciondecorreoelectronico' | translate }}" formControlName="email" type="text"></ion-input>
+                </ion-item>
+          </div>
+    </form>
+          <div padding>
+              <ion-button expand="block" id="boton_envio" onClick="this.disabled=true;" (click)="EnForm.ngSubmit.emit()"  color="secondary" [disabled]="!myForm.valid" type="submit">{{'siguiente' | translate }}</ion-button>
+          </div>
+    
+</ion-grid>
+</ion-content>

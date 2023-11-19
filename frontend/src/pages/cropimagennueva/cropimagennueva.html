@@ -1,0 +1,111 @@
+<ion-header translucent>
+  <ion-toolbar>
+      <ion-row>
+        <ion-col col-2>
+              <button class="button_top1" ion-button icon-only color="danger" (click)="clear()">
+                {{'botoncancelar'   | translate  }}
+              </button>
+        </ion-col>
+        <ion-col col-8 style="">
+              <ion-title>{{'editarimagen1' | translate }}</ion-title>
+        </ion-col>
+        <ion-col col-2>
+              <button class="button_top2" ion-button icon-only color="secondary" (click)="save()" style="margin-left: -19px;">
+                {{'botonaceptar'  | translate  }}
+              </button>
+        </ion-col>
+      </ion-row>
+     
+      
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+            <div class="cropper-wrapper">
+                <image-cropper
+                    [imageChangedEvent]="imageChangedEvent"
+                    [imageURL]="imageURL"
+                    [maintainAspectRatio]="true"
+                    [containWithinAspectRatio]="containWithinAspectRatio"
+                    [aspectRatio]="aspectRatio"
+                    [resizeToWidth]="800"
+                    [resizeToHeight]="800"
+                    [cropperMinWidth]="128"
+                    [cropperMinHeight]="128"
+                    [onlyScaleDown]="true"
+                    [roundCropper]="false"
+                    [canvasRotation]="canvasRotation"
+                    [transform]="transform"
+                    [alignImage]="'center'"
+                    [imageQuality]="90"
+                    [style.display]="showCropper ? null : 'none'"
+                    backgroundColor="#fff"
+                    format="jpeg"
+                    (imageCropped)="imageCropped($event)"
+                    (imageLoaded)="imageLoaded()"
+                    (cropperReady)="cropperReady($event)"
+                    (loadImageFailed)="loadImageFailed()"
+                ></image-cropper>
+              <div *ngIf="loading" class="loader">{{'editarimagen2' | translate }}...</div>
+            </div>
+             <ion-row style="margin-top: 10px;">
+                            <ion-col col-3>
+                              <button ion-button outline icon-left color="primary" (click)="zoomIn()">
+                                Zoom + 
+                              </button>
+                            </ion-col>
+                            <ion-col col-3>
+                              <button ion-button outline icon-left color="primary" (click)="zoomOut()">
+                                Zoom -
+                              </button>
+                            </ion-col>
+                            <ion-col col-3>
+                              <button ion-button clear (click)="flipHorizontal()" style="padding-top: 4px;">
+                                {{'editarimagen3' | translate }}
+                              </button>
+                            </ion-col>
+                            <ion-col col-3>
+                              <button ion-button clear (click)="flipVertical()" style="padding-top: 4px;">
+                                {{'editarimagen4' | translate }}
+                              </button>
+                            </ion-col>
+                         
+                            
+                            <ion-col col-3>
+                              <button ion-button clear icon-only (click)="moveBottom()">
+                                  <ion-icon name="arrow-up-outline"></ion-icon>
+                              </button>
+                            </ion-col>
+                            <ion-col col-3>
+                              <button ion-button clear icon-only (click)="moveTop()">
+                                <ion-icon name="arrow-down-outline"></ion-icon>
+                              </button>
+                            </ion-col>
+                            <ion-col col-3>
+                              <button ion-button clear icon-only (click)="moveRight()">
+                                <ion-icon name="arrow-back-outline"></ion-icon>
+                              </button>
+                            </ion-col>
+                            <ion-col col-3>
+                              <button ion-button clear icon-only (click)="moveLeft()">
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                              </button>
+                            </ion-col>
+                            
+
+                            <ion-col col-4>
+                              <button ion-button clear (click)="rotateLeft()">
+                                {{'editarimagen6' | translate }} 
+                              </button>
+                            </ion-col>
+                            <ion-col col-4>
+                              <button ion-button clear (click)="rotateRight()">
+                                {{'editarimagen7' | translate }}
+                              </button>
+                            </ion-col>
+                            <ion-col col-4>
+                              <button ion-button clear (click)="resetImage()">
+                                {{'editarimagen5' | translate }}
+                              </button>
+                            </ion-col>
+              </ion-row>
+ </ion-content>

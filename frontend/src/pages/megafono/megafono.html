@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-row>
+  		<ion-col col-2 style="padding-top: 19px;">
+	      	<ion-buttons>
+		        <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+		  	</ion-buttons>
+	  	</ion-col>
+	  	<ion-col col-10>
+    		<ion-searchbar style="--box-shadow:0px;     padding-left: 0px;" type="text"  animated="true" showCancelButton="focus"  placeholder="Buscar" clearInput [(ngModel)]="searchTerm" (ionChange)="onSearchTerm($event)"></ion-searchbar>
+    	</ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+			<ion-label label-destacados><b>{{ 'Mensajes' | translate }}</b></ion-label>
+      <br>
+            <div style="" *ngFor="let item of this.data;" class="chat-list">
+                <ion-row *ngIf="item.usuarioid_from!=this.usuarioid">
+                  <ion-col col-2  (click)="irchat(item.usuarioid_desty, item.usuarioid_from, item.usuarioid_from)" style="text-align: center; padding-top: 5px;">
+                  	<img class="img-destacado" *ngIf="item.usuariosfrom.foto2!='' && item.usuariosfrom.foto2!=null" src="{{item.usuariosfrom.foto2}}">
+                    <img class="img-destacado" *ngIf="item.usuariosfrom.foto2=='' || item.usuariosfrom.foto2==null" src="./assets/logos/avatar.png">
+                  </ion-col>
+                  <ion-col col-8 (click)="irchat(item.usuarioid_desty, item.usuarioid_from, item.usuarioid_from)" style="">
+                     <b *ngIf="item.leido=='0'" style="color:#000">{{item.usuariosfrom.username}}</b>
+                     <b *ngIf="item.leido!='0'" style="color:#683bc7">{{item.usuariosfrom.username}}</b>
+                     <br>
+                     {{item.mensaje}}
+                     <div class="hora">{{this.zonahoraria(item.created)}}</div>
+                  </ion-col>
+                  <ion-col col-2  (click)="deletechat(item.usuarioid_desty, item.usuarioid_from, item.usuarioid_from, this.usuarioid)" style="text-align: center; padding-top: 5px;">
+                      <ion-icon name="trash-outline"></ion-icon>
+                  </ion-col>
+
+              </ion-row>
+              <ion-row *ngIf="item.usuarioid_desty!=this.usuarioid">
+                  <ion-col col-2 (click)="irchat(item.usuarioid_desty, item.usuarioid_from, item.usuarioid_desty)" style="text-align: center; padding-top: 5px;">
+                  	<img class="img-destacado" *ngIf="item.usuariosdesty.foto2!='' && item.usuariosdesty.foto2!=null" src="{{item.usuariosdesty.foto2}}">
+                    <img class="img-destacado" *ngIf="item.usuariosdesty.foto2=='' || item.usuariosdesty.foto2==null" src="./assets/logos/avatar.png">
+                  </ion-col>
+                  <ion-col col-8 (click)="irchat(item.usuarioid_desty, item.usuarioid_from, item.usuarioid_desty)" style="">
+                     <b *ngIf="item.leido=='0'" style="color:#000">{{item.usuariosdesty.username}}</b>
+                     <b *ngIf="item.leido!='0'" style="color:#683bc7">{{item.usuariosdesty.username}}</b>
+
+                     <br>
+                     {{item.mensaje}}
+                     <div class="hora">{{this.zonahoraria(item.created)}}</div>
+                  </ion-col>
+                   <ion-col col-2  (click)="deletechat(item.usuarioid_desty, item.usuarioid_from, item.usuarioid_from, this.usuarioid)" style="text-align: center; padding-top: 5px;">
+                      <ion-icon name="trash-outline"></ion-icon>
+                  </ion-col>
+              </ion-row>
+          </div>
+           <div padding style="" *ngIf="this.data==null || this.data.length==0" class="chat-list">
+              <ion-label title-sub>{{'megafonoinicial' | translate }}</ion-label>      
+          </div>
+</ion-content>

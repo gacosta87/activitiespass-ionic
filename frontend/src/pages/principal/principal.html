@@ -1,0 +1,34 @@
+<ion-router-outlet id="secondary" name="secondary"></ion-router-outlet>
+<ion-tabs>
+      <ion-tab-bar slot="bottom" style="height: 58px;"> 
+
+            <ion-tab-button tab="inicio" (click)="actualziar_vista_padre_inicio()">
+              <ion-icon id="menu1"  name="home-outline" ></ion-icon>
+              <ion-label>{{'menu_inicio' | translate }}</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button id="menu3"  tab="temas" (click)="actualziar_vista_padre_eventos()">
+              <ion-icon name="logo-reddit"></ion-icon>
+              <ion-label>{{'chatinteractivo' | translate }}</ion-label>
+            </ion-tab-button>
+            
+
+                    <ion-tab-button  (click)="agregarpublicacion()">
+                      <ion-icon class="add-menu" name="add-circle-outline"></ion-icon>
+                      <ion-label>{{'agregar' | translate }}</ion-label>
+                    </ion-tab-button>
+
+                     
+            <ion-tab-button id="menu2" tab="buscar" (click)="actualziar_vista_padre_buscar()">
+              <ion-icon name="search-outline"></ion-icon>
+              <ion-label>{{'menu_buscar' | translate }}</ion-label>
+            </ion-tab-button>
+            
+
+            <ion-tab-button id="menu4"  tab="perfil"  (click)="actualziar_vista_padre_perfil()">
+              <ion-icon name="person-outline"></ion-icon>
+              <ion-label>{{'menu_perfil' | translate }}</ion-label>
+            </ion-tab-button>
+
+      </ion-tab-bar>
+</ion-tabs>

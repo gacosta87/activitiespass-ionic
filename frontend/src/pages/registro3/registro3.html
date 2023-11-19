@@ -1,0 +1,38 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-buttons slot="start">
+                <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+          <ion-title text-center>{{'registrarse' | translate }}</ion-title>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview">
+	<ion-grid>
+		<form #EnForm="ngForm"  [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+            <div padding>
+              <ion-label stacked style="color:#172833;  text-align:justify;    white-space: normal; font-size: 17px;"><b>{{'registrofechanacimiento1' | translate }}</b></ion-label>
+            </div>
+            <div padding style="padding-top:0px;">
+              <ion-label stacked style="color:#172833;  text-align:justify;    white-space: normal; font-size: 12px;">{{'fechanacimientomenor' | translate }}</ion-label>
+            </div>
+        	  <div padding style="margin-top: 10px;padding-bottom: 16px;">
+                <ion-item>
+                    <ion-icon name="calendar" slot="start" style="margin-right: 12px;"></ion-icon>
+                    <ion-input value="{{ this.fechar | date: 'dd/MM/yyyy' }}" id="date" class=""></ion-input>
+                    <ion-popover trigger="date" size="cover" alignment="center" side="bottom">
+                        <ng-template>
+                            <ion-datetime preferWheel=true  doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" [showDefaultButtons]="true"  presentation="date" [(ngModel)]="this.fechar"  displayFormat="DD/MM/YYYY" formControlName="fechanacimiento"></ion-datetime>
+                        </ng-template>
+                    </ion-popover>       
+                </ion-item>
+            </div>
+    </form>    
+          	<div padding>
+              	<ion-button id="boton_envio"  (click)="EnForm.ngSubmit.emit()"  expand="block" color="secondary" [disabled]="!myForm.valid" type="submit">{{'registrarse' | translate }}</ion-button>
+          	</div>
+            <div padding style="padding-top: 0px;text-align: center;">
+                <br><br>
+                <a (click)="enviarformularioomitir()" style="text-decoration-line: underline; margin-top:10px; font-size:14px !important;text-transform: none !important;">{{'omitir' | translate }}</a>
+            </div>
+	</ion-grid>
+</ion-content>

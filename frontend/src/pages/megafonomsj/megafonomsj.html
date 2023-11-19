@@ -1,0 +1,96 @@
+<ion-header translucent *ngFor="let item2 of this.data2;">
+  <ion-toolbar (click)="linkperfil(item2.mycar_id)">
+    <ion-title>
+      <ion-row>
+        <ion-col col-2 style="padding-top: 10px;">
+            <ion-buttons>
+              <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+        </ion-col>
+        <ion-col col-2 style="text-align: center;">
+          <img style="width: 30px; height: 30px;" *ngIf="item2.foto2=='' || item2.foto2==null"  src="./assets/logos/avatar.png">
+          <img style="width: 30px; height: 30px;" *ngIf="item2.foto2!='' && item2.foto2!=null"  src="{{item2.foto2}}">
+        </ion-col>
+        <ion-col col-8 style="padding-top: 6px; padding-left: 0px; text-align: left;">
+          <b>{{'Mensajes' | translate }}</b><br>
+          {{item2.username}}
+        </ion-col>
+      </ion-row>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content  #scrollElement id="scrollElement">
+    <div style="" *ngFor="let item of this.data;" >
+          <div *ngIf="item.usuarioid_desty!=this.usuarioid" class="chat-list-yo">
+                <ion-row >                    
+                    <ion-col col-12  style="text-align: right;" *ngIf="item.imagen=='' || item.imagen==null"  (click)="dobleclick(item.id, this.usuarioid, item.texto)" >
+                       {{item.texto}}
+                       <div class="moment-yo"> {{ this.zonahoraria(item.created) }}</div>
+                    </ion-col>
+                    <ion-col col-7 *ngIf="item.imagen!='' && item.imagen!=null" (click)="dobleclick(item.id, this.usuarioid, item.texto)" >
+                      <div class="zonaimg" style="position: absolute;bottom: 6px; left: 7px;"> {{ this.zonahoraria(item.created) }}</div>
+                    </ion-col>
+                    <ion-col col-5  style="text-align: right;" *ngIf="item.imagen!='' && item.imagen!=null">
+                       <!--<img class="imagen" (click)="imgver(item.id)" src="{{item.imagen_m}}"> -->
+                       <ngx-progressive-image-loader style="filter: brightness(1.0) saturate(1.3);">
+                        <img
+                          (click)="imgver(item.id)" 
+                          [src]="item.imagen_m"
+                          [placeholderImageSrc]="item.thumbnail1"
+                          ngxProgressiveImage
+                        />
+                      </ngx-progressive-image-loader>
+                      <br>
+                      
+                    </ion-col>
+                </ion-row>
+          </div>
+          <div *ngIf="item.usuarioid_from!=this.usuarioid" class="chat-list" >
+              <ion-row >
+                    <ion-col col-2 style="text-align: center;padding-right: 0px; padding-left: 0px;">
+                      <img style="width: 30px; height: 30px; border-radius: 50%;" *ngIf="fotodesty=='' || fotodesty==null"  src="./assets/logos/avatar.png">
+                      <img style="width: 30px; height: 30px; border-radius: 50%;" *ngIf="fotodesty!='' && fotodesty!=null"  src="{{fotodesty}}">
+                    </ion-col>
+                    <ion-col col-10  style="text-align: left; padding-left: 0px;" *ngIf="item.imagen=='' || item.imagen==null" (click)="dobleclickcopy(item.id, item.texto)">
+                       {{item.texto}}
+                       <div class="moment"> {{ this.zonahoraria(item.created) }}</div>
+                    </ion-col>
+                    <ion-col col-5  style="text-align: left; padding-left: 0px;" *ngIf="item.imagen!='' && item.imagen!=null">
+                           <!--<img class="imagen" (click)="imgver(item.id)" src="{{item.imagen_m}}"> -->
+                           <ngx-progressive-image-loader style="filter: brightness(1.0) saturate(1.3);"> 
+                              <img
+                                (click)="imgver(item.id)" 
+                                class="imagen"
+                                [src]="item.imagen_m"
+                                [placeholderImageSrc]="item.thumbnail1"
+                                ngxProgressiveImage
+                              />
+                            </ngx-progressive-image-loader>
+                           <div class="moment"> {{ this.zonahoraria(item.created) }}</div>
+                    </ion-col>
+              </ion-row>
+          </div>
+    </div>
+    <br><br><br>
+</ion-content>
+<ion-footer>
+<form #EnForm="ngForm"  [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+    <ion-toolbar>
+        <ion-row>
+          <ion-col col-2 style="text-align: center;">
+                      <ion-icon class="camera-icon" name="camera" (click)="cambiarimagen()"></ion-icon> 
+          </ion-col>
+          <ion-col col-8 style="">
+          <ion-textarea rows="1" cols="20"  [(ngModel)]="this.textom" placeholder="{{'enviarmensaje' | translate }}..." formControlName="texto"></ion-textarea>
+          </ion-col>
+          <ion-col col-2 style="text-align: center;">
+                  <button class="send-icon" id="boton_envio" (click)="EnForm.ngSubmit.emit()"  type="submit">
+                      <ion-icon style=" " name="send" ></ion-icon> 
+                  </button>
+          </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</form>
+</ion-footer>
+
+

@@ -1,0 +1,18 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px;"  text-center>{{'tituloinicial2' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content class="myview">
+<ion-grid>
+	      <div padding  text-center>
+	  	  	<div class="texto-center" scrollY="false" [innerHTML]="this.texto"></div>
+	  	  </div>  
+</ion-grid>
+</ion-content>
+
+

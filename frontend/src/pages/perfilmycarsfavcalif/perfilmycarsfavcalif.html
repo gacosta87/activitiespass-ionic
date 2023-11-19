@@ -1,0 +1,38 @@
+<form #EnForm="ngForm"  class="form" [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+<ion-header translucent>
+	<ion-toolbar>
+	  <ion-title>
+	  	<ion-row>
+	  		<ion-col col-2>
+	  			<img *ngIf="this.fotodeperfil!='' && this.fotodeperfil!=null" style="height:30px; width:30px;" src="{{this.fotodeperfil}}">
+	  			<img *ngIf="this.fotodeperfil=='' || this.fotodeperfil==null" style="height:30px; width:30px;" src="./assets/logos/avatar.png">
+	  		</ion-col>
+	  		<ion-col col-10 style="padding-top: 6px; padding-left: 6px;">
+	          <b>{{'calificacion' | translate }}</b><br>
+	          {{this.username}}
+	        </ion-col>
+	  	</ion-row>
+	  	</ion-title>
+	  <button slot="end" (click)="close()" class="send" type="button">
+            <ion-icon name="close" icon-close></ion-icon>
+      </button>
+	</ion-toolbar>
+</ion-header>
+<ion-content>
+	<ion-grid no-padding>
+			<div padding >
+				<rating [(ngModel)]="this.puntaje" formControlName="puntaje" readonly="false" size="default"></rating>
+			</div>
+			<div padding style="padding-top:0px">
+				  <ion-textarea rows="5" cols="18" formControlName="descripcion" placeholder="{{'tuexperiencia' | translate }}..."></ion-textarea>
+			</div>
+	</ion-grid>
+</ion-content>
+<footer class="footer">
+    <ion-toolbar>
+		<button slot="end" class="send" id="boton_envio" onClick="this.disabled=true;" (click)="EnForm.ngSubmit.emit()"  [disabled]="!myForm.valid" type="submit">
+		  	<ion-icon name="paper-plane" icon-close></ion-icon>
+		</button>
+	</ion-toolbar>
+</footer>
+</form>

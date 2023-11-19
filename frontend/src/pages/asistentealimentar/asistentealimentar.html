@@ -1,0 +1,50 @@
+<ion-header>
+      <ion-toolbar>
+            <ion-title style="margin-left: -26px;"  text-center>{{'configurarasistente14' | translate }}</ion-title>
+            <ion-buttons slot="start">
+                <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+            </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview" >
+<form #EnForm="ngForm" style="height: 100%;" [formGroup]="myForm" (ngSubmit)="enviarformulario()" enctype="multipart/form-data">
+            <ion-grid no-padding *ngFor="let item of datos;" >
+                    <div style="height: 100px; width: 100%; margin-bottom: 70px; margin-top: 10px; text-align: center;">
+                          <img style="width: 150px; height:227px;" class="" src="./assets/logos/asistente4.png">
+                    </div>
+                    <div padding style="padding-top: 70px;padding-bottom: 0px;">
+                                <br>
+                                <span style="white-space: normal; padding: 16px;line-height: 27px; font-size: 16px;">{{'configurarasistente21' | translate }}</span>
+
+                                <br><br>
+                                <span style="white-space: normal; padding: 16px;line-height: 27px; font-size: 16px;">{{'configurarasistente22' | translate }}</span>
+                    </div>
+                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                    <ion-label style="white-space: normal; margin-top: 0px;line-height: 27px;margin-bottom: 32px;font-size: 16px;" class="label-item" position="floating">{{'configurarasistente31' | translate }}:</ion-label>
+                                    <input type="file" (change)="onFileChange1($event)" formControlName="file1" style="font-size: 14px;"  *ngIf="item.entrenamiento1=='' || item.entrenamiento1==null">
+                                    
+                                    <div class="name-entrenamiento" *ngIf="item.entrenamiento1!='' && item.entrenamiento1!=null">{{ 'configurarasistente33' | translate  }}</div>
+                                    <img (click)="delete('1')" style="width: 20px; height:20px;" class="" src="./assets/logos/malo.png" *ngIf="item.entrenamiento1!='' && item.entrenamiento1!=null">
+                    </div>
+
+                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                    <ion-label style="white-space: normal; margin-top: 0px;line-height: 27px;margin-bottom: 32px;font-size: 16px;" class="label-item" position="floating">{{'configurarasistente32' | translate }}:</ion-label>
+                                    <input type="file" (change)="onFileChange2($event)" formControlName="file2" style="font-size: 14px;"   *ngIf="item.entrenamiento2=='' || item.entrenamiento2==null">
+                                    
+                                    <div class="name-entrenamiento"  *ngIf="item.entrenamiento2!='' && item.entrenamiento2!=null">{{ 'configurarasistente34' | translate  }}</div>
+                                    <img (click)="delete('2')" style="width: 20px; height:20px;" class="" src="./assets/logos/malo.png" *ngIf="item.entrenamiento2!='' && item.entrenamiento2!=null">
+                    </div>
+                                    
+                  <br><br><br><br><br><br><br><br><br><br><br>
+          </ion-grid>
+</form>
+</ion-content>
+<ion-footer class="ion-no-border"  >  
+  <ion-toolbar >
+    <div padding>
+        <ion-button expand="block" type="submit" id="boton_envio"  [disabled]="!myForm.valid" style="text-transform: none;" color="secondary" (click)="EnForm.ngSubmit.emit()">
+             <ion-label style="font-size: 12px;">{{'guardar' | translate }}</ion-label>
+        </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

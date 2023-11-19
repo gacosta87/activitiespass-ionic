@@ -1,0 +1,59 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px;"  text-center>{{'misproveedores' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content >
+			<ion-refresher  slot="fixed" (ionRefresh)="doRefresh($event)">
+		        <ion-refresher-content
+		          ppullingIcon="arrow-dropdown"
+		          pullingText="Pull to refresh"
+		          refreshingSpinner="circles">
+		        </ion-refresher-content>
+		    </ion-refresher>
+       <ion-slides #mySliderpublicidad2 avoid-super-tabs="true" [options]="slideOpts_publi"  loop="true"  pager="false" paginationType="arrows">
+              <ion-slide *ngFor="let item_publicidad of this.conf_banner_2" >
+                  <img class="publicidad_img" (click)="linkperfil_publicidad(item_publicidad.mycar_id)"src="{{this.imgurl2}}{{item_publicidad.url_banner}}">
+              </ion-slide>
+      </ion-slides>
+      <div *ngIf="this.data!=null && this.data.length==0" style="height: 200px; width: 100%; margin-bottom: 70px; text-align: center;">
+            <img style="width: 300px; height: 300px;" class="" src="./assets/logos/notificaciones.png" height="300px" width="300px;">
+      </div>
+			
+      <div class="mostrar-segui" *ngFor="let item1 of this.data">
+          <span><b>{{'editarperfiltext2' | translate }}:</b> {{ item1.razon_social}}</span><br><br>
+          <span><b>{{'editarperfiltext10_1' | translate }}:</b> {{ item1.categoria}} </span><br><br>
+          <span><ion-icon style="font-size: 30px; margin-right: 10px;" name="mail-outline"></ion-icon> {{ item1.email}} </span><br><br>
+          <span><ion-icon style="font-size: 30px; margin-right: 10px;" name="call-outline"></ion-icon> {{ item1.telefono}} </span><br><br>
+          <div style="width:100%; text-align: right;">
+            <ion-icon (click)="eliminar(item1.id)"   style="font-size: 30px; margin-right: 10px;"  name="trash-outline"></ion-icon> 
+          </div>
+      </div>
+      <div padding class="chat-list"  *ngIf="this.data!=null && this.data.length==0">
+        <ion-label title-sub2>{{'nodataproveedores' | translate }}</ion-label>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="div-destacado-add_pub" >
+          <ion-icon name="add" class="div-add-img-icon-add_pub" (click)="misproveedoresadd()"></ion-icon>
+      </div>
+      <ion-infinite-scroll style="margin-bottom: 0px;" threshold="50px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="{{'cargando' | translate }}...">
+        </ion-infinite-scroll-content>
+    	</ion-infinite-scroll>
+</ion-content>
+

@@ -1,0 +1,35 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-buttons slot="start">
+                <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+          <ion-title text-center>{{'iniciarsession' | translate }}</ion-title>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview">
+	<ion-grid>
+		<form #EnForm="ngForm"  [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+        	  <div padding style="margin-top: 0px;padding-bottom: 16px;">
+                <ion-item>
+                    <ion-icon name="person" slot="start" style="margin-right: 12px;"></ion-icon>
+                    <ion-input placeholder="{{'direccioncorreoelectronico' | translate }}" formControlName="usuario" type="email"></ion-input>
+                </ion-item>
+            </div>
+            <div padding style="padding-top: 0px;">
+                <ion-item>
+                    <ion-icon name="key" slot="start" style="margin-right: 12px;"></ion-icon>
+                    <ion-input placeholder="{{'contrasena' | translate }}" formControlName="clave" type="password"></ion-input>
+                </ion-item>
+            </div>
+            <div padding style="padding-top: 10px;padding-bottom: 16px;">
+                <ion-label style="font-size:12px;" float-left>
+                	<a (click)="recuperar()" href="javascript:" >{{'olvidocontrasena' | translate }}</a>
+                </ion-label>
+            </div>
+    </form>
+          	<div padding style="padding-top: 23px;">
+              	<ion-button expand="block" color="secondary" id="boton_envio" onClick="this.disabled=true;" (click)="EnForm.ngSubmit.emit()"  [disabled]="!myForm.valid" type="submit">{{'iniciarsession' | translate }}</ion-button>
+          	</div>
+    
+	</ion-grid>
+</ion-content>

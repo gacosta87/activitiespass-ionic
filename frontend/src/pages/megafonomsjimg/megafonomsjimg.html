@@ -1,0 +1,22 @@
+<div *ngFor="let item2 of this.datos">
+    <ion-header translucent>
+      <ion-toolbar>
+          <ion-title></ion-title>
+          <button slot="end" (click)="close()" class="send" type="button">
+                <ion-icon name="close" icon-close></ion-icon>
+          </button>
+      </ion-toolbar>
+    </ion-header>
+    <div  class="div-publicacion">
+      <div class="div-publicacion-content">
+         <!-- <img src="{{item2.imagen}}"> -->
+          <ngx-progressive-image-loader style="width: 100%; height: 100%; filter: brightness(1.0) saturate(1.3);">
+            <img
+              [src]="item2.imagen"
+              [placeholderImageSrc]="item2.thumbnail1"
+              ngxProgressiveImage
+            />
+          </ngx-progressive-image-loader>
+      </div>
+    </div>
+</div>

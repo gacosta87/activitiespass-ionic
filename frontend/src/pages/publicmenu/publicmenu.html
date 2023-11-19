@@ -1,0 +1,38 @@
+<ion-list>
+		
+	<ion-item *ngIf="this.comperfil=='2'" lines="none" detail="false" button (click)="denunciarperfil()">{{'menutext10' | translate }}</ion-item>
+	<ion-item *ngIf="this.comperfil=='2'" lines="none" detail="false" button (click)="denunciarperfil()">{{'denucionarusuario' | translate }}</ion-item>
+
+
+	<ion-item *ngIf="this.comperfil=='2' && this.bloqueado=='1'" lines="none" detail="false" button (click)="bloquearuser()">{{'menutext11' | translate }}</ion-item>
+	<ion-item *ngIf="this.comperfil=='2' && this.bloqueado=='2'" lines="none" detail="false" button (click)="desbloquearuser()">{{'menutext12' | translate }}</ion-item>
+
+
+	<ion-item *ngIf="this.comperfil=='2' && this.version_exporar=='2'"  lines="none" detail="false" button (click)="compartirperfil()">{{'menutext1' | translate }}</ion-item>
+    <ion-item *ngIf="this.comperfil=='2' && this.version_exporar=='2'"  lines="none" detail="false" button (click)="copiarenlaceperfil()">{{'menutext2' | translate }}</ion-item>
+    
+
+    <ion-item *ngIf="this.compublic=='2'" lines="none" detail="false" button (click)="denunciarpublic('1')">{{'menutext10' | translate }}</ion-item>
+    <ion-item *ngIf="this.compublic=='2'" lines="none" detail="false" button (click)="denunciarpublic('2')">{{'denucionarpublicacion' | translate }}</ion-item>
+    <ion-item *ngIf="this.compublic=='2'" lines="none" detail="false" button (click)="denunciarpublic('3')">{{'denucionarpublicacion2' | translate }}</ion-item>
+
+
+	<ion-item *ngIf="this.compublic=='2' && this.version_exporar=='2'"  lines="none" detail="false" button (click)="compartirpublic()">{{'menutext3' | translate }}</ion-item>
+	<ion-item *ngIf="this.compublic=='2' && this.version_exporar=='2'"  lines="none" detail="false" button (click)="copiarenlacepublic()">{{'menutext4' | translate }}</ion-item>
+	
+	<ion-item *ngIf="this.publicusuarioid==usuarioid"  lines="none" detail="false" button (click)="eliminar()">{{'menutext5' | translate }}</ion-item>
+	<ion-item *ngIf="this.publicusuarioid==usuarioid"  lines="none" detail="false" button (click)="editar()">{{'menutext9' | translate }}</ion-item>
+	<ion-item *ngIf="this.salirmodal=='2'"  lines="none" detail="false" button (click)="salimodal()">{{'menutext6' | translate }}</ion-item>
+
+	<ion-item *ngIf="this.editarcuenta=='2'" lines="none" detail="false" button (click)="informacion(1)">{{'politicas2' | translate }}</ion-item>
+	<ion-item *ngIf="this.editarcuenta=='2'" lines="none" detail="false" button (click)="informacion(2)">{{'politicas4' | translate }}</ion-item>
+	<ion-item *ngIf="this.editarcuenta=='2'" lines="none" detail="false" button (click)="invitaramigos()">{{'invitaramigos1' | translate }}</ion-item>
+
+
+	<ion-item *ngIf="this.editarcuenta=='2'" lines="none" detail="false" button (click)="configurarreserva()">{{'configurarhorario' | translate }}</ion-item>
+	<ion-item *ngIf="this.editarcuenta=='2'" lines="none" detail="false" button (click)="editarsession()">{{'menutext7' | translate }}</ion-item>
+	<ion-item *ngIf="this.salircuenta=='2'"  lines="none" detail="false" button (click)="closesession()">{{'menutext8' | translate }}</ion-item>
+
+	<!--<ion-item lines="none" detail="false" button (click)="velocidad()">prueba velocidad</ion-item>
+	<ion-item lines="none" detail="false" button (click)="velocidad2()">prueba velocidad 2</ion-item>-->
+</ion-list>

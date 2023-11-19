@@ -1,0 +1,47 @@
+
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px;"  text-center>{{'historialtemas' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="close()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-grid no-padding style="margin-top: 15px;">
+
+
+    <div *ngIf="this.datos!=null && this.datos.length==0" style="height: 200px; width: 100%; margin-bottom: 70px; text-align: center;">
+              <img style="width: 300px; height: 300px;" class="" src="./assets/logos/notificaciones.png" height="300px" width="300px;">
+    </div>
+
+    <div padding class="chat-list"  *ngIf="this.datos!=null && this.datos.length==0">
+            <ion-label title-sub2>{{'newchatinfo' | translate }}</ion-label>
+    </div>
+
+
+    <div *ngFor="let item2 of this.datos let i=index" class="div-publicacion-solicitud">
+           <div class="div-publicacion-header" >
+                    <ion-row>
+                            <ion-col col-10  style="padding-left:10px; padding-right: 0px;">
+                              <ion-label style="margin-top: 20px; font-size: 14px;" (click)="linkperfil(item2.id)"><b style="font-weight: bolder;">{{item2.nombre}}</b></ion-label>
+                            </ion-col>
+                            <ion-col col-2 style="padding-top: 18px; padding-left: 0px;">
+                                  <ion-icon  style="font-size: 17px; margin-right: 17px;" class="menu-icon" (click)="edit(item2.id)" name="pencil-outline"></ion-icon>
+                                  <ion-icon  style="font-size: 17px;" class="menu-icon" (click)="delete(item2.id)" name="trash-outline"></ion-icon>
+                            </ion-col>
+                    </ion-row>
+          </div>
+          <div class="div-publicacion-footer-solicitud"> 
+                      <b class="parrafo-pie" id="texto2{{item2.id}}" style="font-weight: normal; padding-top: 0px;">{{item2.chatmensajeultimo[0].content}}</b>
+          </div>
+          <div style="text-align: -webkit-right;margin-right: 10px; margin-bottom: 20px;">
+            <ion-button type="Button"  style="font-size: 16px; height: 30px;" (click)="linkperfil(item2.id)" color="secondary">{{'ver' | translate }}</ion-button>
+          </div>
+    </div>  
+
+    <br><br><br><br><br><br><br>
+
+    <!--<ion-button type="Button" expand="block" style="margin-left: 8px; font-size: 25px; height: 50px; position: fixed; bottom: 20px; width: 96%;" (click)="newchat()" color="primary">{{'newchat' | translate }}</ion-button>-->
+	</ion-grid>
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px;" text-center>{{'editarperfil' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview" >
+<form #EnForm="ngForm" style="height: 100%;" [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+          <ion-grid no-padding *ngFor="let item of datos;" >
+                    <div padding style="padding-top: 10px;">
+                            <br>    
+                          <span style="white-space: normal; padding: 16px;font-size: 14px; color: #898989;">{{'editarperfiltext9_1' | translate }}</span>
+                          <ion-item>
+                              <ion-checkbox color="medium" style="color: #94979a;" formControlName="ver" (click)="cargarmapa()" [(ngModel)]="textcheckbox"></ion-checkbox>
+                              <ion-label style="margin-left: 18px;">
+                                <h2 style="margin-left: 18px; font-size: 13px; margin: 0px; color: #212529;">{{'editarperfiltext9' | translate }}</h2>
+                              </ion-label>
+                          </ion-item>
+                    </div>       
+                    <div padding style="padding-top: 0px;padding-bottom: 0px;"  *ngIf="this.textcheckbox==true">
+                                <ion-item>
+                                    <ion-icon name="map" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <span style="margin-right: 10px;">Lat</span>
+                                    <ion-input placeholder="{{'editarperfiltext7' | translate }}" readonly="true" id="Mycarlatitud" [(ngModel)]="this.latitud_ng"  formControlName="latitud" type="text"></ion-input>
+                                </ion-item>
+                    </div>
+                    <div padding style="padding-top: 0px;padding-bottom: 0px;" *ngIf="this.textcheckbox==true">
+                                <ion-item>
+                                    <ion-icon name="map" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <span style="margin-right: 10px;">Lon</span>
+                                    <ion-input placeholder="{{'editarperfiltext8' | translate }}"   readonly="true" id="Mycarlongitud"  [(ngModel)]="this.longitud_ng"  formControlName="longitud"  type="text"></ion-input>
+                                    </ion-item>
+                    </div>
+                    <div padding style="padding-top: 0px;" *ngIf="this.textcheckbox==true">
+                        <ion-row>
+                          <ion-col col-12><div  id="map2" style="width: 100%; height: 250px"></div></ion-col>
+                        </ion-row>
+                    </div>
+                    <ion-input readonly="true" id="Mycarpais"      [(ngModel)]="this.pais_ng"      formControlName="pais"      type="hidden"></ion-input>
+                    <ion-input readonly="true" id="Mycarmunicipio" [(ngModel)]="this.municipio_ng" formControlName="municipio" type="hidden"></ion-input>
+                    <ion-input readonly="true" id="Mycarestado"    [(ngModel)]="this.estado_ng"    formControlName="estado"    type="hidden"></ion-input>
+          </ion-grid>
+</form>
+</ion-content>
+<ion-footer class="ion-no-border" *ngFor="let item of datos;" >  
+  <ion-toolbar >
+    <div padding>
+        <ion-button expand="block" type="submit" id="boton_envio"  [disabled]="!myForm.valid" style="text-transform: none;" color="secondary" (click)="EnForm.ngSubmit.emit()">
+             <ion-label style="font-size: 12px;">{{'guardar' | translate }}</ion-label>
+        </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,273 @@
+<ion-content class="myview" *ngIf="this.sessionactiva!='true'">
+    <ion-refresher  slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          ppullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
+    <ion-grid>
+          <ion-row>
+          <ion-col col-12 style="text-align: -webkit-center;">
+              <ion-avatar class="" style="height: 80px; width: 80px; margin-top: 10%;">
+                <img style="width: 80px; height: 80px;" class="" src="./assets/logos/avatar2.png" height="110px" width="110px;">
+              </ion-avatar>
+          </ion-col>
+        </ion-row>
+        <div padding>
+          <ion-label class="title_registro"><b>{{'inciobienvenida1' | translate }}</b></ion-label>      
+          <ion-label class="title-sub_registro">{{'inciobienvenida2' | translate }}</ion-label> 
+        </div>
+        <ion-row>
+          <ion-col col-12 style="text-align: -webkit-center;margin-top:0px;">
+                <ion-button type="Button" expand="block" style="margin-top: 15px;" (click)="registro()"       color="secondary">{{'inciobienvenida5' | translate }}</ion-button>
+                <ion-button type="Button" expand="block" style="margin-top: 15px;" (click)="iniciarsession()" color="primary"  >{{'iniciarsession' | translate }}</ion-button>
+            </ion-col>
+          </ion-row>
+    </ion-grid>
+</ion-content>
+
+
+
+
+
+<ion-content class="myview" *ngIf="this.sessionactiva=='true'" [scrollEvents]="true">
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px;"  text-center>{{'tituloperfil1' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<super-tabs [config]="{ avoidElements: true }" activeTabIndex=0 #superTabs2 id="superTabs2" *ngIf="this.sessionactiva=='true' ">
+<super-tabs-toolbar color="" style="border: 1px solid #dedede;">
+        <super-tab-button style="color:var(--ion-color-primary); padding-top: 10px; font-size: 14px; text-align: center;">
+            {{'tituloperfil2' | translate }}
+        </super-tab-button>
+
+        <super-tab-button *ngIf="this.datosreservasatender !=null && this.datosreservasatender.length!=0" style="color:var(--ion-color-primary); padding-top: 10px; font-size: 14px; ">
+            {{'tituloperfil4' | translate }}
+        </super-tab-button>
+
+        <super-tab-button *ngIf="this.datosreservas!=null  && this.datosreservas.length!=0" style="color:var(--ion-color-primary); padding-top: 6px; font-size: 14px; text-align: center;">
+            {{'tituloperfil3' | translate }}
+        </super-tab-button>
+
+        <super-tab-button  style="color:var(--ion-color-primary); padding-top: 10px; font-size: 14px; text-align: center;">
+            {{'estadisticas1' | translate }}
+        </super-tab-button>
+</super-tabs-toolbar>
+<super-tabs-container *ngIf="this.datos!=null;">
+    <super-tab> 
+                <div class="myview" #scrollElement2 id="scrollElement2" >
+                          <div padding style="padding-bottom:0px; padding-top:10px;">
+                            <ion-row>
+                                <ion-col col-12>
+                                      <h6><b>{{'perfilinfotext2' | translate }}</b></h6>
+                                </ion-col>
+                            </ion-row>
+                          </div> 
+                          <div padding  style="padding-top:0px; padding-bottom:30px" *ngFor="let item2 of this.datos_calificacion;">
+                              <ion-row>
+                                <ion-col col-12>
+                                      <div title-valoracion>
+                                      <ion-icon slot="start" name="person" style="margin-right: 10px;"></ion-icon>
+                                        <a style="font-size: 16px !important; color: var(--ion-color-primary)!important; " class=""  href="#/perfilmycar/{{item2.usuarios.mycar_id}}">@{{item2.usuarios.username}}</a> - {{item2.created | date:"dd/MM/yyyy"}}
+                                      </div>
+                                </ion-col>
+                              </ion-row>
+                              <ion-row>
+                                <ion-col col-4>
+                                      <div class="rate_div_valoracion">
+                                        <ion-row>
+                                          <ion-col col-8>
+                                            <rating [rate]="item2.puntaje" readonly="true" size="default"></rating>
+                                          </ion-col>
+                                          <ion-col col-4 rating-valoracion>
+                                            {{item2.puntaje}}/5
+                                          </ion-col>
+                                        </ion-row>
+                                      </div>
+                                </ion-col>
+                              </ion-row>
+                              <ion-row>
+                                <ion-col col-12>
+                                      <div descripcion-valoracion>{{item2.descripcion}}</div>
+                                </ion-col>
+                              </ion-row>
+                          </div>
+                          <div padding style="padding-top:50px; line-height: 25px;"  *ngIf="this.datos_calificacion.length==0">
+                            <ion-label title-sub>{{'perfilinfotext3' | translate }}</ion-label>                            
+                          </div>
+
+                </div>
+
+    </super-tab>
+    <super-tab *ngIf="this.datosreservasatender !=null   && this.datosreservasatender.length!=0">
+              <div class="myview" #scrollElement3 id="scrollElement3" >
+                          <div padding style="padding-bottom:0px; padding-top:10px;">
+                            <ion-row>
+                                <ion-col col-12>
+                                      <h6><b>{{'perfilinfotext6' | translate }}</b></h6>
+                                </ion-col>
+                            </ion-row>
+                          </div>
+                          <div *ngFor="let item2 of this.datosreservasatender;">
+                              <div padding  style="padding-top:0px; padding-bottom:30px" *ngIf="this.compararfechas(item2.fecha,this.fechar)==1">
+                                      <ion-row>
+                                        <ion-col col-11>
+                                              <div title-valoracion>
+                                              <ion-icon slot="start" name="person" style="margin-right: 10px;"></ion-icon>
+                                                <a style="font-size: 16px !important;color: var(--ion-color-primary)!important; " class=""  href="#/perfilmycar/{{item2.reservausuarios.mycar_id}}">@{{item2.reservausuarios.username}}</a>
+                                                <ion-row>
+                                                    <ion-col col-12 *ngIf="item2.turno==1">
+                                                          <ion-item>
+                                                            <ion-label class="label-monstrar-radio" style="margin-left: 7px; font-size: 14px;"> {{'fecha' | translate }}: {{item2.fecha | date:"dd/MM/yyyy"}} <br> {{'turno1' | translate }} <br> {{'desde' | translate }}: {{item2.desde }} - {{'hasta' | translate }}: {{item2.hasta}}</ion-label>
+                                                          </ion-item>
+                                                    </ion-col>
+                                                     <ion-col col-12 *ngIf="item2.turno==2">
+                                                          <ion-item>
+                                                            <ion-label class="label-monstrar-radio" style="margin-left: 7px; font-size: 14px;"> {{'fecha' | translate }}: {{item2.fecha | date:"dd/MM/yyyy"}} <br> {{'turno2' | translate }} <br> {{'desde' | translate }}: {{item2.desde}} - {{'hasta' | translate }}: {{item2.hasta}}</ion-label>
+                                                          </ion-item>
+                                                    </ion-col>
+                                                     <ion-col col-12 *ngIf="item2.turno==3">
+                                                          <ion-item>
+                                                            <ion-label class="label-monstrar-radio" style="margin-left: 7px; font-size: 14px;"> {{'fecha' | translate }}: {{item2.fecha | date:"dd/MM/yyyy"}} <br> {{'turno3' | translate }} <br> {{'desde' | translate }}: {{item2.desde}} - {{'hasta' | translate }}: {{item2.hasta}}</ion-label>
+                                                          </ion-item>
+                                                    </ion-col>
+                                                </ion-row>
+                                              </div>
+                                        </ion-col>
+                                        <ion-col col-1>
+                                            <ion-icon name="trash-outline" (click)="reservadelete(item2.id)" style="font-size: 15px;"></ion-icon>
+                                        </ion-col>
+                                      </ion-row>
+                              </div>
+                          </div>
+                </div>
+    </super-tab>
+    <super-tab *ngIf="this.datosreservas!=null   && this.datosreservas.length!=0">
+                <div class="myview" #scrollElement4 id="scrollElement4" >
+                          <div padding style="padding-bottom:0px; padding-top:10px;">
+                            <ion-row>
+                                <ion-col col-12>
+                                      <h6><b>{{'perfilinfotext5' | translate }}</b></h6>
+                                </ion-col>
+                            </ion-row>
+                          </div> 
+                          <div *ngFor="let item2 of this.datosreservas;">
+                              <div padding  style="padding-top:0px; padding-bottom:20px" *ngIf="this.compararfechas(item2.fecha,this.fechar)==1">
+                                  <ion-row>                               
+                                    <ion-col col-11>
+                                          <div title-valoracion>
+                                          <ion-icon slot="start" name="person" style="margin-right: 10px;"></ion-icon>
+                                            <a style="font-size: 16px !important;color: var(--ion-color-primary)!important; " class=""  href="#/perfilmycar/{{item2.usuarios.mycar_id}}">@{{item2.usuarios.username}}</a>
+                                            <ion-row>
+                                                <ion-col style="padding-top: 0px;"  col-12 *ngIf="item2.turno==1">
+                                                      <ion-item>
+                                                        <ion-label class="label-monstrar-radio" style="margin-left: 7px; font-size: 12px;"> 
+                                                          {{'fecha' | translate }}: {{item2.fecha | date:"dd/MM/yyyy"}} <br> 
+                                                          {{'turno1' | translate }} <br> 
+                                                          {{'desde' | translate }}: {{item2.desde }} - {{'hasta' | translate }}: {{item2.hasta}}
+                                                        </ion-label>
+                                                      </ion-item>
+                                                </ion-col>
+                                                 <ion-col style="padding-top: 0px;" col-12 *ngIf="item2.turno==2">
+                                                      <ion-item>
+                                                        <ion-label class="label-monstrar-radio" style="margin-left: 7px; font-size: 12px;"> 
+                                                          {{'fecha' | translate }}: {{item2.fecha | date:"dd/MM/yyyy"}} <br> 
+                                                          {{'turno2' | translate }} <br> 
+                                                          {{'desde' | translate }}: {{item2.desde}} - {{'hasta' | translate }}: {{item2.hasta}}
+                                                        </ion-label>
+                                                      </ion-item>
+                                                </ion-col>
+                                                 <ion-col style="padding-top: 0px;" col-12 *ngIf="item2.turno==3">
+                                                      <ion-item>
+                                                        <ion-label class="label-monstrar-radio" style="margin-left: 7px; font-size: 12px;"> 
+                                                          {{'fecha' | translate }}: {{item2.fecha | date:"dd/MM/yyyy"}} <br> 
+                                                          {{'turno3' | translate }} <br> 
+                                                          {{'desde' | translate }}: {{item2.desde}} - {{'hasta' | translate }}: {{item2.hasta}}
+                                                        </ion-label>
+                                                      </ion-item>
+                                                </ion-col>
+                                            </ion-row>
+                                          </div>
+                                    </ion-col>
+                                    <ion-col col-1 style="padding-top: 18px;">
+                                        <ion-icon name="trash-outline" (click)="reservadelete(item2.id)" style="font-size: 20px;"></ion-icon>
+                                    </ion-col>
+                                  </ion-row>
+                            </div>
+                        </div>
+                </div>
+    </super-tab>
+
+
+    <super-tab>
+            <div class="myview" #scrollElement5 id="scrollElement5" >
+                          <div padding style="padding-bottom:0px; padding-top:10px;">
+                            <ion-row>
+                                <ion-col col-12>
+                                      <h6><b>{{'estadisticas2' | translate }}</b></h6>
+                                </ion-col>
+                            </ion-row>
+                          </div> 
+
+
+                            <!-- Small boxes (Stat box) -->
+                            <ion-row  *ngFor="let item_estadisticas of this.data_estadistica;">
+                                    <ion-col col-4>
+                                          <!-- small box -->
+                                          <div class="small-box bg-aqua" style="border-radius:20px;">
+                                            <div class="inner">
+                                              <h3>{{ item_estadisticas.count_visitas }}</h3>
+                                              <p>{{'estadisticas3' | translate }}</p>
+                                            </div>
+                                          </div>
+                                    </ion-col>
+                                    <ion-col col-4>
+                                          <!-- small box -->
+                                          <div class="small-box bg-green" style="border-radius:20px;">
+                                            <div class="inner">
+                                              <h3>{{ item_estadisticas.count_like }}</h3>
+                                              <p>{{'estadisticas4' | translate }}</p>
+                                            </div>
+                                          </div>
+                                    </ion-col>
+                                    <ion-col col-4>
+                                          <!-- small box -->
+                                          <div class="small-box bg-yellow" style="border-radius:20px;">
+                                            <div class="inner">
+                                              <h3>{{ item_estadisticas.count_comentarios }}</h3>
+                                              <p>{{'estadisticas5' | translate }}</p>
+                                            </div>
+                                          </div>
+                                    </ion-col>                          
+                              </ion-row><!-- /.row -->
+
+                              <ion-card class="welcome-card">
+                                    <ion-card-header>
+                                          <ion-card-title>{{'estadisticas3' | translate }}</ion-card-title>
+                                    </ion-card-header>
+                                    <ion-card-content>
+                                          <canvas #barCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+                                    </ion-card-content>
+                              </ion-card>
+
+
+                              <ion-card class="welcome-card">
+                                    <ion-card-header>
+                                          <ion-card-title>{{'estadisticas4' | translate }}</ion-card-title>
+                                    </ion-card-header>
+                                    <ion-card-content>
+                                          <canvas #barCanvas2 style="position: relative; height:20vh; width:40vw"></canvas>
+                                    </ion-card-content>
+                              </ion-card>
+
+
+            </div>
+    </super-tab>
+</super-tabs-container>
+</super-tabs>
+</ion-content>

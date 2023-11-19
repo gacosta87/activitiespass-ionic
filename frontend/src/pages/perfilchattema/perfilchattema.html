@@ -1,0 +1,67 @@
+<ion-content>
+  <div class="top-fondo-img">
+            <ion-header>
+              <ion-toolbar class="ion-toolbar">
+                    <span class="titulo-top">Activitiespass</span>
+                    <ion-buttons  slot="end" (click)="notificaciones()" *ngIf="this.version_exporar=='2'">
+                          <ion-icon style="margin-right: 15px;" name="notifications" ion-icon-end></ion-icon>
+                          <div class="mensajenuevo" *ngIf="this.notificaciones_push=='2'"></div>
+                    </ion-buttons>
+
+                    <ion-buttons  slot="end" (click)="mensajeria()" *ngIf="this.version_exporar=='2'">
+                          <ion-icon style="margin-right: 15px;" name="mail" ion-icon-end></ion-icon>
+                          <div class="mensajenuevo" *ngIf="this.mensajes!='0'"></div>
+                    </ion-buttons>
+              </ion-toolbar>
+            </ion-header>
+</div>
+<div class="publicidad_div">
+    <ion-slides #mySliderpublicidad5 avoid-super-tabs="true" [options]="slideOpts_publi"  loop="true"  pager="false" paginationType="arrows">
+          <ion-slide *ngFor="let item_publicidad of this.conf_banner_3" >
+              <img class="publicidad_img" (click)="linkperfil(item_publicidad.mycar_id)"src="{{this.imgurl2}}{{item_publicidad.url_banner}}">
+          </ion-slide>
+    </ion-slides>
+</div>
+
+
+  <ion-grid no-padding style="">
+    <div  style="width: 100%; text-align: center;">
+              <img style="width: 200px; height: 200px;" class="" src="./assets/logos/notificaciones.png">
+    </div>
+    <div padding class="chat-list-mensaje-inicial">
+            <ion-label title-sub2>{{'usarprompt' | translate }}</ion-label>
+
+    </div>
+
+    <div style="width: 100%;margin-top: -4px; text-align: end;padding-right: 13px;">
+      <a (click)="linkhistoria()" style="font-size: 21px !important; text-transform: capitalize !important; margin-left: 7px; text-decoration: underline;">
+        <div style="position: absolute; right: 44px; border-bottom: 2px solid;">{{'verhistorial' | translate }} </div>
+        <ion-icon name="file-tray-full-outline"></ion-icon>
+      </a>
+    </div>
+    
+    <ion-row class="div-publicacion">
+        <ion-col col-6 *ngFor="let item2 of this.datos let i=index">
+              <div  class="div-publicacion-solicitud" (click)="linkperfil(item2.id)">
+                  <div class="div-publicacion-header" >
+                            <ion-row>
+                                    <ion-col col-12 (click)="linkperfil(item2.id)" style="padding-top:13px; text-align: end;">
+                                      <img *ngIf="item2.url_imagen!='' && item2.url_imagen!=null" src="{{this.imgurl2}}{{item2.url_imagen}}">
+                                    </ion-col>
+                            </ion-row>
+                  </div>
+                  
+                  <div class="div-publicacion-footer-solicitud">
+                              <!--<b class="parrafo-pie" id="texto2{{item2.id}}" style="font-weight: normal; padding-top: 0px;">{{item2.descripcion}}</b>-->
+                              <ion-label style="margin-top: 70px; font-size: 16px; white-space: normal;"><b style="font-weight: 500;">{{item2.denominacion}}</b></ion-label>
+                  </div>
+                  
+                  <!--<div>
+                    <ion-button type="Button" expand="block" style="font-size: 14px; height: 28px;"  color="secondary">{{'comenzarhablar' | translate }}</ion-button>
+                  </div>-->
+              </div>
+        </ion-col>
+    </ion-row>
+   
+	</ion-grid>
+</ion-content>

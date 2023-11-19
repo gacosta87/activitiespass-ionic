@@ -1,0 +1,55 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px;"  text-center>{{'estadisticasredes1' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview" >
+
+
+     <ion-grid no-padding *ngFor="let item of datos; let i = index" >
+                <div padding  text-center style="margin-top:0px; padding-bottom: 0px;">
+                          <ion-row>
+                              <ion-col col-12 style="text-align: -webkit-center;">
+                                  <ion-avatar  style="height: 120px; width: 120px; margin-bottom:20px;">
+                                    <img style="width: 120px; height: 120px;" class="" src="./assets/logos/estadisticas2.jpg" >
+                                  </ion-avatar>
+                              </ion-col>
+                          </ion-row>
+                </div>
+                <div padding style="padding-top: 0px;">
+                        <p style="line-height: 20px; font-size: 20px; text-align: center;">
+                            <b>{{'estadisticasredes2' | translate }}</b>
+                        </p>
+                        <p style="line-height: 20px; font-size: 14px; text-align: left;">
+                            {{'estadisticasredes5' | translate }}:
+                        </p>
+                </div>
+                <div padding style="padding-top: 0px;">
+                        <p style="line-height: 20px; font-size: 14px; text-align: left;margin-top: 0px;">
+                            <b>{{'estadisticasredes3' | translate }}:</b>
+                        </p>
+                        <br>
+                        <span *ngIf="item.name_page1" (click)="link(1, 1, 'Facebook', item.name_page1)">{{ item.name_page1 }}</span>
+                        <br>
+                        <span *ngIf="item.name_page2" (click)="link(1, 2, 'Facebook', item.name_page2)">{{ item.name_page2 }}</span>
+                        <br>
+                        <span *ngIf="item.name_page3" (click)="link(1, 3, 'Facebook', item.name_page3)">{{ item.name_page3 }}</span>
+                </div>
+                <div padding style="padding-top: 0px;">
+                        <p style="line-height: 20px; font-size: 14px; text-align: left;">
+                            <b>{{'estadisticasredes4' | translate }}:</b>
+                        </p>
+                        <br>
+                        <span *ngIf="item.name_instagram1" (click)="link(2, 1, 'Instagram', item.name_instagram1)">{{ item.name_instagram1 }}</span>
+                        <br>
+                        <span *ngIf="item.name_instagram2" (click)="link(2, 2, 'Instagram', item.name_instagram2)">{{ item.name_instagram2 }}</span>
+                        <br>
+                        <span *ngIf="item.name_instagram3" (click)="link(2, 3, 'Instagram', item.name_instagram3)">{{ item.name_instagram3 }}</span>
+                </div>
+      </ion-grid>
+
+</ion-content>
+

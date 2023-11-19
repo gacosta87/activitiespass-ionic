@@ -1,0 +1,59 @@
+ion-toolbar .sc-ion-searchbar-ios-h {
+    padding-top: 12px;
+    padding-bottom: 13px;
+    height: 52px;
+}
+
+[label-destacados]{
+    margin-top: 20px;
+    margin-bottom: 7px;
+    margin-left: 11px;
+    color: var(--ion-color-secondary);
+    font-size: 18px;
+}
+ion-title{
+  padding-left: 0px;
+}
+.back{
+  font-size: 20px;
+    margin-left: 26px;
+    margin-right: -26px;
+}
+.chat-list{
+    border-radius: 0px;
+    margin-top: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #6c6c6c;
+    border-top: 1px solid #d7d8da;
+    background-color: #fff;
+    height: 90px;
+}
+.chat-list img{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+.chat-list b{
+    color: #404040;
+    font-size: 18px;
+}
+.chat-list ion-icon{
+    color: #404040;
+    font-size: 25px;
+    margin-top: 10px;
+}
+.chat-list .hora{
+  margin-top: 6px;
+  text-align: right;
+}
+ion-content{
+       --background: #fff;
+}
+[title-sub]{
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        white-space: normal;
+        color: #858789;
+  } 

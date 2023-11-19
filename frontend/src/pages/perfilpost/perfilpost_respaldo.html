@@ -1,0 +1,154 @@
+
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>
+      <ion-row>
+        <ion-col col-2>
+          <img style="height:30px; width:30px;margin-left: 5px;" *ngIf="this.fotodeperfil!='' && this.fotodeperfil!=null" src="{{this.fotodeperfil}}">
+          <img style="height:30px; width:30px;margin-left: 5px;" *ngIf="this.fotodeperfil=='' || this.fotodeperfil==null" src="./assets/logos/avatar.png">
+        </ion-col>
+        <ion-col col-10 style="padding-top: 6px; padding-left: 6px;">
+          <b>{{'Publicacion' | translate }}</b><br>
+          {{this.username}}
+        </ion-col>
+      </ion-row>
+      </ion-title>
+      <button slot="end" (click)="close()" class="send" type="button">
+            <ion-icon name="close" icon-close></ion-icon>
+      </button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid no-padding>
+    <form #EnForm="ngForm"  class="form" [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+          <div padding style="padding-top: 0px; padding-bottom: 0px; height: 90px;">
+                  <ion-row>
+                    <ion-col col-4 text-center style="padding-left: 20px;">
+                          <div class="div-add-img-trash" *ngIf="image1!='' && image1!=null"  (click)="limpiar(1)">
+                            <ion-icon name="trash" slot="start" class="div-add-img-icon-trash"></ion-icon>
+                            <img class="img-add-trash" [src]="image1"/>
+                          </div>
+                          <div class="div-add-img" *ngIf="image1=='' || image1=='null'" (click)="cambiarimagen(1)">
+                            <ion-icon name="add" slot="start" class="div-add-img-icon"></ion-icon>
+                            <ion-label style="margin-top: 11px; white-space: initial;">{{'agregarimagen' | translate }} 1</ion-label>
+                          </div>
+                    </ion-col>
+
+
+                    <ion-col col-4 text-center style="padding-left: 20px;" *ngIf="image1!='' && image1!=null">
+                          <div class="div-add-img-trash" *ngIf="image2!='' && image2!=null"  (click)="limpiar(2)">
+                            <ion-icon name="trash" slot="start" class="div-add-img-icon-trash"></ion-icon>
+                            <img class="img-add-trash" [src]="image2"/>
+                          </div>
+                          <div class="div-add-img" *ngIf="image2=='' || image2=='null'" (click)="cambiarimagen(2)">
+                            <ion-icon name="add" slot="start" class="div-add-img-icon"></ion-icon>
+                            <ion-label style="margin-top: 11px; white-space: initial;">{{'agregarimagen' | translate }} 2</ion-label>
+                          </div>
+                    </ion-col>
+                    <ion-col col-4 text-center style="padding-left: 20px;" *ngIf="image1=='' || image1==null">
+                          <div class="div-add-img"  style="opacity: 0.2;">
+                            <ion-icon name="add" slot="start" class="div-add-img-icon"></ion-icon>
+                            <ion-label style="margin-top: 11px; white-space: initial;">{{'agregarimagen' | translate }} 2</ion-label>
+                          </div>
+                    </ion-col>
+
+
+                    <ion-col col-4 text-center style="padding-left: 20px;" *ngIf="image2!='' && image2!=null" >
+                          <div class="div-add-img-trash" *ngIf="image3!='' && image3!=null"  (click)="limpiar(3)">
+                            <ion-icon name="trash" slot="start" class="div-add-img-icon-trash"></ion-icon>
+                            <img class="img-add-trash" [src]="image3"/>
+                          </div>
+                          <div class="div-add-img" *ngIf="image3=='' || image3=='null'" (click)="cambiarimagen(3)">
+                            <ion-icon name="add" slot="start" class="div-add-img-icon"></ion-icon>
+                            <ion-label style="margin-top: 11px; white-space: initial;">{{'agregarimagen' | translate }} 3</ion-label>
+                          </div>
+                    </ion-col>
+                     <ion-col col-4 text-center style="padding-left: 20px;" *ngIf="image2=='' ||image2==null">
+                          <div class="div-add-img" style="opacity: 0.2;">
+                            <ion-icon name="add" slot="start" class="div-add-img-icon"></ion-icon>
+                            <ion-label style="margin-top: 11px; white-space: initial;">{{'agregarimagen' | translate }} 3</ion-label>
+                          </div>
+                    </ion-col>
+
+                  </ion-row>    
+          </div>
+        <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                    <ion-item>
+                        <ion-icon name="create" slot="start"></ion-icon>
+                        <ion-input placeholder="{{'titulo' | translate }}" formControlName="titulo" maxlength="50" type="text"></ion-input>                        
+                    </ion-item>
+        </div>
+        <div padding style="padding-top:0px; padding-bottom: 0px;">
+                  <ion-item>
+                    <ion-icon name="clipboard" slot="start"></ion-icon>
+                    <ion-textarea placeholder="{{'describeps' | translate }}..." id="solicita" #solicita rows="3" cols="20" formControlName="texto" ></ion-textarea>
+                  </ion-item>
+        </div>
+        <div padding style="padding-top: 0px;padding-bottom: 5px;">
+              <ion-radio-group value="1" formControlName="publicaciontipo">
+                  <ion-row>
+                    <ion-col col-6>
+                      <ion-item>
+                        <ion-radio style="margin-right: 15px; margin-left: 0px;" slot="start" color="secondary" (click)="activaoferta(1)" checked value="1"></ion-radio>
+                        <ion-label style="font-size: 12px;">#{{'publicaciontipo1' | translate }}</ion-label>                        
+                      </ion-item>
+                    </ion-col>
+                     <ion-col col-6>
+                      <ion-item>
+                        <ion-radio style="margin-right: 15px; margin-left: 0px;" slot="start" color="secondary" (click)="activaoferta(2)" value="2"></ion-radio>
+                        <ion-label style="font-size: 12px;">#{{'publicaciontipo2' | translate }}</ion-label>                        
+                      </ion-item>  
+                      <!--<ion-item>
+                        <ion-radio style="margin-right: 15px; margin-left: 0px;" slot="start" color="secondary" value="3"></ion-radio>
+                        <ion-label style="font-size: 12px;">#{{'publicaciontipo3' | translate }}</ion-label>                        
+                      </ion-item>  -->
+                    </ion-col>
+                  </ion-row>
+              </ion-radio-group>
+        </div>
+        
+        <div padding style="padding-top: 0px;padding-bottom: 0px;">
+                      <ion-label style="font-size: 13px; margin-top: 0px; white-space: normal; text-align: left;">{{'moneda1' | translate }}:</ion-label>
+                      <ion-item>
+                          <ion-icon name="cash" slot="start"></ion-icon>
+                           <ion-select [(ngModel)]="this.pais_ng" formControlName="isomoneda" okText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" id="solicita">
+                              <ion-select-option value="VES Bs">VES Bs</ion-select-option>
+                              <ion-select-option value="MXN $">MXN $</ion-select-option>
+                              <ion-select-option value="USD $">USD $</ion-select-option>
+                              <ion-select-option value="CLP $">CLP $</ion-select-option>
+                              <ion-select-option value="COP $">COP $</ion-select-option>
+                              <ion-select-option value="PEN S/">PEN S/</ion-select-option>
+                              <ion-select-option value="ARS $">ARS $</ion-select-option>
+                              <ion-select-option value="BOB Bs">BOB Bs</ion-select-option>
+                              <ion-select-option value="DOP RD$">DOP RD$</ion-select-option>
+                              <ion-select-option value="EUR €">EUR €</ion-select-option>
+                          </ion-select>
+                      </ion-item>
+        </div>
+        <div padding style="padding-top: 5px;padding-bottom: 0px;" *ngIf="this.oferta==2">
+                      <ion-label style="font-size: 13px; margin-top: 0px; white-space: normal; text-align: left;">{{'agregarpreciooferta' | translate }}:</ion-label>
+                      <ion-item>
+                          <ion-icon name="card" slot="start"></ion-icon>
+                          <input currencyMask type="numeric"  style="margin-left:0px; border: 0; outline:none; background-color: #fff; " class="precio"  formControlName="precio_oferta" [options]="{ prefix: ' ', thousands: ',', decimal: '.' }" />
+                      </ion-item>
+        </div>
+        <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                      <ion-label style="font-size: 13px; margin-top: 0px; white-space: normal; text-align: left;">{{'agregarprecioproducto' | translate }}:</ion-label>
+                      <ion-item>
+                          <ion-icon name="card" slot="start"></ion-icon>
+                          <input currencyMask type="numeric" style="border: 0; outline:none; background-color: #fff; " class="precio"  formControlName="precio" [options]="{ prefix: ' ', thousands: ',', decimal: '.' }" />
+                      </ion-item>
+        </div>        
+    </form>
+	</ion-grid>
+</ion-content>
+<footer class="footer">
+    <ion-toolbar>
+        <button class="addhashtag" slot="start" (click)="addhashtag('solicita')"  type="button">
+            # Hashtags
+        </button>
+        <button slot="end" class="send" id="boton_envio" onClick="this.disabled=true;" (click)="EnForm.ngSubmit.emit()"  [disabled]="!myForm.valid" type="submit">
+              <ion-icon name="paper-plane" icon-close></ion-icon>
+        </button>
+    </ion-toolbar>
+</footer>

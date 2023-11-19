@@ -1,0 +1,303 @@
+@media only screen and (min-width : 700px){
+    .div-publicacion_espacio{
+        margin-left: 30% !important;
+        margin-right: 30% !important;
+    }
+}
+
+.inf_video{
+  
+    position: absolute;
+    font-size: 18px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    color: #fff;
+    margin-left: 2px;
+}
+.quitar{
+    display: none !important;
+}
+.noverificada{
+    font-size: 15px;
+    color: #5a5a5a;
+    background-color: #edeeef;
+    height: 27px;
+    padding-right: 16px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.verificada1{
+    font-size: 15px;
+    color: #357c23;
+    background-color: #b2ffb4;
+    height: 27px;
+    padding-right: 16px;
+    padding-left: 10px; 
+    padding-top: 5px;
+}
+
+.verificada2{
+    font-size: 15px;
+    color: #234e7c;
+    background-color: #b2caff;
+    height: 27px;
+    padding-right: 16px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.verificada3{
+    font-size: 15px;
+    color: #f3ff4d;
+    background-color: #7a7c4a;
+    height: 27px;
+    padding-right: 16px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+ion-toolbar .sc-ion-searchbar-ios-h {
+    padding-top: 12px;
+    padding-bottom: 13px;
+    height: 52px;
+}
+
+
+[label-destacados-categoria]{
+    margin-top: 10px;
+    margin-bottom: 7px;
+    margin-left: 11px;
+    color: var(--ion-color-secondary);
+    font-size: 15px;
+}
+.destacado-wapper-categoria{
+    height: 110px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: -webkit-box;
+    border-bottom: 0px solid #d7d8da;
+    margin-bottom: -10px;
+    padding-left: 5px;
+}
+.div-destacado-categoria{
+    width: 95px;
+    height: 95px;
+    margin-left: 0px;
+    margin-right: 10px;
+    text-align: center;
+    border: 0px solid #e0e0e0;
+    padding-top: 0px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.img-destacado-categoria{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  padding: 2px;
+  border: 2px solid var(--ion-color-primary);
+}
+.destacado-nombre-categoria{
+  font-size: 12px;
+  /*color: var(--ion-color-primary);*/
+  font-weight: normal;
+  color: #000;
+}
+
+
+
+[label-destacados]{
+    margin-top: 10px;
+    margin-bottom: 7px;
+    margin-left: 11px;
+    color: var(--ion-color-secondary);
+    font-size: 15px;
+}
+.destacado-wapper{
+    height: 245px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: -webkit-box;
+    border-bottom: 0px solid #d7d8da;
+    margin-bottom: -10px;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+.div-destacado{
+    width: 190px;
+    height: 240px;
+    margin-left: 0px;
+    margin-right: 10px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    padding-top: 7px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 1px 4px 0px;
+}
+.img-destacado{
+  height: 85px;
+  width: 85px;
+  border-radius: 50%;
+  padding: 2px;
+  border: 2px solid var(--ion-color-primary);
+}
+.destacado-nombre{
+  font-size: 12px;
+  /*color: var(--ion-color-primary);*/
+  font-weight: normal;
+  color: #000;
+}
+.parrafo-pie-menos{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  font-weight: normal;
+  height: 13px;
+  font-size: 12px;
+  color: #4c4a4a;
+}
+.div-publicacion{
+    width: auto;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border: 1px solid #d7d8da;
+    border-radius: 7px;
+    background-color: #ffffff;
+}
+.div-publicacion-ver-menos{
+  display:none !important;
+}
+.div-publicacion-ver-mas{
+  display:block !important;
+}
+[title-sub]{
+            font-size: 14px;
+            text-align: center;
+            white-space: normal;
+            color: #858789;
+    } 
+[label-destacados-etiquetas]{
+    margin-bottom: 7px;
+    margin-left: 11px;
+    color: var(--ion-color-secondary);
+    font-size: 15px;
+}
+ion-title{
+  padding-left: 0px;
+}
+.back{
+  font-size: 20px;
+    margin-left: 26px;
+    margin-right: -26px;
+}
+
+
+.buscar-publi{
+	/*height: 120px;*/
+    margin-top: 20px;
+}
+.buscar-publi img{
+    width: 100px;
+    height: 100px;
+    border-radius: 7px !important;
+}
+.buscar-publi .razon{
+    /*margin-left: 10px;*/
+    font-size: 15px;
+    color: var(--ion-color-primary);
+}
+.buscar-publi .username{
+    font-size: 13px;
+    /*margin-left: 10px;*/
+    color: var(--ion-color-primary);
+    margin-top: 2px;
+}
+.buscar-publi .texto{
+    font-size: 12px;
+    /*margin-left: 10px;*/
+    color: #4c4a4a;
+    margin-top: 0px;
+    text-align: left;
+}
+
+
+.buscar-list{
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: var(--ion-color-primary);
+}
+.buscar-list img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.buscar-list b{
+    color: var(--ion-color-primary);
+    font-size: 15px;
+    margin-top: 10px;
+    position: absolute;
+}
+.buscar-list a{
+    color: #fff !important;
+    font-size: 18px !important;
+}
+.buscar-list .hora{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+ion-content{
+       --background: #ffffff;
+}
+
+.buscar-b{
+	margin-top: 17px;
+    background-color: #fff;
+    color: var(--ion-color-primary);
+    padding: 0px;
+}
+ion-list{
+	 background:none; 
+}
+ion-item{
+	--ion-item-background: none;
+}    
+.item-md {
+    padding-left: 16px;
+    padding-right: 0;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-transform: none;
+    color: #000;
+    background-color: transparent;
+    -webkit-box-shadow: none; 
+    box-shadow: none;
+    -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.item-ios {
+    padding-left: 16px;
+    border-radius: 0;
+    position: relative;
+    font-size: 1.7rem;
+    color: #000;
+    background-color: transparent;
+    -webkit-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+}
+
+.item-md.item-input.ng-valid.item-input-has-focus .item-inner, 
+.item-md.item-input.ng-valid.item-input-has-focus, .item-inner {
+     border-bottom-color: #32db64;
+    -webkit-box-shadow: inset 0 -0px 0 0 #32db64;
+    box-shadow: inset 0 -0px 0 0 #32db64;
+}

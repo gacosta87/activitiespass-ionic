@@ -1,0 +1,40 @@
+<ion-header>
+      <ion-toolbar>
+      		<ion-buttons slot="start">
+                <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          	</ion-buttons>
+          	<ion-title text-center></ion-title>          
+      </ion-toolbar>
+</ion-header>
+
+<ion-content class="myview">
+	<div padding style=" margin-top: 10px;  text-align: center; padding-top: 20px; white-space: normal;">
+	   			<span style="text-align: center;font-size: 17px;">{{'perfilinicotext1' | translate }} </span>
+	   			<ion-button type="Button" expand="block" style="margin-top: 15px;" (click)="informacion('4')" color="secondary">{{'registrarse' | translate }}</ion-button>
+	</div>
+	<div padding>
+		<ion-label title-top>{{'perfilinicotext2' | translate }} Activitiespass</ion-label>
+	</div>
+	<div padding>
+		<ion-label title-sub>{{'perfilinicotext3' | translate }}</ion-label>
+	</div>
+
+	<div padding style="padding-top: 0px; padding-bo: 5px; ">
+	      <ion-button expand="block" color="light" (click)="emailSignIn()" type="button">
+	          <ion-icon name="person" style="margin-left: 5px;" slot="start"></ion-icon>	          
+	          <ion-label slot="start">{{'perfilinicotext4' | translate }}</ion-label>
+	      </ion-button>
+	</div>
+	<div *ngIf="this.version_exporar=='2' && this.conf_activacion=='1'" padding style="padding-top: 0px; ">
+	      <ion-button expand="block" color="light" (click)="googleSignIn()" type="button">
+	          <ion-icon src="assets/icon/google.svg"  style="margin-left: 5px;" slot="start"></ion-icon>
+	          <ion-label slot="start">{{'perfilinicotext5' | translate }}</ion-label>
+	      </ion-button>
+	</div>
+	<div *ngIf="this.version_exporar=='2'  && this.conf_activacion=='1'" padding style="padding-top: 0px; ">
+	      <ion-button expand="block" color="light" (click)="facebookSignIn()" type="button">
+	          <ion-icon src="assets/icon/facebook.svg"  style="margin-left: 5px;" slot="start"></ion-icon>
+	          <ion-label slot="start">{{'perfilinicotext6' | translate }}</ion-label>
+	      </ion-button>
+	</div>
+</ion-content>

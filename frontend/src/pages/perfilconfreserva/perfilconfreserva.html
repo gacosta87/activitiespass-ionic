@@ -1,0 +1,304 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-title text-center>{{'configurarhorario' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview">
+  <form #EnForm="ngForm" style="height: 100%;" [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+    <ion-grid no-padding>
+                    <div padding style="padding-top: 20px; padding-bottom: 0px;">
+                        <ion-label style="font-size: 20px;white-space: normal;">{{'tituloconfigurarhorario' | translate }}:</ion-label>
+                    </div>
+                    <div padding style="padding-top: 0px; padding-bottom: 0px;">
+                          <ion-item>
+                              <ion-checkbox color="medium" style="color: #94979a;" formControlName="lunes" [(ngModel)]="lunescheckbox"></ion-checkbox>
+                              <ion-label style="margin-left: 18px;">
+                                <h2 style="margin-left: 18px; font-size: 13px; margin: 0px; color: #212529;">{{'lunes' | translate }}</h2>
+                              </ion-label>
+                          </ion-item>
+                    </div>     
+                    <br>
+                    <div padding style="padding-top: 0px;padding-bottom: 0px;padding-left: 40px;" *ngIf="this.lunescheckbox==true">
+                            <ion-row>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'desde' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'desde' | translate }}" [(ngModel)]="this.turno_a_desde" id="date1" class="" formControlName="turno_a_desde" ></ion-input>
+                                    <ion-popover trigger="date1" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_a_desde2" formControlName="turno_a_desde2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime3 (ionChange)="this.turno_a_desde = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A" ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'hasta' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'hasta' | translate }}"  [(ngModel)]="this.turno_a_hasta" id="date2" class="" formControlName="turno_a_hasta"></ion-input>
+                                    <ion-popover trigger="date2" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_a_hasta2" formControlName="turno_a_hasta2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime4 (ionChange)="this.turno_a_hasta = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A"  ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                            </ion-row>
+                    </div>
+
+
+
+                    <div padding style="padding-top: 0px; padding-bottom: 0px;">
+                          <ion-item>
+                              <ion-checkbox color="medium" style="color: #94979a;" formControlName="martes" [(ngModel)]="martescheckbox"></ion-checkbox>
+                              <ion-label style="margin-left: 18px;">
+                                <h2 style="margin-left: 18px; font-size: 13px; margin: 0px; color: #212529;">{{'martes' | translate }}</h2>
+                              </ion-label>
+                          </ion-item>
+                    </div>
+                    <br>
+                    <div padding style="padding-top: 0px;padding-bottom: 0px;padding-left: 40px;" *ngIf="this.martescheckbox==true">
+                            <ion-row>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'desde' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'desde' | translate }}" [(ngModel)]="this.turno_b_desde" id="date3" class="" formControlName="turno_b_desde" ></ion-input>
+                                    <ion-popover trigger="date3" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_b_desde2" formControlName="turno_b_desde2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime3 (ionChange)="this.turno_b_desde = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A" ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'hasta' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'hasta' | translate }}"  [(ngModel)]="this.turno_b_hasta" id="date4" class="" formControlName="turno_b_hasta"></ion-input>
+                                    <ion-popover trigger="date4" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_b_hasta2" formControlName="turno_b_hasta2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime4 (ionChange)="this.turno_b_hasta = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A"  ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                            </ion-row>
+                    </div>
+
+
+                    <div padding style="padding-top: 0px; padding-bottom: 0px;">
+                          <ion-item>
+                              <ion-checkbox color="medium" style="color: #94979a;" formControlName="miercoles" [(ngModel)]="miercolescheckbox"></ion-checkbox>
+                              <ion-label style="margin-left: 18px;">
+                                <h2 style="margin-left: 18px; font-size: 13px; margin: 0px; color: #212529;">{{'miercoles' | translate }}</h2>
+                              </ion-label>
+                          </ion-item>
+                    </div>   
+                    <br>
+                    <div padding style="padding-top: 0px;padding-bottom: 0px;padding-left: 40px;" *ngIf="this.miercolescheckbox==true">
+                            <ion-row>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'desde' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'desde' | translate }}" [(ngModel)]="this.turno_c_desde" id="date5" class="" formControlName="turno_c_desde" ></ion-input>
+                                    <ion-popover trigger="date5" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_c_desde2" formControlName="turno_c_desde2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime3 (ionChange)="this.turno_c_desde = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A" ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'hasta' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'hasta' | translate }}"  [(ngModel)]="this.turno_c_hasta" id="date6" class="" formControlName="turno_c_hasta"></ion-input>
+                                    <ion-popover trigger="date6" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_c_hasta2" formControlName="turno_c_hasta2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime4 (ionChange)="this.turno_c_hasta = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A"  ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                            </ion-row>
+                    </div>
+
+                    <div padding style="padding-top: 0px; padding-bottom: 0px;">
+                          <ion-item>
+                              <ion-checkbox color="medium" style="color: #94979a;" formControlName="jueves" [(ngModel)]="juevescheckbox"></ion-checkbox>
+                              <ion-label style="margin-left: 18px;">
+                                <h2 style="margin-left: 18px; font-size: 13px; margin: 0px; color: #212529;">{{'jueves' | translate }}</h2>
+                              </ion-label>
+                          </ion-item>
+                    </div>    
+                    <br>
+                    <div padding style="padding-top: 0px;padding-bottom: 0px;padding-left: 40px;" *ngIf="this.juevescheckbox==true">
+                            <ion-row>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'desde' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'desde' | translate }}" [(ngModel)]="this.turno_d_desde" id="date7" class="" formControlName="turno_d_desde" ></ion-input>
+                                    <ion-popover trigger="date7" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_d_desde2" formControlName="turno_d_desde2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime3 (ionChange)="this.turno_d_desde = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A" ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'hasta' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'hasta' | translate }}"  [(ngModel)]="this.turno_d_hasta" id="date8" class="" formControlName="turno_d_hasta"></ion-input>
+                                    <ion-popover trigger="date8" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_d_hasta2" formControlName="turno_d_hasta2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime4 (ionChange)="this.turno_d_hasta = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A"  ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                            </ion-row>
+                    </div>
+
+
+                    <div padding style="padding-top: 0px; padding-bottom: 0px;">
+                          <ion-item>
+                              <ion-checkbox color="medium" style="color: #94979a;" formControlName="viernes" [(ngModel)]="viernescheckbox"></ion-checkbox>
+                              <ion-label style="margin-left: 18px;">
+                                <h2 style="margin-left: 18px; font-size: 13px; margin: 0px; color: #212529;">{{'viernes' | translate }}</h2>
+                              </ion-label>
+                          </ion-item>
+                    </div>     
+                    <br>
+                    <div padding style="padding-top: 0px;padding-bottom: 0px;padding-left: 40px;" *ngIf="this.viernescheckbox==true">
+                            <ion-row>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'desde' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'desde' | translate }}" [(ngModel)]="this.turno_e_desde" id="date9" class="" formControlName="turno_e_desde" ></ion-input>
+                                    <ion-popover trigger="date9" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_e_desde2" formControlName="turno_e_desde2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime3 (ionChange)="this.turno_e_desde = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A" ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'hasta' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'hasta' | translate }}"  [(ngModel)]="this.turno_e_hasta" id="date10" class="" formControlName="turno_e_hasta"></ion-input>
+                                    <ion-popover trigger="date10" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_e_hasta2" formControlName="turno_e_hasta2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime4 (ionChange)="this.turno_e_hasta = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A"  ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                            </ion-row>
+                    </div>
+
+
+                    <div padding style="padding-top: 0px; padding-bottom: 0px;">
+                          <ion-item>
+                              <ion-checkbox color="medium" style="color: #94979a;" formControlName="sabado" [(ngModel)]="sabadocheckbox"></ion-checkbox>
+                              <ion-label style="margin-left: 18px;">
+                                <h2 style="margin-left: 18px; font-size: 13px; margin: 0px; color: #212529;">{{'sabado' | translate }}</h2>
+                              </ion-label>
+                          </ion-item>
+                    </div>     
+                    <br>
+                    <div padding style="padding-top: 0px;padding-bottom: 0px;padding-left: 40px;" *ngIf="this.sabadocheckbox==true">
+                            <ion-row>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'desde' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'desde' | translate }}" [(ngModel)]="this.turno_f_desde" id="date11" class="" formControlName="turno_f_desde" ></ion-input>
+                                    <ion-popover trigger="date11" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_f_desde2" formControlName="turno_f_desde2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime3 (ionChange)="this.turno_f_desde = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A" ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'hasta' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'hasta' | translate }}"  [(ngModel)]="this.turno_f_hasta" id="date12" class="" formControlName="turno_f_hasta"></ion-input>
+                                    <ion-popover trigger="date12" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_f_hasta2" formControlName="turno_f_hasta2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime4 (ionChange)="this.turno_f_hasta = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A"  ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                            </ion-row>
+                    </div>
+
+                    <div padding style="padding-top: 0px; padding-bottom: 0px;">
+                          <ion-item>
+                              <ion-checkbox color="medium" style="color: #94979a;" formControlName="domingo" [(ngModel)]="domingocheckbox"></ion-checkbox>
+                              <ion-label style="margin-left: 18px;">
+                                <h2 style="margin-left: 18px; font-size: 13px; margin: 0px; color: #212529;">{{'domingo' | translate }}</h2>
+                              </ion-label>
+                          </ion-item>
+                    </div> 
+                    <br>
+                    <div padding style="padding-top: 0px;padding-bottom: 0px;padding-left: 40px;" *ngIf="this.domingocheckbox==true">
+                            <ion-row>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'desde' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'desde' | translate }}" [(ngModel)]="this.turno_g_desde" id="date13" class="" formControlName="turno_g_desde" ></ion-input>
+                                    <ion-popover trigger="date13" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_g_desde2" formControlName="turno_g_desde2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime3 (ionChange)="this.turno_g_desde = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A" ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                              <ion-col col-6>
+                                <span style="margin-left: 10px;font-size: 16px;">{{ 'hasta' | translate  }}:</span>
+                                <ion-item>
+                                    <ion-icon name="calendar" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <ion-input placeholder="{{'hasta' | translate }}"  [(ngModel)]="this.turno_g_hasta" id="date14" class="" formControlName="turno_g_hasta"></ion-input>
+                                    <ion-popover trigger="date14" size="fixed" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime [(ngModel)]="this.turno_g_hasta2" formControlName="turno_g_hasta2" hourCycle="h12" doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" #popoverDatetime4 (ionChange)="this.turno_g_hasta = formatDate($event)" [showDefaultButtons]="true"  presentation="time" minuteValues="0,15,30,45" displayFormat="hh:mm A"  displayFormat="hh:mm A"  ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                              </ion-col>
+                            </ion-row>
+                    </div>
+
+
+
+
+
+                    
+                    <br><br><br><br>
+                    <br><br><br><br>
+    </ion-grid>
+</form>    
+</ion-content>
+<ion-footer class="ion-no-border"> 
+  <ion-toolbar >
+    <div padding>
+        <ion-button expand="block" type="submit" id="boton_envio"  [disabled]="!myForm.valid" style="text-transform: none;" color="secondary" (click)="EnForm.ngSubmit.emit()">
+             <ion-label style="font-size: 12px;">{{'guardar' | translate }}</ion-label>
+        </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,27 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-title text-center>{{'registrarse' | translate }}</ion-title>
+          <ion-buttons slot="start">
+                <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview">
+	<ion-grid>
+		<form #EnForm="ngForm"  [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+        	  <div padding style="margin-top: 10px;padding-bottom: 16px;">
+                <ion-item>
+                    <ion-icon name="person" slot="start" style="margin-right: 12px;"></ion-icon>
+                    <ion-input placeholder="{{'direcciondecorreoelectronico' | translate }}" formControlName="email" type="email"></ion-input>
+                </ion-item>
+            </div>
+            <div padding style="color:#A6ACAF; font-size: 14px; line-height: 2;" stacked>
+                  {{'politicas1' | translate }} <a (click)="informacion('1')" style="font-size: 14px !important;" href="javascript:" class="">{{'politicas2' | translate }}</a>  {{'politicas3' | translate }} <a (click)="informacion('2')" style="font-size: 14px !important;" href="javascript:"  class="">{{'politicas4' | translate }}</a>
+            </div>
+</form>            
+          	<div padding>
+              	<ion-button id="boton_envio"  (click)="EnForm.ngSubmit.emit()"  expand="block" color="secondary" [disabled]="!myForm.valid" type="submit">{{'siguiente' | translate }}</ion-button>
+          	</div>
+    
+	</ion-grid>
+</ion-content>

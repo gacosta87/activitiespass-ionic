@@ -1,0 +1,235 @@
+ion-backdrop {
+    display: none !important;
+}
+
+.activa-notificaciones{
+  
+
+}
+.desactiva-notificaciones{
+  
+  
+}
+.add-menu-seleccion{
+   color: var(--ion-color-secondary) !important;
+}
+.add-menu{
+    font-size: 50px !important;
+    margin-top: -9px !important;
+    color: var(--ion-color-secondary) !important;
+}
+
+[ion-icon-end]{
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+ion-title {
+  /*padding-left: 10px;
+  margin-left: -20px;*/
+}
+
+ion-header{
+  margin-bottom: -8px;
+}
+super-tabs-toolbar {
+    color: white;
+    height: 48px;
+}
+
+ion-tab-button {
+  --color: #777a80ad;
+  --color-selected: var(--ion-color-secondary) !important;
+}
+ion-label{
+    font-size: 11px;
+    margin-top: 2px;
+}
+super-tabs-toolbar ion-icon {
+    margin-top: -5px;
+    --st-icon-size: 25px;
+    --st-base-color-inactive: white;
+    --st-icon-color-active: white;
+}
+
+.header-ios ion-toolbar:last-of-type {
+    --border-width: 0 0 0px;
+}
+
+super-tab-button {
+    height: 48px !important;
+}
+
+.header-md:after {
+    left: 0;
+    bottom: -5px;
+    background-position: left 0 top -2px;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-image: none;
+    background-repeat: repeat-x;
+    content: "";
+}
+
+ion-icon {
+    display: inline-block;
+    font-size: 18px;
+    /*color: #172833 ;*/
+}
+
+.principal{
+  margin-top: 10px;
+}
+
+ion-tab-button {
+  padding-top: 5px;
+}
+
+ion-tab-button ion-icon {
+    display: inine-block;
+    font-size: 27px;
+    margin-top: 2px;
+}
+
+.button-md_principal{
+      float: none;
+      width: 140px;
+      height: 118px;
+      color: #f79633;
+      margin-top:   15px;
+      margin-right: 3%;
+      margin-left:  3%;
+      border: 1px #777 solid;
+      background-color: #ffffff;
+      padding: 0px;
+      -webkit-box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.55);
+      -moz-box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.55);
+      box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.55);
+      border-radius: 10px 10px 0px 0px;
+}
+[ion-slide]{
+    width: 100% !important;
+}
+[item-principal] {
+  margin-top: 20px;
+}
+ion-menu ion-content {
+  --background: var(--ion-item-background, var(--ion-background-color, #fff));
+}
+
+ion-menu.md ion-content {
+  --padding-start: 8px;
+  --padding-end: 8px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+}
+
+ion-menu.md ion-list {
+  padding: 0px 0;
+}
+
+ion-menu.md ion-note {
+  margin-bottom: 15px;
+}
+
+ion-menu.md ion-list-header,
+ion-menu.md ion-note {
+  /*padding-left: 10px;*/
+}
+
+ion-menu.md ion-list#inbox-list {
+  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);
+}
+
+ion-menu.md ion-list#inbox-list ion-list-header {
+  font-size: 22px;
+  font-weight: 600;
+
+  min-height: 20px;
+}
+
+ion-menu.md ion-list#labels-list ion-list-header {
+  font-size: 16px;
+
+  margin-bottom: 18px;
+
+  color: #757575;
+
+  min-height: 26px;
+}
+
+ion-menu.md ion-item {
+  --padding-start: 10px;
+  --padding-end: 10px;
+  border-radius: 4px;
+}
+
+ion-menu.md ion-item.selected {
+  --background: rgba(var(--ion-color-primary-rgb), 0.14);
+}
+
+ion-menu.md ion-item.selected ion-icon {
+  color: var(--ion-color-primary);
+}
+
+ion-menu.md ion-item ion-icon {
+  color: #616e7e;
+}
+
+ion-menu.md ion-item ion-label {
+  font-weight: 500;
+}
+
+ion-menu.ios ion-content {
+  --padding-bottom: 20px;
+}
+
+ion-menu.ios ion-list {
+  padding: 0px 0 0 0;
+}
+
+ion-menu.ios ion-note {
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+ion-menu.ios ion-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --min-height: 50px;
+}
+
+ion-menu.ios ion-item.selected ion-icon {
+  color: var(--ion-color-primary);
+}
+
+ion-menu.ios ion-item ion-icon {
+  font-size: 24px;
+  color: #73849a;
+}
+
+ion-menu.ios ion-list#labels-list ion-list-header {
+  margin-bottom: 8px;
+}
+
+ion-menu.ios ion-list-header,
+ion-menu.ios ion-note {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+ion-menu.ios ion-note {
+  margin-bottom: 8px;
+}
+
+ion-note {
+  display: inline-block;
+  font-size: 16px;
+
+  color: var(--ion-color-medium-shade);
+}
+
+ion-item.selected {
+  --color: var(--ion-color-primary);
+}

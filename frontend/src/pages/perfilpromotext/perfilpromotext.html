@@ -1,0 +1,38 @@
+<form #EnForm="ngForm"  class="form" [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+<ion-header translucent>
+	<ion-toolbar>
+	  <ion-title>
+	  	<ion-row>
+	  		<ion-col col-2>
+	  			<img *ngIf="this.fotodeperfil!='' && this.fotodeperfil!=null" style="height:30px; width:30px;" src="{{this.fotodeperfil}}">
+	  			<img *ngIf="this.fotodeperfil=='' || this.fotodeperfil==null" style="height:30px; width:30px;" src="./assets/logos/avatar.png">
+	  		</ion-col>
+	  		<ion-col col-10 style="padding-top: 6px; padding-left: 6px;">
+	          <b>{{'textopromocion' | translate }}</b><br>
+	          {{this.username}}
+	        </ion-col>
+	  	</ion-row>
+	  	</ion-title>
+	  <button slot="end" (click)="close()" class="send" type="button">
+            <ion-icon name="close" icon-close></ion-icon>
+      </button>
+	</ion-toolbar>
+</ion-header>
+<ion-content class="myview">
+	<ion-grid>
+        	<div padding>
+                <ion-textarea  id="solicita" #solicita rows="4" cols="15" formControlName="texto" placeholder="{{'textoapromocionar' | translate }}"></ion-textarea>
+            </div>
+	</ion-grid>
+</ion-content>
+<footer class="footer">
+    <ion-toolbar>
+    	<button class="addhashtag" slot="start" (click)="addhashtag('solicita')"  type="button">
+		  	# Hashtags
+		</button>
+		<button slot="end" onClick="this.disabled=true;" id='boton_envio' (click)="EnForm.ngSubmit.emit()" class="send" [disabled]="!myForm.valid" type="submit">
+		  	<ion-icon name="paper-plane" icon-close></ion-icon>
+		</button>
+	</ion-toolbar>
+</footer>
+</form>

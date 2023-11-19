@@ -1,0 +1,62 @@
+
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>
+      <ion-row>
+        <ion-col col-2>
+          <img style="height:30px; width:30px;margin-left: 5px;" *ngIf="this.fotodeperfil!='' && this.fotodeperfil!=null" src="{{this.fotodeperfil}}">
+          <img style="height:30px; width:30px;margin-left: 5px;" *ngIf="this.fotodeperfil=='' || this.fotodeperfil==null" src="./assets/logos/avatar.png">
+        </ion-col>
+        <ion-col col-10 style="padding-top: 6px; padding-left: 6px;">
+          <b>{{'menutext3' | translate }}</b><br>
+          {{this.username}}
+        </ion-col>
+      </ion-row>
+      </ion-title>
+      <button slot="end" (click)="close()" class="send" type="button">
+            <ion-icon name="close" icon-close></ion-icon>
+      </button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row style="font-size: 17px;margin-top: 15px;margin-left: 10px;" *ngIf="this.publicuserid!=this.usuarioid"> 
+      <ion-col col-2 style="height: 70px;">
+          <ion-icon    class="icon-menu-pub"       (click)="compartirpublic_perfil(this.publicid)"  name="send-outline"></ion-icon>
+      </ion-col>
+      <ion-col col-6 style="height: 70px;    padding-top: 14px">
+          <span        class="span-menu-pub"       (click)="compartirpublic_perfil(this.publicid)">{{ 'compartir2' | translate }}</span>
+      </ion-col>
+      <ion-col col-4 style="height: 70px;">
+          <ion-button  class="button-segui activa" (click)="compartirpublic_perfil(this.publicid)"  expand="block"  color="light" type="button">{{'enviar' | translate }}</ion-button>
+      </ion-col>
+  </ion-row>
+
+<!--
+  <ion-row style="font-size: 17px;margin-top: 15px;margin-left: 10px;" >
+      <ion-col col-2 style="height: 70px;">
+          <ion-icon    class="icon-menu-pub"       (click)="compartirpublic_promocionate(this.publicid)" name="documents-outline"></ion-icon>
+      </ion-col>
+      <ion-col col-6 style="height: 70px;    padding-top: 14px">
+          <span        class="span-menu-pub"       (click)="compartirpublic_promocionate(this.publicid)">{{ 'compartir1' | translate }}</span>
+      </ion-col>
+      <ion-col col-4 style="height: 70px;">
+          <ion-button  class="button-segui activa" (click)="compartirpublic_promocionate(this.publicid)"  expand="block"  color="light" type="button">{{'enviar' | translate }}</ion-button>
+      </ion-col>
+  </ion-row>
+  -->
+
+  <ion-row style="font-size: 17px;margin-top: 15px;margin-left: 10px;">
+      <ion-col col-2 style="height: 70px;">
+          <ion-icon    class="icon-menu-pub"       (click)="compartirpublic(this.publicid)"  name="share-social-outline" ></ion-icon>
+      </ion-col>
+      <ion-col col-6 style="height: 70px;    padding-top: 14px">
+          <span        class="span-menu-pub"       (click)="compartirpublic(this.publicid)">{{ 'compartir3' | translate }}</span>
+      </ion-col>
+      <ion-col col-4 style="height: 70px;">
+          <ion-button  class="button-segui activa" (click)="compartirpublic(this.publicid)"  expand="block"  color="light" type="button">{{'enviar' | translate }}</ion-button>
+      </ion-col>
+  </ion-row>
+</ion-content>
+
+
+    

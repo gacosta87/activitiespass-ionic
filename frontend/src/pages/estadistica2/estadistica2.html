@@ -1,0 +1,36 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px;"  text-center>{{'estadisticasredes1' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+         <!--- <button slot="end" class="save" id="boton_envio" onClick="this.disabled=true;" (click)="EnForm.ngSubmit.emit()"  [disabled]="!myForm.valid" type="submit">
+            <ion-icon name="save-outline"></ion-icon>
+            <ion-label style="font-size: 12px;">{{'guardar' | translate }}</ion-label>
+          </button>-->
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview" >
+
+        <div padding  text-center style="margin-top:0px; padding-bottom: 0px;">
+                  <ion-row>
+                      <ion-col col-12 style="text-align: -webkit-center;">
+                          <ion-avatar  style="height: 120px; width: 120px; margin-bottom:20px;">
+                            <img style="width: 120px; height: 120px;" class="" src="./assets/logos/estadisticas2.jpg" >
+                          </ion-avatar>
+                      </ion-col>
+                  </ion-row>
+        </div>
+        <div class="titulo_faceinst">
+            {{ this.namestadistica }}
+        </div>
+        <ion-grid no-padding *ngFor="let item of datos;" >
+                    <div padding style="padding-top: 0px;">
+                            <p style="line-height: 20px; font-size: 14px;">
+                                <span class="span_p" *ngIf="this.tipofaceinst=='2'">{{ item.period }}:</span> {{ item.description }}:                                
+                            </p>  
+                            <div *ngIf="this.tipofaceinst=='1'" class="div_total"><span class="span_total">{{ item.values[0].value }}</span></div>
+                            <div *ngIf="this.tipofaceinst=='2'" class="div_total"><span class="span_total">{{ item.total_value.value }}</span></div>
+                    </div>
+        </ion-grid>
+</ion-content>

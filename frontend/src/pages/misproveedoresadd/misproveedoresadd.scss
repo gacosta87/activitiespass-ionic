@@ -1,0 +1,59 @@
+.back{
+  font-size: 20px;
+    margin-left: 26px;
+    margin-right: -26px;
+}
+.mostrar-segui{
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
+    min-height: 60px;
+}
+.mostrar-segui img{
+    font-size: 14px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+[title-sub]{
+	        font-size: 14px;
+		    text-align: center;
+		    white-space: normal;
+		    color: #858789;
+}
+[label-destacados]{
+    margin-top: 20px;
+    margin-bottom: 7px;
+    margin-left: 11px;
+    color: var(--ion-color-secondary);
+    font-size: 15px;
+} 
+.chat-list{
+    border-radius: 5px;
+    margin-top: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: var(--ion-color-primary);
+    border: 0px solid #d7d8da;
+    background-color: #fff;
+    height: 60px;
+}
+[title-sub2]{
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        white-space: normal;
+        color: #858789;
+  } 
+
+  .header-md::after {
+    left: 0;
+    bottom: -5px;
+    background-position: left 0 top -2px;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-image: none; 
+    background-repeat: repeat-x;
+    content: "";
+}

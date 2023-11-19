@@ -1,0 +1,33 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px;"  text-center>{{'mipromocionadd' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview">
+      	<form #EnForm="ngForm" style="height: 100%;" [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+              <div padding>
+                <ion-label stacked style="color:#172833; white-space: normal; font-size: 17px;"><b>{{'anuncios1' | translate }}</b></ion-label>
+              </div>
+              <div padding style="padding-top:0px;">
+                <ion-label stacked style="color:#172833; margin-top: 10px;  margin-bottom: 10px; white-space: normal; font-size: 14px;">{{'anuncios2' | translate }}</ion-label>
+              </div>
+              <div padding style="padding-top:0px">
+                  <ion-item style="border: 1px solid #dedede;">
+                      <ion-label class="label-item" position="floating">{{'anuncios3' | translate }}</ion-label>
+                      <ion-textarea maxlength="100" style="text-align: justify;" rows="6" cols="20" formControlName="texto"></ion-textarea>
+                  </ion-item>
+              </div>
+    </form>
+</ion-content>
+<ion-footer class="ion-no-border">  
+  <ion-toolbar >
+    <div padding *ngIf="this.envia==1"> 
+        <ion-button expand="block" type="submit" id="boton_envio"  [disabled]="!myForm.valid" style="text-transform: none;" color="secondary" (click)="EnForm.ngSubmit.emit()">
+             <ion-label style="font-size: 12px;">{{'enviar' | translate }}</ion-label>
+        </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

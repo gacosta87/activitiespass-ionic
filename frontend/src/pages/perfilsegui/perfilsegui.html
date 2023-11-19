@@ -1,0 +1,72 @@
+<ion-header *ngFor="let item2 of this.datos">
+  	<ion-toolbar>
+  		<ion-title>
+          <ion-row >
+            <ion-col col-2 >
+              <img style="height:30px; width:30px;margin-left: 5px;"  *ngIf="item2.foto2!='' && item2.foto2!=null" src="{{item2.foto2}}">
+              <img style="height:30px; width:30px;margin-left: 5px;"  *ngIf="item2.foto2=='' || item2.foto2==null" src="./assets/logos/avatar.png">
+            </ion-col>
+            <ion-col col-9 style="padding-top: 6px; padding-left: 6px;">
+            <b *ngIf="this.tipo=='1'">{{'seguidos' | translate }}</b>
+            <b *ngIf="this.tipo=='2'">{{'seguidores' | translate }}</b>
+            <br>
+            {{item2.username}}
+            </ion-col>
+            <ion-col col-1 style="padding-top: 17px; padding-left: 0px;">
+                  <ion-icon class="menu-icon" (click)="publicmenu($event)" name="ellipsis-vertical"></ion-icon>
+            </ion-col>
+          </ion-row>
+          </ion-title>
+  	</ion-toolbar>
+</ion-header>
+<ion-content>
+            <div *ngFor="let item1 of this.datos2" class="mostrar-segui">
+              <div *ngIf="item1.usuarios.username!=''">
+                <ion-row *ngIf="this.tipo=='1'">
+                      <ion-col col-2  (click)="linkperfil(item1.usuarios.mycar_id)">
+                        <img style="height:30px; width:30px;"  *ngIf="item1.usuarios.foto2!='' && item1.usuarios.foto2!=null" src="{{item1.usuarios.foto2}}">
+                        <img style="height:30px; width:30px;"  *ngIf="item1.usuarios.foto2=='' || item1.usuarios.foto2==null" src="./assets/logos/avatar.png">
+                      </ion-col>
+                      <ion-col col-5 style="padding-top: 12px; padding-left: 0px;" (click)="linkperfil(item1.usuarios.mycar_id)">
+                          {{item1.usuarios.username}}
+                      </ion-col>
+                      <ion-col col-5 style="text-align: -webkit-center; padding-top: 0px; padding-left: 0px;">
+                          <div *ngIf="item1.favorito=='0' && this.usuarioid!=item1.usuarios.id">
+                              <ion-button  id="bseg{{item1.id}}" class="button-segui activa"    expand="block" (click)="favoritoadd(item1.usuarios.mycar_id, item1.id)"     color="" type="button">{{'seguir' | translate }}</ion-button>
+                              <ion-button  id="bseg2{{item1.id}}" class="button-segui desactiva" expand="block" (click)="favoritodelete(item1.usuarios.mycar_id, item1.id)"  color="light"      type="button">{{'noseguir' | translate }}</ion-button>
+                          </div>
+                          <div *ngIf="item1.favorito!='0' && this.usuarioid!=item1.usuarios.id" >
+                              <ion-button  id="bseg{{item1.id}}" class="button-segui desactiva" expand="block" (click)="favoritoadd(item1.usuarios.mycar_id, item1.id)"     color="" type="button">{{'seguir' | translate }}</ion-button>
+                              <ion-button  id="bseg2{{item1.id}}" class="button-segui activa"    expand="block" (click)="favoritodelete(item1.usuarios.mycar_id, item1.id)"  color="light"      type="button">{{'noseguir' | translate }}</ion-button>
+                          </div>
+                      </ion-col>
+                </ion-row>
+                <ion-row *ngIf="this.tipo=='2'">
+                      <ion-col col-2 (click)="linkperfil(item1.usuarios.mycar_id)">
+                        <img style="height:30px; width:30px;"  *ngIf="item1.usuarios.foto2!='' && item1.usuarios.foto2!=null" src="{{item1.usuarios.foto2}}">
+                        <img style="height:30px; width:30px;"  *ngIf="item1.usuarios.foto2=='' || item1.usuarios.foto2==null" src="./assets/logos/avatar.png">
+                      </ion-col>
+                      <ion-col col-5 style="padding-top: 12px; padding-left: 0px;" (click)="linkperfil(item1.usuarios.mycar_id)">
+                          {{item1.usuarios.username}}
+                      </ion-col>
+                      <ion-col col-5 style="text-align: -webkit-center;  padding-top: 0px; padding-left: 0px;">
+                          <div *ngIf="item1.favorito=='0' && this.usuarioid!=item1.usuarios.id">
+                              <ion-button  id="bseg{{item1.id}}" class="button-segui activa"    expand="block" (click)="favoritoadd(item1.usuarios.mycar_id, item1.id)"     color="" type="button">{{'seguir' | translate }}</ion-button>
+                              <ion-button  id="bseg2{{item1.id}}" class="button-segui desactiva" expand="block" (click)="favoritodelete(item1.usuarios.mycar_id, item1.id)"  color="light"      type="button">{{'noseguir' | translate }}</ion-button>
+                          </div>
+                          <div *ngIf="item1.favorito!='0' && this.usuarioid!=item1.usuarios.id" >
+                              <ion-button  id="bseg{{item1.id}}" class="button-segui desactiva" expand="block" (click)="favoritoadd(item1.usuarios.mycar_id, item1.id)"     color="" type="button">{{'seguir' | translate }}</ion-button>
+                              <ion-button  id="bseg2{{item1.id}}" class="button-segui activa"    expand="block" (click)="favoritodelete(item1.usuarios.mycar_id, item1.id)"  color="light"      type="button">{{'noseguir' | translate }}</ion-button>
+                          </div>
+                      </ion-col>
+                </ion-row>
+            </div>
+          </div>
+          <ion-infinite-scroll style="margin-bottom: 0px;" threshold="50px" (ionInfinite)="loadData($event)">
+              <ion-infinite-scroll-content
+                loadingSpinner="bubbles"
+                loadingText="{{'cargando' | translate }}...">
+              </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+
+</ion-content>

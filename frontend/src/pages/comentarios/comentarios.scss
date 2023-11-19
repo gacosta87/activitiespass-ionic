@@ -1,0 +1,140 @@
+.quitar{
+    display: none !important;
+}
+.noverificada{
+    font-size: 11px;
+    color: #5a5a5a;
+    background-color: #edeeef;
+    height: 23px;
+    padding-right: 16px;
+    padding-left: 10px;
+    padding-top: 5px;
+    border-radius: 6px;
+    position: absolute;
+}
+.verificada1{
+    font-size: 11px;
+    color: #357c23;
+    background-color: #b2ffb4;
+    height: 23px;
+    padding-right: 16px;
+    padding-left: 10px; 
+    padding-top: 5px;
+    border-radius: 6px;
+    position: absolute;
+}
+
+.verificada2{
+    font-size: 11px;
+    color: #234e7c;
+    background-color: #b2caff;
+    height: 23px;
+    padding-right: 16px;
+    padding-left: 10px;
+    padding-top: 5px;
+    border-radius: 6px;
+    position: absolute;
+}
+
+.verificada3{
+    font-size: 11px;
+    color: #f3ff4d;
+    background-color: #7a7c4a;
+    height: 23px;
+    padding-right: 16px;
+    padding-left: 10px;
+    padding-top: 5px;
+    border-radius: 6px;
+    position: absolute;
+}
+
+.responder{
+    font-size: 14px;
+    position: absolute;
+    right: 80px;
+    margin-top: 12px;
+    color: #000000;
+}
+.eliminar{
+    font-size: 14px;
+    position: absolute;
+    right: 20px;
+    margin-top: 12px;
+    color: #000000;
+}
+[icon-close]{
+    font-size: 30px;
+    color: var(--ion-color-secondary);
+    margin-right: 5px;
+}
+.send:disabled {
+  opacity: 0.4;
+}
+.send{
+  background-color: white;
+    margin-right: 10px;
+    outline:none;
+}
+.ngx-image-placeholder {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    /* padding-bottom: 100% !important; */
+    width: 200px !important;
+    height: 200px !important;
+}
+ion-toolbar.large-title-fix {
+  padding-top: env(safe-area-inset-top);
+}
+ion-title{
+  font-size: 14px;
+  padding-left: 0px;
+  margin-left: 5px;
+}
+ion-title img{
+  border-radius: 50%
+}
+.back{
+  font-size: 20px;
+    margin-left: 26px;
+    margin-right: -26px;
+}
+.camera-icon{
+	font-size: 30px;
+	color: var(--ion-color-primary);
+}
+.send-icon{
+	background-color:#ffffff;
+}
+.send-icon ion-icon{
+	font-size: 30px;
+	/*color: var(--ion-color-primary);*/
+}
+ion-textarea{
+	    padding: 0px;
+	    margin-top: 0px;
+	    border: 1px solid #d7d8da;
+	    background-color: #f5f6f8;
+	    border-radius: 15px;
+      font-size: 14px;
+
+}
+ion-content{
+       --background: #fff;
+}
+.chat-list{
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #4c4a4a;
+    font-size:15px;
+}
+.hora{
+		font-size: 10px;
+    	color: #9f9c9c;
+    	margin-top: 3px;
+}
+.imagen{
+    width: 200px;
+    height: 200px;
+}

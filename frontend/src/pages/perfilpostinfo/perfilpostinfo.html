@@ -1,0 +1,26 @@
+<ion-row style="padding: 5px;">
+	<ion-col col-12 style="margin-top: 20px; font-size: 18px;text-align: center;"><b>{{'agregarasistente1' | translate }}</b></ion-col>
+	<ion-col col-12 style="text-align: center;">
+		<ion-icon class="add-menu" name="person-add-outline"></ion-icon>
+	</ion-col>
+	<ion-col col-12 style="margin-top: 0px; font-size: 14px;text-align: center;">{{'agregarasistente2' | translate }}</ion-col>
+	
+	<ion-col col-6 style="margin-top: 13px;
+    font-size: 16px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
+    color: var(--ion-color-secondary) !important;
+    text-decoration: underline;" (click)="salir()"> 
+		{{'botoncancelar' | translate }}
+	</ion-col>
+	<ion-col col-6 style="margin-top: 13px;
+    font-size: 16px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
+    color: var(--ion-color-secondary) !important;
+    text-decoration: underline;" (click)="aceptar()"> 
+		{{'botonaceptar' | translate }}
+	</ion-col>
+</ion-row>

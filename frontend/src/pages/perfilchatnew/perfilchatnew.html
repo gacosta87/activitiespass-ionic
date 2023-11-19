@@ -1,0 +1,84 @@
+
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px; font-size: 14px;"  text-center>{{'cantidaddemensajes' | translate }}: {{this.puntos}}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content  #scrollElement id="scrollElement">
+  <ion-grid no-padding style="margin-top: 15px;">
+
+        <div *ngIf="this.data!=null && this.data.length==0" style="width: 100%; text-align: center;">
+                  <img style="width: 100px; height: 100px;" class="" src="./assets/logos/notificaciones.png" height="100px" width="100px;">
+        </div>
+        <div padding class="chat-list-mensaje-inicial"  *ngIf="this.data!=null && this.data.length==0">
+                <ion-label title-sub2>{{'usarprompt' | translate }}</ion-label>
+
+        </div>
+
+
+        <div *ngIf="this.data!=null && this.data.length==0">
+            <div *ngFor="let item2 of this.datos2 let i=index" class="div-publicacion-solicitud">
+                <div class="prompt_style" (click)="linkusar(item2.denomincion)"> 
+                            <b class="parrafo-pie" id="texto2{{item2.id}}" style="font-weight: normal; padding-top: 0px;">{{i+1}}) {{item2.denomincion}}</b>
+                            <br>
+                            <span style="border-bottom: dotted; margin-top: 5px; font-size: 20px; float: right; text-decoration: auto;">{{'ver' | translate }}</span>
+                </div>
+            </div>  
+        </div>
+
+
+        <div style="" *ngFor="let item of this.data; let i=index;" class="div-publicacion">
+              <div *ngIf="item.role=='user'" class="chat-list-yo"  style="text-align: right; white-space: pre-wrap; padding: 10px;">
+                           {{item.content}}
+                           <div class="moment" style="text-align: left !important;"><ion-icon name="clipboard-outline" (click)="copiar(item.content)"></ion-icon></div>
+              </div>
+              <div *ngIf="item.role=='assistant' && i!=(this.data.length-1)" class="chat-list" style="text-align: left; padding: 10px; white-space: pre-wrap;">
+                          {{item.content}}
+                          <div class="moment"><ion-icon name="clipboard-outline" (click)="copiar(item.content)"></ion-icon></div>
+              </div>
+              <div *ngIf="item.role=='assistant' && i==(this.data.length-1) && this.inicio==1" class="chat-list" style="text-align: left; padding: 10px; white-space: pre-wrap;">
+                          {{item.content}}
+                          <div class="moment"><ion-icon name="clipboard-outline" (click)="copiar(item.content)"></ion-icon></div>
+              </div>
+              
+        </div>
+        <div id="ultimo" class="div-publicacion"></div>
+        <div class="moment" *ngIf="this.inicio==2" style="margin-right: 17px;margin-top: 5px;"><ion-icon  (click)="copiar('ultimo001');" style="position: absolute;margin-top: -30px;margin-left: -27px; " name="clipboard-outline"></ion-icon></div>
+        <br><br><br>
+	</ion-grid>
+</ion-content>
+<ion-footer>
+<form #EnForm="ngForm"  [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+    <ion-toolbar *ngIf="this.puntos!=0 && this.limite_chat>this.contar_chat">
+        <ion-row class="div-publicacion">
+          <ion-col col-10 style="">
+          <ion-textarea rows="3" cols="20"  [(ngModel)]="this.textom" placeholder="{{'enviarmensaje' | translate }}..." formControlName="texto"></ion-textarea>
+          </ion-col>
+          <ion-col col-2 style="text-align: center;">
+                  <button class="send-icon" id="boton_envio" (click)="EnForm.ngSubmit.emit()"  type="submit">
+                      <ion-icon style=" " name="send" ></ion-icon> 
+                  </button>
+          </ion-col>
+        </ion-row>
+    </ion-toolbar>
+
+    <ion-toolbar *ngIf="this.puntos==0">
+        <ion-row>
+          <ion-col col-12 style="text-align: center;font-size: 16px;">
+          {{'noenviarmensaje' | translate }}
+          </ion-col>
+        </ion-row>
+    </ion-toolbar>
+
+    <ion-toolbar *ngIf="this.limite_chat<=this.contar_chat">
+        <ion-row>
+          <ion-col col-12 style="text-align: center;font-size: 16px;">
+          {{'noenviarmensaje2' | translate }}
+          </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</form>
+</ion-footer>

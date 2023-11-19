@@ -1,0 +1,139 @@
+.img-post-type{
+    border-radius: 50%;
+    width: 160px;
+}
+.div-post-type{
+    width: 100%;
+    margin-top: 20px;
+}
+
+ion-textarea{
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    background-color: rgb(248, 248, 248);
+    font-size: 16px;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+
+[title2]{
+        
+        font-size: 16px;
+        line-height: 30px;
+        text-align: center;
+        white-space: normal;
+        color: #222;
+        margin-bottom: 15px;
+        padding: 10px;
+} 
+
+[title]{
+        
+        font-size: 24px;
+        line-height: 30px;
+        text-align: center;
+        white-space: normal;
+        color: #222;
+        margin-bottom: 15px;
+        padding: 10px;
+} 
+
+[subtitle]{ 
+        
+    font-size: 14px;
+    margin-top: -15px;
+    color: #9E9E9E;
+    padding: 10px;
+    white-space: normal;
+} 
+
+
+.precio{
+  text-align: left !important;
+  width: 200px;
+}
+.addhashtag{
+    font-size: 14px;
+    color: var(--ion-color-secondary);
+    background: #fff;
+    border: 1px solid;
+    outline:none;
+    height: 30px;
+    margin-top: 10px;
+}
+.div-add-img{
+    width: 70px;
+    height: 70px; 
+    margin-top: 5px;
+    opacity: 0.6;
+    background-color: #000;
+    border-radius: 50%;
+}
+.div-add-img-icon{
+    color: #f5f6f9;
+    font-size: 48px;
+    opacity: 1;
+    margin-top: 11px;
+}
+.div-add-img-trash{
+    width: 70px;
+    height: 70px;
+    margin-top: 5px;
+    border-radius: 50%;
+}
+.img-add-trash{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.div-add-img-icon-trash{
+    color: var(--ion-color-primary);
+    font-size: 25px;
+    opacity: 0.5;
+    margin-top: 11px;
+}
+
+.form{
+    width: 100%;
+    height: 350px;
+}
+ion-content{
+     height: 390px;
+}
+.footer{
+    border-top: 1px solid;
+    color: #d8d8d8;
+}
+.send:disabled {
+  opacity: 0.4;
+}
+.send{
+  background-color: white;
+    margin-right: 10px;
+    outline:none;
+}
+ion-textarea{
+  --padding-top: 5px;
+  --padding-end: 5px;
+  --padding-bottom: 5px;
+  --padding-start: 5px;
+  margin-top: 0px;
+  font-size:14px; 
+}
+ion-title{
+  font-size: 14px;
+  padding-left: 0px;
+}
+ion-title img{
+  border-radius: 50%
+}
+[icon-close]{
+    font-size: 30px;
+    color: var(--ion-color-secondary);
+    margin-right: 5px;
+}

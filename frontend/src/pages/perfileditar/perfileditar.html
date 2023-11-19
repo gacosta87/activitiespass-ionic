@@ -1,0 +1,167 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px;"  text-center>{{'editarperfil' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+         <!--- <button slot="end" class="save" id="boton_envio" onClick="this.disabled=true;" (click)="EnForm.ngSubmit.emit()"  [disabled]="!myForm.valid" type="submit">
+            <ion-icon name="save-outline"></ion-icon>
+            <ion-label style="font-size: 12px;">{{'guardar' | translate }}</ion-label>
+          </button>-->
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview" >
+<form #EnForm="ngForm" style="height: 100%;" [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+          <ion-grid no-padding *ngFor="let item of datos;" >
+                    <div padding  text-center style="margin-top:0px; padding-bottom: 0px;">
+                              <ion-row>
+                                  <ion-col col-12 style="text-align: -webkit-center;">
+                                      <ion-avatar  style="height: 120px; width: 120px; margin-bottom:20px;">
+                                        <img style="width: 120px; height: 120px;" class="" *ngIf="image1!='' && image1!=null "  [src]="image1" >
+                                        <img style="width: 120px; height: 120px;" class="" *ngIf="image1=='' || image1==null "  src="./assets/logos/avatar.png" >
+                                      </ion-avatar>
+                                      <a (click)="cambiarimagen()" style="text-decoration-line: underline; margin-top:10px; font-size:12px;text-transform: none !important;">{{'cambiarfoto' | translate }}</a>
+                                  </ion-col>
+                              </ion-row>
+                    </div>
+                    <div padding style="padding-top: 10px;padding-bottom: 0px;">
+                                <br>
+                                <span style="white-space: normal; padding: 16px;font-size: 14px; color: #898989;">{{'editarperfiltext1_1' | translate }}</span>
+                                <ion-item>
+                                    <ion-label class="label-item" position="floating" style="white-space: normal;">{{'editarperfiltext1' | translate }}</ion-label>
+                                    <ion-input [(ngModel)]="item.usuarios[0]['username']" formControlName="username" type="text"></ion-input>
+                                </ion-item>
+                    </div>
+                    <div padding style="padding-top: 5px;padding-bottom: 0px; text-align: right;">
+                                <ion-item>
+                                    <ion-label class="label-item" position="floating">{{'editarperfiltext10' | translate }}</ion-label>
+                                    <ion-select  [(ngModel)]="item.categoria_id" formControlName="categoria_id" okText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" id="solicita">
+                                        <div *ngFor="let item_categoria of datos_categorias;">
+                                                <ion-select-option value="{{item_categoria.denominacion}}">{{ item_categoria.denominacion }}</ion-select-option>
+                                        </div>
+                                    </ion-select>
+                                </ion-item> 
+                    </div>
+                    <div padding style="padding-top: 10px;padding-bottom: 0px;">
+                                <ion-item>
+                                    <ion-label class="label-item" position="floating">{{'registrofechanacimiento1' | translate }}</ion-label>
+                                    <ion-input [(ngModel)]="item.usuarios[0]['fechanacimiento']"  id="date" class="" formControlName="fechanacimiento"></ion-input>
+                                    <ion-popover trigger="date" size="cover" alignment="center" side="top">
+                                        <ng-template>
+                                            <ion-datetime  preferWheel=true  [(ngModel)]="item.usuarios[0]['fechanacimiento2']" formControlName="fechanacimiento2" #popoverDatetime1 (ionChange)="item.usuarios[0]['fechanacimiento'] = formatDate(popoverDatetime1.value)"  doneText="{{'botonaceptar' | translate }}" cancelText="{{'botoncancelar' | translate }}" [showDefaultButtons]="true"  presentation="date"  displayFormat="DD/MM/YYYY"  ></ion-datetime>
+                                        </ng-template>
+                                    </ion-popover>
+                                </ion-item>
+                    </div>
+                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                <ion-item>
+                                    <ion-label class="label-item" position="floating">{{'editarperfiltext2' | translate }}</ion-label>
+                                    <ion-input [(ngModel)]="item.razon_social" formControlName="razon_social" type="text"  maxlength="50"></ion-input>
+                                </ion-item>
+                    </div>
+                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                <ion-item>
+                                    <ion-label class="label-item" position="floating">{{'editarperfiltext3' | translate }}</ion-label>
+                                    <ion-input [(ngModel)]="item.email" formControlName="email" type="text"></ion-input>
+                                </ion-item>
+                    </div>
+                    <div padding style="padding-top: 10px;">
+                          <ion-item>
+                              <ion-checkbox color="medium" style="color: #94979a;" formControlName="delivery"  [(ngModel)]="textcheckbox_delivery"></ion-checkbox>
+                              <ion-label style="margin-left: 18px;">
+                                <h2 style="margin-left: 18px; font-size: 13px; margin: 0px; color: #212529;">{{'editarperfiltext14' | translate }}</h2>
+                              </ion-label>
+                          </ion-item>
+                    </div>     
+                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                <span style="white-space: normal; padding: 16px;font-size: 12px; color: #898989;">{{'editarperfiltext16' | translate }}</span>
+                                <ion-item>
+                                    <ion-label style="white-space: normal; margin-top: 0px;margin-bottom: 32px;" class="label-item" position="floating">{{'editarperfiltext11_' | translate }}</ion-label>
+                                    <ion-input [(ngModel)]="item.instagram" formControlName="instagram" type="text" ></ion-input>
+                                </ion-item>
+                    </div>
+                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                <span style="white-space: normal; padding: 16px;font-size: 12px; color: #898989;">{{'editarperfiltext16' | translate }}</span>
+                                <ion-item>
+                                    <ion-label style="white-space: normal; margin-top: 0px;margin-bottom: 32px;" class="label-item" position="floating">{{'editarperfiltext12_' | translate }}</ion-label>
+                                    <ion-input [(ngModel)]="item.facebook" formControlName="facebook" type="text" ></ion-input>
+                                </ion-item>
+                    </div>
+                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                <span style="white-space: normal; padding: 16px;font-size: 12px; color: #898989;">{{'editarperfiltext16' | translate }}</span>
+                                <ion-item>
+                                    <ion-label style="white-space: normal; margin-top: 0px;margin-bottom: 32px;" class="label-item" position="floating">{{'editarperfiltext13_' | translate }}</ion-label>
+                                    <ion-input [(ngModel)]="item.tiktok" formControlName="tiktok" type="text" ></ion-input>
+                                </ion-item>
+                    </div>                    
+                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                <ion-item>
+                                    <ion-label class="label-item" position="floating">{{'editarperfiltext5' | translate }}</ion-label>
+                                    <ion-textarea style="margin-top: 0px;" rows="3" cols="20" [(ngModel)]="item.descripcion" formControlName="descripcion"></ion-textarea>
+                                </ion-item>
+                    </div>
+
+
+
+                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                <br>
+                                <span style="white-space: normal; padding: 16px;font-size: 14px; color: #898989;">{{'editarperfiltext6_1' | translate }}</span>
+                                <ion-item>
+                                    <ion-label class="label-item" position="floating">{{'editarperfiltext6' | translate }}</ion-label>
+                                    <ion-textarea id="solicita" #solicita style="margin-top: 10px;" rows="3" cols="20" [(ngModel)]="this.servicios" formControlName="servicios" ></ion-textarea>
+                                    <button class="addhashtag" slot="end" (click)="addhashtag('solicita')"  type="button">
+                                        # Hashtags
+                                    </button> 
+                                </ion-item> 
+
+                    </div>
+                    
+                    <div padding style="padding-top: 10px;">
+                            <br>    
+                          <span style="white-space: normal; padding: 16px;font-size: 14px; color: #898989;">{{'editarperfiltext9_1' | translate }}</span>
+                          <ion-item>
+                              <ion-checkbox color="medium" style="color: #94979a;" formControlName="ver" (click)="cargarmapa()" [(ngModel)]="textcheckbox"></ion-checkbox>
+                              <ion-label style="margin-left: 18px;">
+                                <h2 style="margin-left: 18px; font-size: 13px; margin: 0px; color: #212529;">{{'editarperfiltext9' | translate }}</h2>
+                              </ion-label>
+                          </ion-item>
+                    </div>       
+                    <!--
+                    <div padding style="padding-top: 0px;padding-bottom: 100px;" *ngIf="this.textcheckbox==true">
+                        <ion-button expand="block" (click)="cargarmapa()" color="secondary" style="text-transform: none;" type="button">{{'editarperfiltext9' | translate }}</ion-button>
+                    </div>
+                -->
+                    <div padding style="padding-top: 0px;padding-bottom: 0px;"  *ngIf="this.textcheckbox==true">
+                                <ion-item>
+                                    <ion-icon name="map" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <span style="margin-right: 10px;">Lat</span>
+                                    <ion-input placeholder="{{'editarperfiltext7' | translate }}" readonly="true" id="Mycarlatitud" [(ngModel)]="this.latitud_ng"  formControlName="latitud" type="text"></ion-input>
+                                </ion-item>
+                    </div>
+                    <div padding style="padding-top: 0px;padding-bottom: 0px;" *ngIf="this.textcheckbox==true">
+                                <ion-item>
+                                    <ion-icon name="map" slot="start" style="margin-right: 18px;"></ion-icon>
+                                    <span style="margin-right: 10px;">Lon</span>
+                                    <ion-input placeholder="{{'editarperfiltext8' | translate }}"   readonly="true" id="Mycarlongitud"  [(ngModel)]="this.longitud_ng"  formControlName="longitud"  type="text"></ion-input>
+                                    </ion-item>
+                    </div>
+                    <div padding style="padding-top: 0px;" *ngIf="this.textcheckbox==true">
+                        <ion-row>
+                          <ion-col col-12><div  id="map2" style="width: 100%; height: 250px"></div></ion-col>
+                        </ion-row>
+                    </div>
+                    <ion-input readonly="true" id="Mycarpais"      [(ngModel)]="this.pais_ng"      formControlName="pais"      type="hidden"></ion-input>
+                    <ion-input readonly="true" id="Mycarmunicipio" [(ngModel)]="this.municipio_ng" formControlName="municipio" type="hidden"></ion-input>
+                    <ion-input readonly="true" id="Mycarestado"    [(ngModel)]="this.estado_ng"    formControlName="estado"    type="hidden"></ion-input>
+          </ion-grid>
+</form>
+</ion-content>
+<ion-footer class="ion-no-border" *ngFor="let item of datos;" >  
+  <ion-toolbar >
+    <div padding>
+        <ion-button expand="block" type="submit" id="boton_envio"  [disabled]="!myForm.valid" style="text-transform: none;" color="secondary" (click)="EnForm.ngSubmit.emit()">
+             <ion-label style="font-size: 12px;">{{'guardar' | translate }}</ion-label>
+        </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

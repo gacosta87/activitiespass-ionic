@@ -1,0 +1,117 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title  *ngFor="let item of this.data2;">
+      <ion-row (click)="linkperfil(item.mycar_id)">
+        <ion-col col-2 style=" text-align: center; padding-top:14px;">
+          <img style="width: 37px; height: 37px;" *ngIf="item.usuarios.foto2=='' || item.usuarios.foto2==null"  src="./assets/logos/avatar.png">
+          <img style="width: 37px; height: 37px;" *ngIf="item.usuarios.foto2!='' && item.usuarios.foto2!=null"  src="{{item.usuarios.foto_35}}">
+        </ion-col>
+        <ion-col col-9 (click)="linkperfil(item.mycar_id)" style="padding-top: 6px;">
+          <ion-label style="margin-top: 6px; font-size: 14px;"><b>{{item.usuarios.username}}</b></ion-label>
+          <div style="margin-top: 5px; height: 25px;">
+              <div *ngIf="item.usuarios.verificacion_1=='1' && item.usuarios.verificacion_2=='1' && item.usuarios.verificacion_3=='1' && item.usuarios.verificacion_4=='1' && item.usuarios.verificacion_5=='1'" class="noverificada">   
+                  {{'verificada3' | translate }} 
+              </div>
+              <div *ngIf="item.usuarios.verificacion_1=='2' && item.usuarios.verificacion_2=='1' && item.usuarios.verificacion_3=='1' && item.usuarios.verificacion_4=='1' && item.usuarios.verificacion_5=='1'" class="noverificada">   
+                  {{'verificada3' | translate }} 
+              </div>
+              <div *ngIf="item.usuarios.verificacion_1=='2' && item.usuarios.verificacion_2=='2' && item.usuarios.verificacion_3!='3' && item.usuarios.verificacion_4=='3' && item.usuarios.verificacion_5!='3'"  class="verificada1"> 
+                  {{'verificada12' | translate }} 
+              </div>
+               <div *ngIf="item.usuarios.verificacion_1=='2' && item.usuarios.verificacion_2=='2' && item.usuarios.verificacion_3!='3' && item.usuarios.verificacion_4!='3' && item.usuarios.verificacion_5!='3'"  class="verificada1"> 
+                  {{'verificada12' | translate }} 
+              </div>
+              <div *ngIf="item.usuarios.verificacion_1=='2' && item.usuarios.verificacion_2=='2' && item.usuarios.verificacion_3=='3' && (item.usuarios.verificacion_4!='3' || item.usuarios.verificacion_4=='3' ) && item.usuarios.verificacion_5!='3'"  class="verificada2"> 
+                  {{'verificada13' | translate }} 
+              </div>
+              <div *ngIf="item.usuarios.verificacion_1=='2' && item.usuarios.verificacion_2=='2' && item.usuarios.verificacion_3=='3' && item.usuarios.verificacion_4=='3' && item.usuarios.verificacion_5=='3'"  class="verificada3"> 
+                  {{'verificada14' | translate }} 
+              </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      </ion-title>
+      <button slot="end" (click)="close()" class="send" type="button">
+            <ion-icon name="close" icon-close></ion-icon>
+      </button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div *ngFor="let item2 of this.data2;">
+          <div class="chat-list" style="border-bottom: 0px solid #bcbdbe69; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;">
+              <ion-row >
+                    <ion-col col-12  style="text-align: left; padding-left: 0px;">
+                         <div [innerHTML] = "this.hashtag(item2.texto)"></div>
+                    </ion-col>
+                    
+              </ion-row>
+          </div>
+          <div *ngIf="this.data!=null">
+                <div class="chat-list" *ngFor="let item3 of this.data; let i=index">
+                    <ion-row style="min-height: 80px;">
+                          <ion-col col-2 style="text-align: center;padding-right: 0px; padding-left: 0px;">
+                              <img (click)="linkperfil(item3.usuarios.mycar_id)" style="width: 20px; height: 20px; border-radius: 50%;" *ngIf="item3.usuarios.foto2=='' || item3.usuarios.foto2==null"  src="./assets/logos/avatar.png">
+                              <img (click)="linkperfil(item3.usuarios.mycar_id)" style="width: 20px; height: 20px; border-radius: 50%;" *ngIf="item3.usuarios.foto2!='' && item3.usuarios.foto2!=null"  src="{{item3.usuarios.foto_35}}">
+                          </ion-col>
+                          <ion-col col-10  style="text-align: left; padding-left: 0px; padding-bottom: 40px;" *ngIf="i==0">
+                              <b (click)="linkperfil(item3.usuarios.mycar_id)">{{item3.usuarios.username}}</b>&nbsp;
+                              <b style="color:#4c4a4a;font-weight: normal;" [innerHTML] = "this.hashtag(item3.comentario)"></b>
+                              <div class="responder" (click)="respondercomentario(item3.id, item3.usuarios.id, item3.usuarios.username)">{{'respondermensaje' | translate  }}</div>
+                              <div class="eliminar"  (click)="elminarcomentario(item3.id)"   *ngIf="item3.usuarios.id==this.usuarioid" >{{'eliminarmensaje' | translate  }}</div>
+                              <div class="moment"> {{ this.zonahoraria(item3.created) }}</div>
+                          </ion-col>
+
+                          <ion-col col-10  style="text-align: left; padding-left: 0px;" *ngIf="i!=0">
+                              <b (click)="linkperfil(item3.usuarios.mycar_id)">{{item3.usuarios.username}}</b>&nbsp;
+                              <b style="color:#4c4a4a;font-weight: normal;" [innerHTML] = "this.hashtag(item3.comentario)"></b>
+                              <div class="responder" (click)="respondercomentario(item3.id, item3.usuarios.id, item3.usuarios.username)">{{'respondermensaje' | translate  }}</div>
+                              <div class="eliminar"  (click)="elminarcomentario(item3.id)"   *ngIf="item3.usuarios.id==this.usuarioid" >{{'eliminarmensaje' | translate  }}</div>
+                              <div class="moment"> {{ this.zonahoraria(item3.created) }}</div>
+                          </ion-col>
+                    </ion-row>
+
+                      <div class="chat-list" *ngFor="let item4 of item3.hijo;" style="text-align: -webkit-right;">
+                          <ion-row style="min-height: 80px; width: 90%;font-size: 13px; margin-top: 10px;  margin-bottom: 25px;">
+                                <ion-col col-2 style="text-align: center;padding-right: 0px; padding-left: 0px;">
+                                    <img (click)="linkperfil(item4.mycar_id)" style="width: 20px; height: 20px; border-radius: 50%;" *ngIf="item4.usuarios.foto2=='' || item4.usuarios.foto2==null"  src="./assets/logos/avatar.png">
+                                    <img (click)="linkperfil(item4.mycar_id)" style="width: 20px; height: 20px; border-radius: 50%;" *ngIf="item4.usuarios.foto2!='' && item4.usuarios.foto2!=null"  src="{{item4.usuarios.foto_35}}">
+                                </ion-col>
+                                <ion-col col-10  style="text-align: left; padding-left: 0px;">
+                                    <b (click)="linkperfil(item4.mycar_id)">{{item4.usuarios.username}}</b>&nbsp;
+                                    <b style="color:#4c4a4a;font-weight: normal;" [innerHTML] = "this.hashtag(item4.comentario)"></b>
+                                    <div class="responder" style="margin-top: 20px; font-size: 14px;" (click)="respondercomentario(item3.id, item4.usuarios.id, item4.usuarios.username)">{{'respondermensaje' | translate  }}</div>
+                                    <div class="eliminar"  style="margin-top: 20px; font-size: 14px;" (click)="elminarcomentario(item4.id)"   *ngIf="item4.usuarios.id==this.usuarioid" >{{'eliminarmensaje' | translate  }}</div>
+                                    <div class="moment"> {{ this.zonahoraria(item3.created) }}</div>
+                                </ion-col>
+                          </ion-row>
+                      </div>
+
+                </div>
+          </div>
+    </div>
+    <ion-infinite-scroll style="margin-bottom: 0px;" threshold="50px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="{{'cargando' | translate }}...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
+<ion-footer *ngIf="this.data2!=null">
+<form #EnForm="ngForm"  [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+    <ion-toolbar>
+        <ion-row>
+          <ion-col col-10 style="">
+          <ion-textarea rows="1" cols="20" id="textoenviar" #textoenviar [(ngModel)]="this.textom" placeholder="{{'enviarmensaje' | translate }}..." formControlName="texto"></ion-textarea>
+          </ion-col>
+          <ion-col col-2 style="text-align: center;">
+                  <button class="send-icon" id="boton_envio" (click)="EnForm.ngSubmit.emit()"  type="submit">
+                      <ion-icon style=" " name="send" icon-close></ion-icon> 
+                  </button>
+          </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</form>
+</ion-footer>
+
+
+

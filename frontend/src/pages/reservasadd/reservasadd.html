@@ -1,0 +1,92 @@
+<ion-header translucent>
+	<ion-toolbar>
+	  <ion-title>
+	  	<ion-row>
+	  		<ion-col col-2>
+	  			<img *ngIf="this.fotodeperfil!='' && this.fotodeperfil!=null" style="height:30px; width:30px;" src="{{this.fotodeperfil}}">
+	  			<img *ngIf="this.fotodeperfil=='' || this.fotodeperfil==null" style="height:30px; width:30px;" src="./assets/logos/avatar.png">
+	  		</ion-col>
+	  		<ion-col col-10 style="padding-top: 6px; padding-left: 6px;">
+	          <b>{{'horario' | translate }}</b><br>
+	          {{this.username}}
+	        </ion-col>
+	  	</ion-row>
+	  	</ion-title>
+	  <button slot="end" (click)="close()" class="send" type="button">
+            <ion-icon name="close" icon-close></ion-icon>
+      </button>
+	</ion-toolbar>
+</ion-header>
+<ion-content class="myview" *ngFor="let item of this.datosconfig;" >
+	<div padding style="padding-top: 20px; padding-bottom: 0px;">
+        <ion-label style="font-size: 20px; margin-bottom: 9px; white-space: normal;text-align: center;">{{'atencionpublico' | translate }}</ion-label>
+        <span style="font-size: 16px;" *ngIf="item.lunes==2"> {{'lunes' | translate }}</span>
+    		<ion-row *ngIf="item.lunes==2" style="margin-bottom: 10px">
+            <ion-col col-12 >
+                  <ion-item>
+                    <ion-label class="label-monstrar-radio" style="margin-left: 7px; font-size: 12px;"> {{'desde' | translate }}: {{item.turno_a_desde }} - {{'hasta' | translate }}: {{item.turno_a_hasta}}</ion-label>
+                  </ion-item>
+            </ion-col>
+        </ion-row>
+ 
+
+        <span style="font-size: 16px;" *ngIf="item.martes==2"> {{'martes' | translate }}</span>
+        <ion-row *ngIf="item.martes==2" style="margin-bottom: 10px">
+            <ion-col col-12 >
+                  <ion-item>
+                    <ion-label class="label-monstrar-radio" style="margin-left: 7px; font-size: 12px;"> {{'desde' | translate }}: {{item.turno_b_desde }} - {{'hasta' | translate }}: {{item.turno_b_hasta}}</ion-label>
+                  </ion-item>
+            </ion-col>
+        </ion-row>
+
+
+        <span style="font-size: 16px;" *ngIf="item.miercoles==2"> {{'miercoles' | translate }}</span>
+        <ion-row *ngIf="item.miercoles==2" style="margin-bottom: 10px">
+            <ion-col col-12 >
+                  <ion-item>
+                    <ion-label class="label-monstrar-radio" style="margin-left: 7px; font-size: 12px;"> {{'desde' | translate }}: {{item.turno_c_desde }} - {{'hasta' | translate }}: {{item.turno_c_hasta}}</ion-label>
+                  </ion-item>
+            </ion-col>
+        </ion-row>
+
+
+        <span style="font-size: 16px;" *ngIf="item.jueves==2"> {{'jueves' | translate }}</span>
+        <ion-row *ngIf="item.jueves==2" style="margin-bottom: 10px">
+            <ion-col col-12 >
+                  <ion-item>
+                    <ion-label class="label-monstrar-radio" style="margin-left: 7px; font-size: 12px;"> {{'desde' | translate }}: {{item.turno_d_desde }} - {{'hasta' | translate }}: {{item.turno_d_hasta}}</ion-label>
+                  </ion-item>
+            </ion-col>
+        </ion-row>
+
+
+        <span style="font-size: 16px;" *ngIf="item.viernes==2"> {{'viernes' | translate }}</span>
+        <ion-row *ngIf="item.viernes==2" style="margin-bottom: 10px">
+            <ion-col col-12 >
+                  <ion-item>
+                    <ion-label class="label-monstrar-radio" style="margin-left: 7px; font-size: 12px;"> {{'desde' | translate }}: {{item.turno_e_desde }} - {{'hasta' | translate }}: {{item.turno_e_hasta}}</ion-label>
+                  </ion-item>
+            </ion-col>
+        </ion-row>
+
+
+        <span style="font-size: 16px;" *ngIf="item. sabado==2"> {{'sabado' | translate }}</span>
+        <ion-row *ngIf="item.sabado==2" style="margin-bottom: 10px">
+            <ion-col col-12 >
+                  <ion-item>
+                    <ion-label class="label-monstrar-radio" style="margin-left: 7px; font-size: 12px;"> {{'desde' | translate }}: {{item.turno_f_desde }} - {{'hasta' | translate }}: {{item.turno_f_hasta}}</ion-label>
+                  </ion-item>
+            </ion-col>
+        </ion-row>
+
+
+        <span style="font-size: 16px;" *ngIf="item.domingo==2"> {{'domingo' | translate }}</span>
+        <ion-row *ngIf="item.domingo==2" style="margin-bottom: 10px">
+            <ion-col col-12 >
+                  <ion-item>
+                    <ion-label class="label-monstrar-radio" style="margin-left: 7px; font-size: 12px;"> {{'desde' | translate }}: {{item.turno_g_desde }} - {{'hasta' | translate }}: {{item.turno__hasta}}</ion-label>
+                  </ion-item>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>

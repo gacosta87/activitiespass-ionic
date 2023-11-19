@@ -1,0 +1,45 @@
+
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px;"  text-center>{{'chatedit1' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content  #scrollElement id="scrollElement">
+  <ion-grid no-padding style="margin-top: 15px;">
+        
+        <div  style="width: 100%; text-align: center;">
+                  <img style="width: 100px; height: 100px;" class="" src="./assets/logos/notificaciones.png" height="100px" width="100px;">
+        </div>
+        <div padding class="chat-list-mensaje-inicial" >
+                <ion-label title-sub2>{{'chatedit' | translate }}</ion-label>
+        </div>
+
+
+        <form #EnForm="ngForm" style="height: 100%;" [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+          <ion-grid no-padding *ngFor="let item of data;" >
+                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                <ion-item>
+                                    <ion-label class="label-item" position="floating">{{'chatedit2' | translate }}</ion-label>
+                                    <ion-input [(ngModel)]="item.nombre" formControlName="nombre" type="text"  maxlength="50"></ion-input>
+                                </ion-item>
+                    </div>
+
+            </ion-grid>
+        </form>
+
+        <br><br><br>
+	</ion-grid>
+</ion-content>
+<ion-footer class="ion-no-border" *ngFor="let item of data;" >  
+  <ion-toolbar >
+    <div padding>
+        <ion-button expand="block" type="submit" id="boton_envio"  [disabled]="!myForm.valid" style="text-transform: none;" color="secondary" (click)="EnForm.ngSubmit.emit()">
+             <ion-label style="font-size: 12px;">{{'guardar' | translate }}</ion-label>
+        </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+

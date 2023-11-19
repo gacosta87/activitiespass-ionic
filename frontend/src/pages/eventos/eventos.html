@@ -1,0 +1,179 @@
+<ion-header>
+  <ion-toolbar>
+    <img style="height: 35px;
+    width: 35px;
+    float: left;
+    margin-left: 6px;
+    margin-top: 4px;" src="assets/icon/lgo.png" >
+    <img style="height: 25px;
+    width: 106px;
+    margin-top: 14px;
+    margin-left: 2px;" src="assets/icon/lgo2.png" >
+    <ion-buttons  slot="end" (click)="notificaciones()" *ngIf="this.version_exporar=='2'">
+              <ion-icon style="margin-right: 15px;" name="notifications-outline" ion-icon-end></ion-icon>
+              <div class="mensajenuevo" *ngIf="this.notificaciones_push=='2'"></div>
+    </ion-buttons>
+    <ion-buttons  slot="end" (click)="mensajeria()" *ngIf="this.version_exporar=='2'">
+          <ion-icon style="margin-right: 15px;" name="mail-outline" ion-icon-end></ion-icon>
+          <div class="mensajenuevo" *ngIf="this.mensajes!='0'"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content #scrollElement2  id="scrollElement2" [scrollEvents]="true" >
+        <ion-refresher  slot="fixed" (ionRefresh)="doRefresh($event)" *ngIf="this.data2!=null && this.data2.length!=0">
+        <ion-refresher-content
+          ppullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles">
+        </ion-refresher-content>
+      </ion-refresher>
+
+      
+        <ion-slides #mySliderpublicidad3 avoid-super-tabs="true" [options]="slideOpts_publi"  loop="true"  pager="false" paginationType="arrows">
+              <ion-slide *ngFor="let item_publicidad of this.conf_banner_3" >
+                  <img class="publicidad_img" (click)="linkperfil(item_publicidad.mycar_id)"src="{{this.imgurl2}}{{item_publicidad.url_banner}}">
+              </ion-slide>
+        </ion-slides>
+
+
+
+        <div *ngIf="this.data2_solicitudes!=null && this.data2_solicitudes.length==0" style="height: 200px; width: 100%; margin-bottom: 70px; text-align: center;">
+              <img style="width: 300px; height: 300px;" class="" src="./assets/logos/notificaciones.png" height="300px" width="300px;">
+        </div>
+
+        <div padding class="chat-list"  *ngIf="this.data2_solicitudes!=null && this.data2_solicitudes.length==0">
+            <ion-label title-sub2>{{'nodatanotificacionessolicitudes' | translate }}</ion-label>
+        </div>
+
+
+
+        <div *ngFor="let item2 of this.data2_solicitudes let i=index" >
+                <div *ngIf="item2.tipo=='1'" class="div-publicacion-solicitud">
+                          <div class="div-publicacion-header" >
+                                    <ion-row>
+                                            <ion-col col-2 (click)="linkperfil(item2.usuarios.mycar_id)" style="padding-top:13px; text-align: center;">
+                                              <img *ngIf="item2.usuarios.foto2!='' && item2.usuarios.foto2!=null" src="{{item2.usuarios.foto_35}}">
+                                              <img *ngIf="item2.usuarios.foto2=='' || item2.usuarios.foto2==null" src="./assets/logos/avatar.png">
+                                            </ion-col>
+                                            <ion-col col-7  (click)="linkperfil(item2.usuarios.mycar_id)" style="padding-left:0px; padding-right: 0px;">
+                                              <ion-label style="margin-top: 6px; font-size: 14px;"><b>{{item2.usuarios.username}}</b></ion-label>
+                                               <div style="margin-top: 5px; height: 25px;">
+                                                    <div *ngIf="item2.usuarios.verificacion_1=='1' && item2.usuarios.verificacion_2=='1' && item2.usuarios.verificacion_3=='1' && item2.usuarios.verificacion_4=='1' && item2.usuarios.verificacion_5=='1'" class="noverificada">   
+                                                        {{'verificada3' | translate }} 
+                                                    </div>
+                                                    <div *ngIf="item2.usuarios.verificacion_1=='2' && item2.usuarios.verificacion_2=='1' && item2.usuarios.verificacion_3=='1' && item2.usuarios.verificacion_4=='1' && item2.usuarios.verificacion_5=='1'" class="noverificada">   
+                                                        {{'verificada3' | translate }} 
+                                                    </div>
+                                                    <div *ngIf="item2.usuarios.verificacion_1=='2' && item2.usuarios.verificacion_2=='2' && item2.usuarios.verificacion_3!='3' && item2.usuarios.verificacion_4=='3' && item2.usuarios.verificacion_5!='3'"  class="verificada1"> 
+                                                        {{'verificada12' | translate }} 
+                                                    </div>
+                                                     <div *ngIf="item2.usuarios.verificacion_1=='2' && item2.usuarios.verificacion_2=='2' && item2.usuarios.verificacion_3!='3' && item2.usuarios.verificacion_4!='3' && item2.usuarios.verificacion_5!='3'"  class="verificada1"> 
+                                                        {{'verificada12' | translate }} 
+                                                    </div>
+                                                    <div *ngIf="item2.usuarios.verificacion_1=='2' && item2.usuarios.verificacion_2=='2' && item2.usuarios.verificacion_3=='3' && (item2.usuarios.verificacion_4!='3' || item2.usuarios.verificacion_4=='3' ) && item2.usuarios.verificacion_5!='3'"  class="verificada2"> 
+                                                        {{'verificada13' | translate }} 
+                                                    </div>
+                                                    <div *ngIf="item2.usuarios.verificacion_1=='2' && item2.usuarios.verificacion_2=='2' && item2.usuarios.verificacion_3=='3' && item2.usuarios.verificacion_4=='3' && item2.usuarios.verificacion_5=='3'"  class="verificada3"> 
+                                                        {{'verificada14' | translate }} 
+                                                    </div>
+                                                </div>
+                                            </ion-col>
+                                            <ion-col col-2 style="padding-top: 19px; padding-left: 0px;">
+                                              <div id="nosigo_tipo1{{i}}">
+                                                <a *ngIf="item2.nosigo=='2'" (click)="favoritoadd3(item2.mycar_id, i)">{{'seguir' | translate }}</a>
+                                              </div>
+                                            </ion-col>
+                                            <ion-col col-1 style="padding-top: 18px; padding-left: 0px;">
+                                                  <ion-icon class="menu-icon" (click)="publicmenu($event, item2.id, item2.usuarios.id)" name="ellipsis-vertical"></ion-icon>
+                                            </ion-col>
+                                    </ion-row>
+                          </div>
+                          <div *ngIf="item2.rt_publicacione_id!=null && item2.rt_publicacione_id!=''">
+                                    <ion-row *ngFor="let item3 of item2.rtuser" style="padding-left: 10px; margin-top: 5px; border-bottom: 0px; border: 1px solid #e0e0e0;">
+                                          <ion-col col-2  (click)="linkperfil(item3.mycar_id)" style=" text-align: center;">
+                                              <img style="height:25px; width:25px; border-radius: 50%;"  *ngIf="item3.foto2!='' && item3.foto2!=null" src="{{item3.foto_35}}">
+                                              <img style="height:25px; width:25px; border-radius: 50%;"  *ngIf="item3.foto2=='' || item3.foto2==null" src="./assets/logos/avatar.png">
+                                          </ion-col>
+                                          <ion-col col-9  (click)="linkperfil(item3.mycar_id)" style="padding-top: 6px; padding-left: 0px; font-size: 14px;">
+                                              <ion-label style="margin-top: 6px;"><b>{{item3.username}}</b></ion-label>
+                                          </ion-col>
+                                    </ion-row>
+                          </div>
+                          <div class="div-publicacion-footer-solicitud">
+                                      <b class="parrafo-pie-menos_tipo1" id="texto{{item2.id}}"  style="font-weight: normal;" [innerHTML] = "this.hashtag(item2.textn)"></b>
+                                      <a id="verm{{item2.id}}" *ngIf="item2.mas=='2'"  style="font-size:14px !important;color: #666666 !important;" (click)="mas(item2.id)">{{'vermas' | translate }}</a>
+                                      <b class="parrafo-pie" id="texto2{{item2.id}}" style="font-weight: normal; padding-top: 0px; display:none;" [innerHTML] = "this.hashtag(item2.texto)"></b>
+                          </div>
+                          <div class="div-publicacion-titulo-precio_solicitud" style="margin-top: 5px;"  *ngIf="this.usuarioid!=item2.usuarios.id">
+                                <ion-row >
+                                  <ion-col col-12 style="text-align: left;">
+                                  </ion-col>
+                                </ion-row>
+                          </div>
+                           <div class="div-publicacion-footer-megusta">
+                                    <b id="megusta{{item2.id}}" (click)="postmegusta('1', item2.id)">{{item2.cmegusta}} {{'megusta' | translate }}</b>
+                                    <div style="display:none" id="cmegusta{{item2.id}}">{{item2.cmegusta}}</div>
+                                    <div class="creacion"> {{ this.zonahoraria(item2.created) }}</div>
+                          </div>
+                          <div class="div-publicacion-social">
+                                       <ion-row>
+                                          <ion-col col-4 style="text-align: -webkit-center; ">
+                                                <table>
+                                                <tr>
+                                                  <td>
+                                                      <ion-icon *ngIf="item2.cmegustame=='1'" (click)="like(item2.id, item2.mycar_id)" id="icon{{item2.id}}" name="heart-outline"></ion-icon>
+                                                      <ion-icon *ngIf="item2.cmegustame=='2'" (click)="like(item2.id, item2.mycar_id)" id="icon{{item2.id}}" name="heart" style="color: #222;"></ion-icon>
+                                                  </td>
+                                                  <td>
+                                                      <span class="span-menu-pub"             (click)="like(item2.id, item2.mycar_id)" >{{ 'megusta' | translate }}</span>
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                          </ion-col>
+                                          <ion-col col-4 style="text-align: -webkit-center;">
+                                                <table>
+                                                <tr>
+                                                  <td>
+                                                        <ion-icon name="chatbubble-outline" (click)="comentario(item2.id)"></ion-icon>
+                                                  </td>
+                                                  <td>
+                                                        <span class="span-menu-pub"         (click)="comentario(item2.id)" style="margin-left: 2px;" >{{ 'comentario_m' | translate }}</span>
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                          </ion-col>
+                                          <ion-col col-4 style="text-align: -webkit-center;">
+                                               <table>
+                                                <tr>
+                                                  <td>
+                                                    <ion-icon name="share-social-outline" (click)="compartirpublic(item2.id, item2.usuario_id)" ></ion-icon>
+                                                  </td>
+                                                  <td>
+                                                     <span class="span-menu-pub"   (click)="compartirpublic(item2.id, item2.usuario_id)">{{ 'menutext3' | translate }}</span>
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                          </ion-col>
+                                       </ion-row>
+                          </div>
+                          <div class="div-publicacion-footer-megusta">
+                                    <b class="parrafo-pie-menos"  id="ctexto{{item2.id}}"    style="font-weight: normal;" [innerHTML] = "this.hashtag('<b>'+item2.ucomentarios+'</b>&nbsp;'+item2.tcomentarios)"></b>
+                                    <a id="cverm{{item2.id}}" *ngIf="item2.cmas=='2'"  style="font-size:14px  !important;color: #666666 !important;"      (click)="comentario(item2.id)">{{'vermas' | translate }}</a>
+                                    <div *ngIf="item2.ccomentarios!=''" style="margin-top: 10px; margin-bottom: 7px;">
+                                        <a style="font-size: 14px !important;color: #666666 !important;" *ngIf="item2.ccomentarios=='1'" (click)="comentario(item2.id)">{{'ver' | translate }} {{item2.ccomentarios}} {{'comentario' | translate }}</a>
+                                        <a style="font-size: 14px !important;color: #666666 !important;" *ngIf="item2.ccomentarios!='1'" (click)="comentario(item2.id)">{{'verlos' | translate }} {{item2.ccomentarios}} {{'comentarios' | translate }}</a>
+                                    </div>
+                          </div>
+                  </div>
+        </div>
+        <ion-infinite-scroll style="margin-bottom: 0px;" threshold="50px" (ionInfinite)="loadData2($event)" *ngIf="this.data2_solicitudes!=null && this.data2_solicitudes.length!=0">
+            <ion-infinite-scroll-content
+              loadingSpinner="bubbles"
+              loadingText="{{'cargando' | translate }}...">
+            </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+  </ion-content>

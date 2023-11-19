@@ -1,0 +1,37 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-buttons slot="start">
+                <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview">
+        	<div padding *ngIf="this.opcionnavegacion=='2'">
+              <ion-row style="margin-top: 10px; margin-bottom: -20px; border-radius: 10px 10px 10px 10px;"  >
+                  <ion-col col-12 no-padding>
+                    <ion-label style="border-top: 0px solid #dedede; padding-bottom: 16px; font-size: 14px;margin-left: 8px;"><b>{{'registrocompletarprogreso' | translate }}</b></ion-label>
+                  </ion-col>
+                  <ion-col col-12 no-padding style="background-color: #ffffff; border-radius: 15px 0px 0px 0px;">
+                      <span style="padding-top: 2px; color: #000000; position: absolute; z-index: 1; margin-left: 47%;">40%</span>
+                      <ion-progress-bar class="barraprocesost" color="secondary" value="0.4">40%</ion-progress-bar>
+                  </ion-col>
+              </ion-row>
+            </div>
+        	  <div padding  text-center style="margin-top: 20px !important; padding-bottom: 0px;">
+                      <ion-label title><b>{{'registrocompletar4' | translate }}</b></ion-label>      
+                      <ion-label title-sub>{{'registrocompletar8' | translate }}</ion-label> 
+                      <ion-row>
+                          <ion-col col-12 style="text-align: -webkit-center;">
+                              <ion-avatar  style="height: 120px; width: 120px; margin-bottom:20px;">
+                                <img style="width: 120px; height: 120px;" class="" *ngIf="image1!='' && image1!=null "  [src]="image1" >
+                                <img style="width: 120px; height: 120px;" class="" *ngIf="image1=='' || image1==null "  src="./assets/logos/avatar.png" >
+                              </ion-avatar>
+                          </ion-col>
+                      </ion-row>
+            </div>
+          	<div padding style="padding-top: 0px;text-align: center;" *ngIf="this.activar==1">
+              	<ion-button id="boton_envio" (click)="cambiarimagen()"  expand="block" color="secondary">{{'registrocompletar0' | translate }}</ion-button>
+                <br><br>
+                <a (click)="omitir()" style="text-decoration-line: underline; margin-top:10px; font-size:14px !important;text-transform: none !important;">{{'omitir' | translate }}</a>
+          	</div>
+</ion-content>

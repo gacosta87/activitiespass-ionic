@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": []
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/test.ts",
+    "src/**/*.spec.ts",
+    "src/environments/environment.prod.ts",
+    "src/providers/translate-config.service.ts",
+    "src/pages/reservasferiados/reservasferiados.ts",
+    "src/pages/reservasferiados/reservasferiados.module.ts",
+    "src/pages/reservas/reservas.ts",
+    "src/pages/reservas/reservas.module.ts"
+  ]
+}

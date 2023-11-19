@@ -1,0 +1,55 @@
+<ion-router-outlet id="secondary" name="secondary"></ion-router-outlet>
+<ion-tabs>
+      <ion-tab-bar slot="bottom" style="height: 58px;"> 
+
+            <ion-tab-button (click)="menu(1)" *ngIf="this.opcionmenu!='1'">
+              <ion-icon id="menu1"  name="home-outline" ></ion-icon>
+              <ion-label>{{'menu_inicio' | translate }}</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button class="add-menu-seleccion"   (click)="menu(1)" *ngIf="this.opcionmenu=='1'">
+              <ion-icon id="menu1"  name="home-outline" ></ion-icon>
+              <ion-label>{{'menu_inicio' | translate }}</ion-label>
+            </ion-tab-button>
+
+
+            <ion-tab-button id="menu2" (click)="menu(2)" *ngIf="this.opcionmenu!='2'">
+              <ion-icon name="search-outline"></ion-icon>
+              <ion-label>{{'menu_buscar' | translate }}</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button class="add-menu-seleccion"  id="menu2" (click)="menu(2)" *ngIf="this.opcionmenu=='2'">
+              <ion-icon name="search-outline"></ion-icon>
+              <ion-label>{{'menu_buscar' | translate }}</ion-label>
+            </ion-tab-button>
+
+
+                    <ion-tab-button  (click)="agregarpublicacion()">
+                      <ion-icon class="add-menu" name="cloud-upload-outline"></ion-icon>
+                    </ion-tab-button>
+                    
+
+            <ion-tab-button id="menu3"  (click)="menu(3)"  *ngIf="this.opcionmenu!='3'">
+              <ion-icon name="notifications-outline"></ion-icon>
+              <div class="mensajenuevo" *ngIf="this.notificaciones_push=='2'"></div>
+              <ion-label>{{'menu_notificaciones' | translate }}</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button class="add-menu-seleccion" id="menu3" (click)="menu(3)"  *ngIf="this.opcionmenu=='3'">
+              <ion-icon name="notifications-outline"></ion-icon>
+              <div class="mensajenuevo" *ngIf="this.notificaciones_push=='2'"></div>
+              <ion-label>{{'menu_notificaciones' | translate }}</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button id="menu4"  (click)="menu(4)" *ngIf="this.opcionmenu!='4'">
+              <ion-icon name="person-outline"></ion-icon>
+              <ion-label>{{'menu_perfil' | translate }}</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button class="add-menu-seleccion"  id="menu4"  (click)="menu(4)" *ngIf="this.opcionmenu=='4'">
+              <ion-icon name="person-outline"></ion-icon>
+              <ion-label>{{'menu_perfil' | translate }}</ion-label>
+            </ion-tab-button>
+
+      </ion-tab-bar>
+</ion-tabs>

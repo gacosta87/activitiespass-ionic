@@ -1,0 +1,55 @@
+<ion-header>
+      <ion-toolbar>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview">
+      	<form #EnForm="ngForm" style="height: 100%;" [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+              <div padding>
+                <ion-label stacked style="color:#172833;  text-align:justify;    white-space: normal; font-size: 17px;"><b>{{'sugerencia1' | translate }}</b></ion-label>
+              </div>
+              <div padding style="padding-top:0px;">
+                <ion-label stacked style="color:#172833;  text-align:justify;  margin-top: 10px;  white-space: normal; font-size: 12px;">{{'sugerencia2' | translate }}</ion-label>
+              </div>
+              <div padding style="padding-top:0px;margin-top: 20px;">
+                <ion-label stacked style="color:#172833;  text-align:justify;    white-space: normal; font-size: 12px; ">{{'sugerencia4' | translate }}</ion-label>
+              </div>
+              <div padding style="padding-top:0px">
+                        <ion-input id="puntaje" [(ngModel)]="puntaje" formControlName="puntaje" type="hidden"></ion-input>
+                        <ion-item style="width: 100%; text-align: -webkit-center; border: 1px solid #dedede; font-size: 20px;">
+                            <ion-row style="width: 100%; text-align: -webkit-center;">
+                              <ion-col col-1 id="col1" (click)="seleccion('1')">1</ion-col>
+                              <ion-col col-1 id="col2" (click)="seleccion('2')">2</ion-col>
+                              <ion-col col-1 id="col3" (click)="seleccion('3')">3</ion-col>
+                              <ion-col col-1 id="col4" (click)="seleccion('4')">4</ion-col>
+                              <ion-col col-1 id="col5" (click)="seleccion('5')">5</ion-col>
+                              <ion-col col-1 id="col6" (click)="seleccion('6')">6</ion-col>
+                              <ion-col col-1 id="col7" (click)="seleccion('7')">7</ion-col>
+                              <ion-col col-1 id="col8" (click)="seleccion('8')">8</ion-col>
+                              <ion-col col-1 id="col9" (click)="seleccion('9')">9</ion-col>
+                              <ion-col col-2 id="col10"  (click)="seleccion('10')" style="text-align: left;">10</ion-col>
+                            </ion-row>
+                        </ion-item>
+              </div>
+              <div padding style="padding-top:0px">
+                  <ion-item style="border: 1px solid #dedede;">
+                      <ion-label class="label-item" position="floating">{{'sugerencia3' | translate }}</ion-label>
+                      <ion-textarea style="text-align: justify;" rows="6" cols="20" formControlName="texto"></ion-textarea>
+                  </ion-item>
+              </div>
+
+              <br>
+              <br>
+              <div padding style="padding-top: 0px;text-align: center;">
+                  <a (click)="omitir()" style="text-decoration-line: underline; margin-top:10px; font-size:14px !important; text-transform: none !important;">{{'omitir' | translate }}</a>
+              </div>
+    </form>
+</ion-content>
+<ion-footer class="ion-no-border">  
+  <ion-toolbar >
+    <div padding *ngIf="this.envia==1">
+        <ion-button expand="block" type="submit" id="boton_envio"  [disabled]="!myForm.valid" style="text-transform: none;" color="secondary" (click)="EnForm.ngSubmit.emit()">
+             <ion-label style="font-size: 12px;">{{'enviar' | translate }}</ion-label>
+        </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

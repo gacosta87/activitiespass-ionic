@@ -1,0 +1,53 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px;"  text-center>{{'misproveedores' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview" >
+<form #EnForm="ngForm" style="height: 100%;" [formGroup]="myForm" (ngSubmit)="enviarformulario()">
+          <ion-grid no-padding >
+                    <div padding style="padding-top: 10px;padding-bottom: 0px;">
+                        <br>
+                        <span style="white-space: normal; padding: 16px;font-size: 14px; color: #898989;">{{'editarperfiltext1_2' | translate }}</span>
+                        <br>
+                    </div>
+                    <div padding style="margin-top: 20px; padding-top: 5px;padding-bottom: 0px;">
+                                <ion-item>
+                                    <ion-label class="label-item" position="floating">{{'editarperfiltext2' | translate }}</ion-label>
+                                    <ion-input  formControlName="razon_social" type="text"  maxlength="50"></ion-input>
+                                </ion-item>
+                    </div>
+                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                <ion-item>
+                                    <ion-label class="label-item" position="floating">{{'editarperfiltext3' | translate }}</ion-label>
+                                    <ion-input formControlName="email" type="text"></ion-input>
+                                </ion-item>
+                    </div>
+                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                <ion-item>
+                                    <ion-label class="label-item" position="floating">{{'editarperfiltext17' | translate }}</ion-label>
+                                    <ion-input  formControlName="telefono" type="text"></ion-input>
+                                </ion-item>
+                    </div>
+                    <div padding style="padding-top: 5px;padding-bottom: 0px;">
+                                <ion-item>
+                                    <ion-label class="label-item" position="floating">{{'editarperfiltext10_1' | translate }}</ion-label>
+                                    <ion-textarea style="margin-top: 0px;" rows="3" cols="20"  formControlName="categoria"></ion-textarea>
+                                </ion-item>
+                    </div>
+          </ion-grid>
+</form>
+</ion-content>
+<ion-footer class="ion-no-border" >  
+  <ion-toolbar >
+    <div padding>
+        <ion-button expand="block" type="submit" id="boton_envio"  [disabled]="!myForm.valid" style="text-transform: none;" color="secondary" (click)="EnForm.ngSubmit.emit()">
+             <ion-label style="font-size: 12px;">{{'guardar' | translate }}</ion-label>
+        </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+

@@ -1,0 +1,34 @@
+<ion-header>
+      <ion-toolbar>
+            <ion-title style="margin-left: -26px;"  text-center>{{'suscripcion2' | translate }}</ion-title>
+            <ion-buttons slot="start">
+                <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+            </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview" >
+            <ion-grid no-padding *ngFor="let item of datos;" >
+                    <div style="height: 100px; width: 100%; margin-bottom: 100px; text-align: center;">
+                          <img style="width: 100%; height: auto;" class="" src="./assets/logos/fondo_suscription.jpg" height="300px" width="300px;">
+                    </div>
+                    <div padding style="padding-top: 50px;padding-bottom: 0px;">
+                                <br>
+                                <div class="titulo"><span style="margin-right: 10px;">★</span>{{'suscripcion1' | translate }}<span style="margin-left: 10px;">★</span></div>
+                                <div class="precio">${{ this.precio }} USD / MONTH</div>
+                                <span style="white-space: normal; padding: 16px;line-height: 27px; font-size: 16px;">{{'configurarasistente23' | translate }}</span>
+                                <div class="subtitulo">{{'diasgratris' | translate }}</div>
+                    </div>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+          </ion-grid>
+</ion-content>
+<ion-footer class="ion-no-border">  
+  <ion-toolbar >
+    <div padding>
+        <!--
+            <ion-button expand="block" type="submit" id="boton_envio" style="text-transform: none;" color="secondary" (click)="enviarformulario()">
+                 <ion-label style="font-size: 12px;">{{'suscripcion2' | translate }}</ion-label>
+            </ion-button>
+        -->
+    </div>
+  </ion-toolbar>
+</ion-footer>

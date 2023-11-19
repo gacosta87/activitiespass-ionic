@@ -1,0 +1,50 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-buttons slot="start">
+                <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview">
+        <ion-row>
+            <ion-col col-12 text-center style="">
+                    <img class="img-post-type" src="./assets/logos/identidad.png" style="width: 170px;" />
+            </ion-col>
+        </ion-row>    
+        <form #EnForm="ngForm"  [formGroup]="myForm" (ngSubmit)="cambiarimagen()">
+              <div padding style="margin-top: 0px !important;  padding-top: 0px; margin-top: 0px;padding-bottom: 16px;">
+                <ion-label title><b>{{'verificada16' | translate }}</b></ion-label>      
+                <ion-label title-sub>{{'verificada6' | translate }}</ion-label> 
+            </div>
+            <ion-row>
+              <ion-col col-12  style="">
+                      <span style="font-size: 18px;">{{'ejemplo' | translate}}</span>
+                      <br>
+                      <img class="img-post-type" src="./assets/logos/ejemplo_selfie.png" style="width: 170px; margin-top: 10px;" />
+              </ion-col>
+          </ion-row>   
+          <ion-row style="margin-top: 10px; margin-bottom: 10px;">
+              <ion-col col-2  style="text-align: center;"><img class="img-post-type" src="./assets/logos/bueno.png" style="width: 30px;" /></ion-col>
+              <ion-col col-10  style="font-size: 16px;">
+                {{'perfilverificada4_1' | translate }} - {{today | date:'shortDate'}}
+              </ion-col>
+          </ion-row>   
+          <ion-row style="margin-top: 10px; margin-bottom: 10px;">
+              <ion-col col-2  style="text-align: center;"><img class="img-post-type" src="./assets/logos/bueno.png" style="width: 30px;" /></ion-col>
+              <ion-col col-10  style="font-size: 16px;">
+                {{'perfilverificada4_2' | translate }}
+              </ion-col>
+          </ion-row>   
+          <ion-row style="margin-top: 10px; margin-bottom: 20px;">
+              <ion-col col-2  style="text-align: center;"><img class="img-post-type" src="./assets/logos/malo.png" style="width: 20px;" /></ion-col>
+              <ion-col col-10  style="font-size: 16px;">
+                {{'perfilverificada4_3' | translate }}
+              </ion-col>
+          </ion-row>   
+            <div padding style="padding-top: 0px;text-align: center;">
+                <ion-button id="boton_envio" expand="block" color="secondary" [disabled]="!myForm.valid" type="submit">{{'capturar' | translate }}</ion-button>
+                <br><br>
+                <a (click)="omitir()" style="text-decoration-line: underline; margin-top:10px; font-size:14px !important;text-transform: none !important;">{{'omitir' | translate }}</a>
+            </div>
+    </form>    
+</ion-content>

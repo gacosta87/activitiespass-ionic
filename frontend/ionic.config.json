@@ -1,0 +1,8 @@
+{
+  "name": "ativitipass",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

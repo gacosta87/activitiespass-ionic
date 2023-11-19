@@ -1,0 +1,89 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-title style="margin-left: -26px;"  text-center>{{'avisos' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content >
+			<ion-refresher  slot="fixed" (ionRefresh)="doRefresh($event)">
+		        <ion-refresher-content
+		          ppullingIcon="arrow-dropdown"
+		          pullingText="Pull to refresh"
+		          refreshingSpinner="circles">
+		        </ion-refresher-content>
+		    </ion-refresher>
+      <div *ngIf="this.data!=null && this.data.length==0" style="height: 200px; width: 100%; margin-bottom: 70px; text-align: center;">
+            <img style="width: 300px; height: 300px;" class="" src="./assets/logos/notificaciones.png" height="300px" width="300px;">
+      </div>
+			<div *ngFor="let item1 of this.data" >
+      <div  *ngIf="item1.tipo=='1' || item1.tipo=='2' || item1.tipo=='3' || item1.tipo=='4' || item1.tipo=='5'  " class="mostrar-segui">
+                <ion-row *ngIf="item1.tipo=='1'">
+                      <ion-col col-2  (click)="linkperfil(item1.mycar_id)" style="text-align: center;">
+                        <img style="height:35px; width:35px;"  *ngIf="item1.usuariolink.foto2!='' && item1.usuariolink.foto2!=null" src="{{item1.usuariolink.foto_35}}">
+                        <img style="height:35px; width:35px;"  *ngIf="item1.usuariolink.foto2=='' || item1.usuariolink.foto2==null" src="./assets/logos/avatar.png">
+                      </ion-col>
+                      <ion-col col-10 style="padding-top: 12px; padding-left: 0px; padding-right: 20px;" (click)="linkperfil(item1.mycar_id)">
+                          <!--<b>{{item1.usuariolink.username}}:</b> -->
+                          {{item1.texto}}
+                          <div class="moment"> {{ this.zonahoraria(item1.created) }}</div>
+                      </ion-col>
+                </ion-row>
+                <ion-row *ngIf="item1.tipo=='2'">
+                      <ion-col col-2 (click)="linkpublicacion(item1.publicacione_id)" style="text-align: center;">
+                        <img style="height:35px; width:35px;"  *ngIf="item1.usuariolink.foto2!='' && item1.usuariolink.foto2!=null" src="{{item1.usuariolink.foto_35}}">
+                        <img style="height:35px; width:35px;"  *ngIf="item1.usuariolink.foto2=='' || item1.usuariolink.foto2==null" src="./assets/logos/avatar.png">
+                      </ion-col>
+                      <ion-col col-10 style="padding-top: 12px; padding-left: 0px; padding-right: 20px;" (click)="linkpublicacion(item1.publicacione_id)">
+                          <!--<b>{{item1.usuariolink.username}}:</b> -->
+                          {{item1.texto}}
+                          <div class="moment"> {{ this.zonahoraria(item1.created) }}</div>
+                      </ion-col>
+                </ion-row>
+                <ion-row *ngIf="item1.tipo=='3'"> 
+                      <ion-col col-2 (click)="linkpublicacion(item1.publicacione_id)" style="text-align: center;">
+                        <img style="height:35px; width:35px;"  *ngIf="item1.usuariolink.foto2!='' && item1.usuariolink.foto2!=null" src="{{item1.usuariolink.foto_35}}">
+                        <img style="height:35px; width:35px;"  *ngIf="item1.usuariolink.foto2=='' || item1.usuariolink.foto2==null" src="./assets/logos/avatar.png">
+                      </ion-col>
+                      <ion-col col-10 style="padding-top: 12px; padding-left: 0px; padding-right: 20px;" (click)="linkpublicacion(item1.publicacione_id)">
+                          <!--<b>{{item1.usuariolink.username}}:</b> -->
+                          {{item1.texto}}
+                          <div class="moment"> {{ this.zonahoraria(item1.created) }}</div>
+                      </ion-col>
+                </ion-row>
+                <ion-row *ngIf="item1.tipo=='4'">
+                      <ion-col col-2  (click)="linkperfil(item1.mycar_id)" style="text-align: center;">
+                        <img style="height:35px; width:35px;"  *ngIf="item1.usuariolink.foto2!='' && item1.usuariolink.foto2!=null" src="{{item1.usuariolink.foto_35}}">
+                        <img style="height:35px; width:35px;"  *ngIf="item1.usuariolink.foto2=='' || item1.usuariolink.foto2==null" src="./assets/logos/avatar.png">
+                      </ion-col>
+                      <ion-col col-10 style="padding-top: 12px; padding-left: 0px; padding-right: 20px;" (click)="linkperfil(item1.mycar_id)">
+                          <!--<b>{{item1.usuariolink.username}}:</b> -->
+                          {{item1.texto}}
+                          <div class="moment"> {{ this.zonahoraria(item1.created) }}</div>
+                      </ion-col>
+                </ion-row>
+                <ion-row *ngIf="item1.tipo=='5'"> 
+                      <ion-col col-2 (click)="linkpublicacion(item1.publicacione_id)" style="text-align: center;">
+                        <img style="height:35px; width:35px;"  *ngIf="item1.usuariolink.foto2!='' && item1.usuariolink.foto2!=null" src="{{item1.usuariolink.foto_35}}">
+                        <img style="height:35px; width:35px;"  *ngIf="item1.usuariolink.foto2=='' || item1.usuariolink.foto2==null" src="./assets/logos/avatar.png">
+                      </ion-col>
+                      <ion-col col-10 style="padding-top: 12px; padding-left: 0px; padding-right: 20px;" (click)="linkpublicacion(item1.publicacione_id)">
+                          <!--<b>{{item1.usuariolink.username}}:</b> -->
+                          {{item1.texto}}
+                          <div class="moment"> {{ this.zonahoraria(item1.created) }}</div>
+                      </ion-col>
+                </ion-row>
+              </div>
+            </div>
+            <div padding class="chat-list"  *ngIf="this.data!=null && this.data.length==0">
+	            <ion-label title-sub2>{{'nodatanotificaciones' | translate }}</ion-label>
+	        </div>
+            <ion-infinite-scroll style="margin-bottom: 0px;" threshold="50px" (ionInfinite)="loadData($event)">
+              <ion-infinite-scroll-content
+                loadingSpinner="bubbles"
+                loadingText="{{'cargando' | translate }}...">
+              </ion-infinite-scroll-content>
+          	</ion-infinite-scroll>
+</ion-content>
+

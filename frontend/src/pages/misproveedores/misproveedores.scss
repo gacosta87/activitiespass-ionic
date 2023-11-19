@@ -1,0 +1,124 @@
+.div-destacado-add_pub{
+    height: 60px;
+    width: 60px;
+    opacity: 0.9;
+    background-color: var(--ion-color-secondary);
+    border-radius: 50%;
+    margin-left: 15px;
+    bottom: 50px;
+    right: 20px;
+    position: fixed;
+    z-index: 100;
+    box-shadow: 0px 2px 9px black;
+}
+
+.div-add-img-icon-add_pub{
+    color: #fff;
+    font-size: 51px;
+    margin-top: 5px;
+    margin-left: 5px;
+    position: absolute;
+    z-index: 1;
+}
+.col-5 {
+    flex: 0 0 41.66667%;
+    width: 41.66667%;
+    max-width: 41.66667%;
+    padding: 5px;
+}
+
+
+.col-2 {
+    flex: 0 0 16.66667%;
+    width: 16.66667%;
+    max-width: 16.66667%;
+    padding: 5px;
+}
+
+
+.div-destacado{
+    height: 85px;
+    width: 85px;
+    margin-left: 15px;
+    text-align: center;
+    margin-bottom: 26px;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+}
+
+.img-destacado{
+  height: 85px;
+  width: 85px;
+  border-radius: 50%;
+  padding: 2px;
+  box-shadow: 0px 0px 5px 0px;
+}
+
+
+.back{
+  font-size: 20px;
+    margin-left: 26px;
+    margin-right: -26px;
+}
+.mostrar-segui{
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    min-height: 60px;
+    padding: 10px;
+    color: #000;
+    border-radius: 10px;
+    background-color: #f7f3ff;
+    border: 1px solid #beb4d3;
+}
+
+.mostrar-segui img{
+    font-size: 14px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+[title-sub]{
+	        font-size: 14px;
+		    text-align: center;
+		    white-space: normal;
+		    color: #858789;
+}
+[label-destacados]{
+    margin-top: 20px;
+    margin-bottom: 7px;
+    margin-left: 11px;
+    color: var(--ion-color-secondary);
+    font-size: 15px;
+} 
+.chat-list{
+    border-radius: 5px;
+    margin-top: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: var(--ion-color-primary);
+    border: 0px solid #d7d8da;
+    background-color: #fff;
+    height: 60px;
+}
+[title-sub2]{
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        white-space: normal;
+        color: #858789;
+  } 
+
+  .header-md::after {
+    left: 0;
+    bottom: -5px;
+    background-position: left 0 top -2px;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-image: none; 
+    background-repeat: repeat-x;
+    content: "";
+}

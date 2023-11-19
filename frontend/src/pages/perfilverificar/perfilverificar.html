@@ -1,0 +1,98 @@
+<ion-header>
+      <ion-toolbar>
+          <ion-title text-center>{{'verificada0' | translate }}</ion-title>
+          <ion-buttons slot="start">
+          <ion-icon (click)="regresar()" class="back" name="arrow-back-outline"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content class="myview" >
+    <ion-row>
+        <ion-col col-12 text-center style="">
+                <img class="img-post-type" src="./assets/logos/identidad.png" style="width: 170px;" />
+        </ion-col>
+        <ion-col col-12  style="padding: 16px; text-align: justify; padding-top: 0px; text-indent: 8px;">
+                <span style="font-size: 14px; text-align: justify; color: #848587;">{{'verificada11' | translate }}</span>
+        </ion-col>
+    </ion-row>     
+
+<div *ngFor="let item1 of this.datos">
+    <div *ngIf="item1.verificacion_3=='2' || item1.verificacion_4=='2' || item1.verificacion_5=='2'" style="padding-left: 16px; padding-right: 16px; margin-top: 20px; text-align: center; font-size: 20px; color: #b845ff;">
+        <span>{{'perfilverificada_aviso'  | translate  }}</span>
+    </div>
+    <ion-row style="margin-top: 20px;">
+        <ion-col col-2 style="text-align: center;">
+                <ion-checkbox *ngIf="item1.verificacion_1=='1'"  disabled style="--border-radius: 50px; --size: 24px;"></ion-checkbox>
+                <ion-checkbox *ngIf="item1.verificacion_1!='1'"  disabled style="--border-radius: 50px; --size: 24px;" checked></ion-checkbox>
+        </ion-col>
+        <ion-col col-8 style="padding-top: 10px;">
+                <span style="font-size: 16px;">{{'verificada7' | translate }}</span>
+        </ion-col>
+        <ion-col col-2>
+
+        </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-top: 20px;">
+        <ion-col col-2 style="text-align: center;">
+                <ion-checkbox *ngIf="item1.verificacion_2=='1'"  disabled style="--border-radius: 50px; --size: 24px;"></ion-checkbox>
+                <ion-checkbox *ngIf="item1.verificacion_2!='1'"  disabled style="--border-radius: 50px; --size: 24px;" checked></ion-checkbox>
+        </ion-col>
+        <ion-col col-8 style="padding-top: 10px;">
+                <span style="font-size: 16px;">{{'verificada4' | translate }}</span>
+        </ion-col>
+        <ion-col col-2>
+
+        </ion-col>
+    </ion-row>
+   
+    <ion-row style="margin-top: 20px;">
+        <ion-col col-2 style="text-align: center;">
+                <ion-checkbox *ngIf="item1.verificacion_3!='3'"  disabled style="--border-radius: 50px; --size: 24px;"></ion-checkbox>
+                <ion-checkbox *ngIf="item1.verificacion_3=='3'"  disabled style="--border-radius: 50px; --size: 24px;" checked></ion-checkbox>
+        </ion-col>
+        <ion-col col-8 style="padding-top: 10px;">
+                <span style="font-size: 16px;">{{'verificada9' | translate }}</span>
+        </ion-col>
+        <ion-col col-2>
+
+        </ion-col>        
+    </ion-row>
+
+    <ion-row style="margin-top: 20px;"> 
+        <ion-col col-2 style="text-align: center;">
+                <ion-checkbox *ngIf="item1.verificacion_4!='3'"  disabled style="--border-radius: 50px; --size: 24px;"></ion-checkbox>
+                <ion-checkbox *ngIf="item1.verificacion_4=='3'"  disabled style="--border-radius: 50px; --size: 24px;" checked></ion-checkbox>
+        </ion-col>
+        <ion-col col-8 style="padding-top: 10px;">
+                <span style="font-size: 16px;">{{'verificada10' | translate }}</span>
+        </ion-col>
+        <ion-col col-2>
+
+        </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-top: 20px;">
+        <ion-col col-2 style="text-align: center;">
+                <ion-checkbox *ngIf="item1.verificacion_5!='3'"  disabled style="--border-radius: 50px; --size: 24px;"></ion-checkbox>
+                <ion-checkbox *ngIf="item1.verificacion_5=='3'"  disabled style="--border-radius: 50px; --size: 24px;" checked></ion-checkbox>
+        </ion-col>
+        <ion-col col-8 style="padding-top: 10px;">
+                <span style="font-size: 16px;">{{'verificada8' | translate }}</span>
+        </ion-col>
+        <ion-col col-2>
+
+        </ion-col>
+    </ion-row>      
+</div>
+    <br><br><br>
+</ion-content>
+<ion-footer class="ion-no-border" >  
+  <ion-toolbar >
+    <div padding *ngFor="let item1 of this.datos">
+        <ion-button expand="block" type="submit" id="boton_envio"  style="text-transform: none;" color="secondary" (click)="empezar()" *ngIf="item1.verificacion_1=='1' || item1.verificacion_2=='1' || item1.verificacion_3=='1' || item1.verificacion_4=='1' || item1.verificacion_5=='1'  ">
+             <ion-label style="font-size: 12px;">{{'empezar' | translate }}</ion-label>
+        </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
