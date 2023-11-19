@@ -1,0 +1,9 @@
+/////////////////////////////GENERAR APK//////////////////////////////
+
+ionic cordova build --release --prod android
+java -jar bundletool-all-1.10.0.jar build-apks --bundle=class.aab --output=class.apks --mode=universal;
+zipalign -v -p 4 class_original.apk  class_subir.apk;
+apksigner sign --ks class.keystore class_subir.apk;
+
+*class*19
+

@@ -1,0 +1,2 @@
+[22-May-2018 13:11:28 America/Denver] PHP Fatal error:  Class 'PHPMailer' not found in /home4/pricespl/public_html/formulario/app/Controller/FormulariosController.php on line 172
+[13-Jun-2018 08:27:12 America/Denver] PHP Fatal error:  Class 'PHPMailer' not found in /home4/pricespl/public_html/formulario/app/Controller/FormulariosController.php on line 172

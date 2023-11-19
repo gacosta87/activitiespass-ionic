@@ -1,0 +1,175 @@
+[08-May-2022 03:09:16 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[08-May-2022 03:09:25 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[08-May-2022 03:09:36 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[08-May-2022 03:10:14 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[08-May-2022 03:10:26 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[08-May-2022 03:10:26 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[08-May-2022 03:10:36 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[08-May-2022 03:11:24 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[08-May-2022 03:11:24 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[08-May-2022 03:11:44 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[08-May-2022 03:11:47 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[08-May-2022 03:12:24 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[08-May-2022 03:12:40 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[08-May-2022 03:12:40 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/olympusapp/public_html/api/vendor/laravel/framework/s in /home/olympusapp/public_html/api/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[17-Jul-2022 17:49:02 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 17:49:12 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 17:50:09 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 17:53:36 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 17:54:46 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 17:56:37 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 17:57:54 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 17:58:43 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 18:05:05 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 18:14:18 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 18:31:23 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 18:32:14 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 18:34:03 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 18:51:05 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 18:54:50 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 18:55:05 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 18:55:22 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 19:09:23 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 19:11:25 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 206
+[17-Jul-2022 19:13:15 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 207
+[17-Jul-2022 19:14:03 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 207
+[17-Jul-2022 19:20:26 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 207
+[17-Jul-2022 19:21:58 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 207
+[17-Jul-2022 19:29:26 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 207
+[17-Jul-2022 19:38:02 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 219
+[17-Jul-2022 22:46:49 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 222
+[17-Jul-2022 22:49:26 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 184
+[17-Jul-2022 22:52:15 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 224
+[17-Jul-2022 22:53:03 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 225
+[17-Jul-2022 22:56:38 America/Caracas] PHP Fatal error:  gd-webp encoding failed in /home/olympusapp/public_html/api/app/Http/Controllers/PostwebpController.php on line 223
+[27-Jul-2022 23:56:24 America/Caracas] PHP Fatal error:  gd-webp cannot get webp info in /home/olympusapp/public_html/api/app/Http/Controllers/ActualizarController.php on line 27
+[10-Jan-2023 08:32:28 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:32:31 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:32:33 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:32:42 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:33:17 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:33:23 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:33:34 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:33:44 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:33:44 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:34:03 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:34:07 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:34:19 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:34:35 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:34:54 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:35:04 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:35:47 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[10-Jan-2023 08:36:18 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.33. in /home/apiolympusapp/public_html/vendor/composer/platform_check.php on line 24
+[22-May-2023 21:53:37 America/Caracas] PHP Fatal error:  Cannot use App\Models\Mycars as Mycars because the name is already in use in /home/apiolympusapp/public_html/app/Http/Controllers/AsistenteController.php on line 22
+[04-Jun-2023 13:05:50 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3
+[04-Jun-2023 13:07:17 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3
+[04-Jun-2023 13:07:38 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3
+[04-Jun-2023 13:08:19 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3
+[04-Jun-2023 13:08:44 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3
+[04-Jun-2023 13:09:52 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3
+[04-Jun-2023 13:10:55 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3
+[04-Jun-2023 13:11:06 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3
+[04-Jun-2023 13:11:29 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3
+[04-Jun-2023 13:11:55 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3
+[04-Jun-2023 13:12:36 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3
+[04-Jun-2023 13:12:40 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3
+[04-Jun-2023 13:13:51 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3
+[04-Jun-2023 13:15:04 America/Caracas] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/apiolympusapp/public_html/app/Http/Controllers/WebhooksController.php on line 3

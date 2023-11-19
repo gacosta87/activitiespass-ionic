@@ -1,0 +1,9 @@
+php_value upload_max_filesize 50M
+php_value post_max_size 50M
+php_value max_execution_time 3600
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule    ^$    webroot/    [L]
+    RewriteRule    (.*) webroot/$1    [L]
+</IfModule>
