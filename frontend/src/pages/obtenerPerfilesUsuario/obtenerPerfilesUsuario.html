@@ -1,0 +1,20 @@
+<ion-header role="banner" class="md header-md header-collapse-none hydrated"><!---->
+  <ion-toolbar class="toolbar-title-default md in-toolbar hydrated">
+    <ion-title class="md title-default hydrated">Seleccionar Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="md content-ltr hydrated" style="--offset-top: 0px; --offset-bottom: 0px;">
+  <ion-grid class="md hydrated">
+    <ion-row class="md hydrated">
+      <ion-col size="6" *ngFor="let perfil of this.perfiles; let i=index;" class="md hydrated" style="flex: 0 0 calc(calc(6 / var(--ion-grid-columns, 12)) * 100%); width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100%); max-width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);">
+        <ion-card button="" (click)="seleccionarPerfil(perfil)" class="md ion-activatable hydrated">
+          <img src="assets/profiles/perfil{{i}}.png" alt="Avatar">
+          <ion-card-header class="ion-inherit-color md hydrated">
+            <ion-card-title role="heading" aria-level="2" class="ion-inherit-color md hydrated">{{perfil.nombre}}</ion-card-title>
+          </ion-card-header>
+        </ion-card> 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

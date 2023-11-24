@@ -96,7 +96,8 @@ export class Perfilregistrocompletar1   implements  OnInit{
         cuentaperfil = localStorage.getItem('CUENTAPERFIL');
         cuentaperfil2 = parseInt(cuentaperfil) + 1;
         localStorage.setItem('CUENTAPERFIL', cuentaperfil2+"");
-        this.navController.navigateRoot("/principal/perfil"); //this.navController.navigateForward("/principal/perfil/"+cuentaperfil);
+        //this.navController.navigateRoot("/principal/perfil"); 
+        this.navController.navigateRoot('obtenerPerfilesUsuario'); 
   }
   regresar(){
     this.navController.back();

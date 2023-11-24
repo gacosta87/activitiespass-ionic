@@ -34,11 +34,11 @@
 	Configure::write('debug', 1);
 
 	//NAME SISTEMA
-	Configure::write('nombresistema',     'Olympus');
-	Configure::write('namesysM',          'O');
+	Configure::write('nombresistema',     'ActivitiPass');
+	Configure::write('namesysM',          'AP');
 	Configure::write('firebase',          'AAAATjCTzak:APA91bFP2jPb-6zIMz4Zf7FVc9s4QRVkmLK1q6HCXAxx_Mte4Xfhle5WlyeROZ1b9lOmmRcqoPmnkGoH6YggiNp-zazCkJbuRSC_5CSMCWYkR2PwJB5CUzA7bcxdZhSeAWRma-5G4lw9');
 	Configure::write('email_root',        'jbusinessapps@gmail.com');
-	Configure::write('nombre_email_root', 'Olympus');
+	Configure::write('nombre_email_root', 'ActivitiPass');
 	Configure::write('api_mycarg_google', 'AIzaSyABXxkIu1wUbJTQ3Se-9nif6qhgPpdyuUw');
 	
 	

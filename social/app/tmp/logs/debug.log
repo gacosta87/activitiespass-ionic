@@ -1,0 +1,336 @@
+2018-05-18 11:08:47 Notice: Notice (8): Undefined variable: _SESSION in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 264]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 264
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 12:15:31 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 264]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 264
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 12:16:26 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 264]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 264
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 13:14:26 Notice: Notice (8): Undefined variable: src in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 150]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 150
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 13:14:56 Notice: Notice (8): Undefined variable: src in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 150]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 150
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 13:16:38 Notice: Notice (8): Undefined variable: src in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 150]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 150
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 13:17:43 Notice: Notice (8): Undefined variable: src in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 150]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 150
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 13:31:03 Notice: Notice (8): Undefined variable: src in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 150]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 150
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 13:31:03 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 206]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 206
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 13:37:02 Notice: Notice (8): Undefined variable: src in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 150]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 150
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 13:37:02 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 206]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 206
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 14:13:46 Notice: Notice (8): Undefined variable: src in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 150]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 150
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 14:13:46 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 206]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 206
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 21:51:09 Notice: Notice (8): Undefined variable: src in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 150]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 150
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-18 21:51:09 Notice: Notice (8): Undefined variable: _SESSION in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 206]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 206
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-19 08:51:22 Notice: Notice (8): Undefined variable: src in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 150]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 150
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-19 08:51:22 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 206]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 206
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-19 09:07:38 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 204]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 204
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-21 06:00:52 Notice: Notice (8): Undefined variable: _SESSION in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 204]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 204
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-22 12:04:04 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 204]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 204
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-22 12:32:45 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 204]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 204
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-22 12:51:47 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 204]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 204
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-23 06:43:09 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 204]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 204
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-05-24 06:01:12 Notice: Notice (8): Undefined variable: _SESSION in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 204]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 204
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-06-13 08:25:39 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 204]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 204
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-06-15 08:08:41 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 204]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 204
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-06-18 09:04:53 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 204]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 204
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+
+2018-06-18 13:34:45 Notice: Notice (8): Undefined index: MODULO_ACTIVO in [/home4/pricespl/public_html/formulario/app/View/Layouts/dashbord2.ctp, line 204]
+Trace:
+include - APP/View/Layouts/dashbord2.ctp, line 204
+View::_evaluate() - CORE/Cake/View/View.php, line 971
+View::_render() - CORE/Cake/View/View.php, line 933
+View::renderLayout() - CORE/Cake/View/View.php, line 546
+View::render() - CORE/Cake/View/View.php, line 481
+Controller::render() - CORE/Cake/Controller/Controller.php, line 963
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 118
+

@@ -134,7 +134,7 @@ class ActualizarController extends Controller
 			                                  'id'    => $data['id']
 			                              ],200);
 	           	}else{
-	           		return redirect('https://apimymotors.olympusapp.es/public/api/actualizarfotospost/'.$nuevo_id);
+	           		return redirect('https://apimymotors.activiticlassapp.es/public/api/actualizarfotospost/'.$nuevo_id);
 	           	}
 	    }//fin function
 
@@ -309,7 +309,7 @@ class ActualizarController extends Controller
 		                              ],200);
            	}else{
            		$data['id']++;
-           		return redirect('https://apimymotors.olympusapp.es/public/api/actualizarfotosusuarios/'.$data['id']);
+           		return redirect('https://apimymotors.activiticlassapp.es/public/api/actualizarfotosusuarios/'.$data['id']);
            		//return redirect('actualizarfotosusuarios/dashboard');
            	}
     	}//fin function

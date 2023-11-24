@@ -67,7 +67,7 @@
   "noenviarmensaje":"No messages available",
   "noenviarmensaje2":"I have reached the limit of messages in a chat, start a new one to continue",
   "cantidaddemensajes":"Number of messages available",
-  "chatinteractivo":"AI help",
+  "chatinteractivo":"Events",
   "chatinteractivo2":"Assistant",
   "chatinteractivo3":"Test your assistant",
   "mensajecopiado":"Copied message",
@@ -289,7 +289,7 @@
   "textopromocion":"Promote yourself",
   "textopromociontext":"Choose an option to promote yourself",
 
-  "menu_inicio":"Favorites",
+  "menu_inicio":"Home",
   "menu_buscar":"Search",
   "menu_mapa":"Map",
   "menu_aviso":"Notices",
@@ -321,7 +321,7 @@
   "megafonoinicial":"Aqui podras ver los mensaje privados que envies a tus tiendas, prestadores de servicio o a tus amigos",
 
   "inciobienvenida1":"Welcome to Activitiespass",
-  "inciobienvenida2":"Register and enjoy the best virtual stores, service providers. You can also create your virtual store and offer your products and / or services.",
+  "inciobienvenida2":"Register and enjoy the best classes.",
   "inciobienvenida3":"AND",
   "inciobienvenida4":"Create your virtual store in Activitiespass and share your products and / or services.",
   "inciobienvenida5":"Sign up",

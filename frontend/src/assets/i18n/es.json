@@ -65,7 +65,7 @@
   "noenviarmensaje":"No tiene mensajes disponibles",
   "noenviarmensaje2":"LLego al limite de mensajes en un chat, inicie uno nuevo para continuar",
   "cantidaddemensajes":"Cantidad de mensajes disponibles",
-  "chatinteractivo":"Ayuda IA",
+  "chatinteractivo":"Eventos",
   "chatinteractivo2":"Asistente",
   "chatinteractivo3":"Prueba tu asistente",
   "mensajecopiado":"Mensaje copiado",
@@ -291,7 +291,7 @@
   "textopromocion":"Promocionate",
   "textopromociontext":"Elige una opción para promocionarte",
 
-  "menu_inicio":"Favoritos",
+  "menu_inicio":"Inicio",
   "menu_buscar":"Buscar",
   "menu_mapa":"Mapa",
   "menu_aviso":"Avisos",
@@ -323,7 +323,7 @@
   "megafonoinicial":"Aqui podras ver los mensaje privados que envies a tus tiendas, prestadores de servicio o a tus amigos",
 
   "inciobienvenida1":"Bienvenido a Activitiespass",
-  "inciobienvenida2":"Registrate y disfruta de las mejores tiendas virtuales, prestadores de servicios. También podras crear tu tienda virtual y ofrecer tus productos y/o servicios.",
+  "inciobienvenida2":"Registrate y disfruta de las mejores clases.",
   "inciobienvenida3":"Y",
   "inciobienvenida4":"Crea tu tienda virtual en Activitiespass y comparte tus productos y/o servicios.",
   "inciobienvenida5":"Registrate",

@@ -69,12 +69,12 @@ class BasicController {
 										 $ruta=""
 										 ){
 			if($foto==null || $foto==""){
-				$foto=env('APP_URL_IMAGEN')."/olympus.png";
+				$foto=env('APP_URL_IMAGEN')."/activiticlass.png";
 			}
 			if(strlen($mensaje)>70){
 				$mensaje =  substr($mensaje, 0, 70)."..";
 			}
-			$small_icon = $foto=env('APP_URL_IMAGEN')."/olympus.png";
+			$small_icon = $foto=env('APP_URL_IMAGEN')."/activiticlass.png";
 			$not        = "";//"DATABASE OBJECT NOTIFICATION";
 			$data       = null;
 			$headers = [
@@ -137,12 +137,12 @@ class BasicController {
 										 $usuarioid_from=0
 										 ){
 			if($foto==null || $foto==""){
-				$foto=env('APP_URL_IMAGEN')."/olympus.png";
+				$foto=env('APP_URL_IMAGEN')."/activiticlass.png";
 			}
 			if(strlen($mensaje)>70){
 				$mensaje =  substr($mensaje, 0, 70)."..";
 			}
-			$small_icon = $foto=env('APP_URL_IMAGEN')."/olympus.png";
+			$small_icon = $foto=env('APP_URL_IMAGEN')."/activiticlass.png";
 			$not        = "";//"DATABASE OBJECT NOTIFICATION";
 			$data       = null;
 			$headers = [

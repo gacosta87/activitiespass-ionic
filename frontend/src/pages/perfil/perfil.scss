@@ -1,11 +1,9 @@
 .top-fondo-img{
-    background-image: url('../../assets/logos/fondo_top.jpg');
-    border-radius: 0px 0px 30px 30px;
-    height: 120px;
+    color: #000;
 }
 
 .titulo-top{
-    color: #fff;
+    color: #000;
     font-size: 30px;
     margin-right: 10px;
     margin-left: 13px;
@@ -14,6 +12,7 @@
 }
 .ion-toolbar {
       --background: none;
+      color: #000;
 }
 
 .swiper-zoom-container>img, .swiper-zoom-container>svg, .swiper-zoom-container>canvas {
@@ -34,7 +33,7 @@
 
 
 .ion-title{
-  color: #fff;
+  color: #000;
 }
 
 
@@ -461,7 +460,7 @@ a{
 }
 .categoriatitulo{
     font-size: 16px;
-    color: #fff;
+    color: #000;
     margin-left: 20px;
     font-family: cursive;
 }
@@ -544,7 +543,7 @@ der-md::after {
     font-size: 20px;
     margin-right: 16px;
     margin-top: 0px;
-    color: #fff;
+    color: #000;
 }
 .cel-post{
     padding-bottom: 15px;

@@ -29,6 +29,10 @@ const routes: Routes = [
       loadChildren: () => import('../pages/suscripcion/suscripcion.module').then(m => m.SuscripcionModule)
   },
   {
+      path: 'obtenerPerfilesUsuario',
+      loadChildren: () => import('../pages/obtenerPerfilesUsuario/obtenerPerfilesUsuario.module').then(m => m.obtenerPerfilesUsuarioModule)
+  },
+  {
     path: 'buscar2/:id',
     loadChildren: () => import('../pages/buscar2/buscar2.module').then(m => m.Buscar2Module),
     //canActivate:[AclGuard]

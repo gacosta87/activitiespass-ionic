@@ -23,15 +23,10 @@ export class Variablesglobales {
     //this.Dowvar = "https://download.olympusapp.es/";
 
 
-    this.Apivar = "https://api.olympusapp.es/public/api/";
-    
-    //this.Servar = "https://dashboard.olympusapp.es/app/webroot/";
-    //this.Comvar = "https://social.olympusapp.es/social/Social/";
-    //this.Dowvar = "https://download.olympusapp.es/";
-
-    this.Servar = "https://dashboard.olympusapp.es/backend/app/webroot/";
-    this.Comvar = "https://dashboard.olympusapp.es/social/Social/";
-    this.Dowvar = "https://dashboard.olympusapp.es/download";
+    this.Apivar = "https://activitipasss.jcloudtec.com/api/public/api/";
+    this.Servar = "https://activitipasss.jcloudtec.com/backend/app/webroot/";
+    this.Comvar = "https://activitipasss.jcloudtec.com/api/social/Social/";
+    this.Dowvar = "https://activitipasss.jcloudtec.com/api/download";
 
 
   }

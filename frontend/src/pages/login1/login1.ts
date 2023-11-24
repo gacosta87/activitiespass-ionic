@@ -140,7 +140,8 @@ export class Login1 implements  OnInit{
                                               this.latitudeusuario  = JSON.parse(localStorage.getItem('latitudeusuario'));
                                               this.longitudeusuario = JSON.parse(localStorage.getItem('longitudeusuario'));
                                               this.providers.actualizarpush(this.t_push, this.p_push, response['datos']['id'], this.p_idio, this.latitudeusuario, this.longitudeusuario).subscribe((response2) => {});
-                                              this.navController.navigateRoot("/principal/perfil");
+                                              //this.navController.navigateRoot("/principal/perfil");
+                                              this.navController.navigateRoot('obtenerPerfilesUsuario'); 
                                         }else if (response['code']==201){
                                                     const alert = this.alertCtrl.create({ cssClass:'my-custom-class-alert',
                                                       subHeader: this.idiomapalabras.aviso,

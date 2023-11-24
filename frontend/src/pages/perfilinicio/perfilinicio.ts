@@ -196,7 +196,8 @@ export class Perfilinicio implements  OnInit{
                                           cuentaperfil = localStorage.getItem('CUENTAPERFIL');
                                           cuentaperfil2 = parseInt(cuentaperfil) + 1;
                                           localStorage.setItem('CUENTAPERFIL', cuentaperfil2+"");
-                                          this.navController.navigateRoot("/principal/perfil"); //this.navController.navigateForward("/principal/perfil/"+cuentaperfil);
+                                          //this.navController.navigateRoot("/principal/perfil"); 
+                                          this.navController.navigateRoot('obtenerPerfilesUsuario'); 
                                     }else if (response['code']==201){
                                                 const alert = this.alertCtrl.create({ cssClass:'my-custom-class-alert',
                                                   subHeader: this.idiomapalabras.aviso,
@@ -226,7 +227,7 @@ export class Perfilinicio implements  OnInit{
         //message: "Un momento, por favor..."
       }).then(load => {
                       load.present();
-                            this.fb.login(['whatsapp_business_management', 'whatsapp_business_messaging', 'pages_messaging', 'instagram_manage_messages', 'instagram_manage_comments', 'instagram_basic'])
+                            this.fb.login(['public_profile', 'email'])
                             .then((res: FacebookLoginResponse) => {
                                   console.info('logging into facebookSignIn', res);
                                   this.fb.api('me?fields=' + ['name', 'email', 'first_name', 'last_name', 'picture.type(large)'].join(), null)
@@ -267,7 +268,7 @@ export class Perfilinicio implements  OnInit{
                                                             cuentaperfil = localStorage.getItem('CUENTAPERFIL');
                                                             cuentaperfil2 = parseInt(cuentaperfil) + 1;
                                                             localStorage.setItem('CUENTAPERFIL', cuentaperfil2+"");
-                                                            //this.navController.navigateRoot("/principal/perfil"); //this.navController.navigateForward("/principal/perfil/"+cuentaperfil);
+                                                            this.navController.navigateRoot('obtenerPerfilesUsuario'); 
                                                       }else if (response['code']==201){
                                                                   const alert = this.alertCtrl.create({ cssClass:'my-custom-class-alert',
                                                                     subHeader: this.idiomapalabras.aviso,

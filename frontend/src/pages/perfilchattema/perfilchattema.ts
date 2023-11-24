@@ -183,133 +183,14 @@ export class Perfilchattema implements  OnInit{
       });
   }
 
- mensajeria(){
-    this.sessionactiva   = localStorage.getItem('SESSIONACTIVA_OLYMPUS_9');
-        if(this.sessionactiva=="true"){
-            this.navController.navigateForward("megafono");  
-        }
-  }
 
-  notificaciones(){
-    
-        if(this.sessionactiva=="true"){
-            this.navController.navigateForward("notificaciones");  
-        }
-  }
-
-  linkhistoria(){
-      this.navController.navigateForward("/perfilchat");  
-  }
 
   ngOnInit() {
-              this.activa0    = 0;
-              this.activa1    = 1;
-              this.activa2    = 0;
-              this.tipoactiva = 2;
-              this.imgurl2 = this.rutas.getServar();
-              this.conf_banner_3  = JSON.parse(localStorage.getItem('conf_banner_3'));
-
-
-              console.log('activa1: '+this.activa1);
-              console.log('activa0: '+this.activa0);
-              console.log('tipoactiva: '+this.tipoactiva);
-              this.loadingCtrl.getTop().then(loader => {
-                if (loader!=undefined) {
-                  console.log('sali',loader);
-                  this.loadingCtrl.dismiss();
-                }
-              });
-
-              const loader = this.loadingCtrl.create({
-                    //qmessage: "Un momento, por favor..."
-                  }).then(load => { load.present();
-                                        
-                                        this.p_idioma   = localStorage.getItem('P_IDIO');
-                                        this.providerhome.chatcategorialist(this.p_idioma).subscribe((response) => {  
-                                            this.loadingCtrl.getTop().then(loader => {if(loader!=undefined) {this.loadingCtrl.dismiss();} 
-                                                          if(response['code']==200){
-                                                                    this.datos  = response['datos'];
-                                                          }else if (response['code']==201){
-                                                                      const alert = this.alertCtrl.create({ cssClass:'my-custom-class-alert',
-                                                                        subHeader: this.idiomapalabras.aviso,
-                                                                          message: response['msg'],
-                                                                          buttons: [
-                                                                            {
-                                                                              text: "Ok", 
-                                                                              role: 'cancel'
-                                                                            }
-                                                                          ]
-                                                                      }).then(alert => alert.present());
-                                                          }//Fin else
-                                            });//FIN LOADING DISS
-                                        });//FIN POST
-
-            });//FIn LOADING
-    }
+  
+  }
 
   
-    actualizar_pais(){
-        //console.log(var1+' - '+var2);
-        this.latitudeusuario  = JSON.parse(localStorage.getItem('latitudeusuario'));
-        this.longitudeusuario = JSON.parse(localStorage.getItem('longitudeusuario'));
-        this.providerhome.mapalocalizar(this.latitudeusuario, this.longitudeusuario).subscribe((response_aux) => {
-              console.log(response_aux);
-                          for(var i=0; i<6 ; i++) { 
-                              if(response_aux['results'][0]['address_components'][i]){
-                                  if (response_aux['results'][0]['address_components'][i]['types'][0] == 'country' ) {                      
-                                        //this.pais_ng  = response_aux['results'][0]['address_components'][i]['long_name']; 
-                                        if(response_aux['results'][0]['address_components'][i]['long_name']=="Venezuela"){
-                                            this.pais_ng = "VES Bs";
-
-                                        }else if(response_aux['results'][0]['address_components'][i]['long_name']=="México"){
-                                            this.pais_ng = "MXN $";
-
-                                        }else if(response_aux['results'][0]['address_components'][i]['long_name']=="Panamá"){
-                                            this.pais_ng = "USD $";
-
-                                        }else if(response_aux['results'][0]['address_components'][i]['long_name']=="Chile"){
-                                            this.pais_ng = "CLP $";
-
-                                        }else if(response_aux['results'][0]['address_components'][i]['long_name']=="Colombia"){
-                                            this.pais_ng = "COP $";
-
-                                        }else if(response_aux['results'][0]['address_components'][i]['long_name']=="Ecuador"){
-                                            this.pais_ng = "USD $";
-
-                                        }else if(response_aux['results'][0]['address_components'][i]['long_name']=="Perú"){
-                                            this.pais_ng = "PEN S/";
-
-                                        }else if(response_aux['results'][0]['address_components'][i]['long_name']=="Argentina"){
-                                            this.pais_ng = "ARS $";
-
-                                        }else if(response_aux['results'][0]['address_components'][i]['long_name']=="Bolivia"){
-                                            this.pais_ng = "BOB Bs";
-
-                                        }else if(response_aux['results'][0]['address_components'][i]['long_name']=="República Dominicana"){
-                                            this.pais_ng = "DOP RD$";
-
-                                        }else if(response_aux['results'][0]['address_components'][i]['long_name']=="España"){
-                                            this.pais_ng = "EUR €";
-
-                                        }else{
-                                            this.pais_ng = "USD $";
-                                        }
-                                   }else{
-                                        this.pais_ng = "USD $";
-                                    }
-                               }else{
-                                    this.pais_ng = "USD $";
-                                }
-                          }
-        },error => {
-
-            this.pais_ng = "USD $";
-
-        });
-        this.latitud_ng  = this.latitudeusuario;
-        this.longitud_ng = this.longitudeusuario;
-        console.log('pais_editar'+this.pais_ng);
-    }
+   
 
     ionViewWillLeave(){
       this.loadingCtrl.getTop().then(loader => {
@@ -330,8 +211,8 @@ export class Perfilchattema implements  OnInit{
     }
  
   ionViewDidEnter(){ 
-      this.mySliderpubli5.stopAutoplay();
-      this.mySliderpubli5.startAutoplay();
+      //this.mySliderpubli5.stopAutoplay();
+      //this.mySliderpubli5.startAutoplay();
       
       //this.loadingCtrl.getTop().then(loader => {if(loader!=undefined) {this.loadingCtrl.dismiss();} });
       this.username      = localStorage.getItem('USUARIO');
@@ -339,28 +220,6 @@ export class Perfilchattema implements  OnInit{
       this.pais_ng       = localStorage.getItem('ISOMONEDA');
       this.usuarioid     = localStorage.getItem('IDUSER');
       this.mycarid       = localStorage.getItem('MYCARID');
-      if(this.pais_ng=="" || this.pais_ng==null){
-        this.actualizar_pais();  
-      }
-
-      this.image1 = '';
-      this.image2 = '';
-      this.image3 = '';
-      this.image4 = '';
-      this.image[0] = this.image1;
-      this.image[1] = this.image2;
-      this.image[2] = this.image3;
-      this.image[3] = this.image4;
-
-      this.activa0    = 0;
-      this.activa1    = 1;
-      this.activa2    = 0;
-      this.activa3    = 0;
-      this.activa4    = 0;
-      this.activa5    = 0;
-      this.activa6    = 0;
-      this.activa7    = 0;
-      this.tipoactiva = 2;
 
       
   }
@@ -371,16 +230,5 @@ export class Perfilchattema implements  OnInit{
   }
 
 
-  linkperfil(var1){
-          this.sessionactiva   = localStorage.getItem('SESSIONACTIVA_OLYMPUS_9');
-          if(this.sessionactiva=="true"){
-                  this.navController.navigateForward("/perfilchatnew/"+var1+"/0");  
-          }else{
-                this.navController.navigateForward("/principal/perfil");
-          }
-  }
-
-
- 
     
 }//FIN CLASS

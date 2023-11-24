@@ -43,12 +43,12 @@ Route::get('whatsap_qr_created',['uses'=> 'WhatsappController@whatsap_qr_created
 
 
 
-
 Route::get('subirfile',     ['uses'=> 'OpeniaController@subirfile']);
 Route::get('leerfile/{task_id}',      ['uses'=> 'OpeniaController@leerfile']);
 	
 Route::group(['middleware' => 'token'], function () {
 
+	Route::post('obtenerPerfilesUsuario',['uses'=> 'UsuariosController@obtenerPerfilesUsuario']);
 
 ///Stipe business///
 

@@ -32,6 +32,18 @@ export class Home{ //Se define la clase
         }
 
 
+        
+
+        obtenerPerfilesUsuario(dato1){
+                return  this._http.post(
+                                this.url.getApivar()+"obtenerPerfilesUsuario",  
+                                JSON.stringify({
+                                    'usuarioid':dato1
+                                }), 
+                                this.httpHeader
+                            );
+        }
+
         listapaises(){
                 return  this._http.post(
                                 this.url.getApivar()+"listapaises",  

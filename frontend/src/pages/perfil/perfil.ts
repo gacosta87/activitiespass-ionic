@@ -404,8 +404,8 @@ export class Perfil   implements  OnInit {
                     this.createBarChart2(this.cantidad_fecha_like);
                 }
                 
-                this.mySliderpubli4.stopAutoplay();
-                this.mySliderpubli4.startAutoplay();
+                //this.mySliderpubli4.stopAutoplay();
+                //this.mySliderpubli4.startAutoplay();
                 if((this.nuevainformacionperfil==null) || (this.nuevainformacionperfiltiempo==null) || (this.nuevainformacionperfil=='2') ||  (tiempo_trancurrido>=2400000) ){
                     this.ngOnInit();
                     console.log('aqui voy');
@@ -1262,7 +1262,7 @@ export class Perfil   implements  OnInit {
             'publicid': '0',
             'publicusuarioid': '0',
             'salirmodal': '1',
-            'comperfil': '2',
+            'comperfil': '1',
             'compublic': '1',
             'editarcuenta':'2',
             'salircuenta':'2',

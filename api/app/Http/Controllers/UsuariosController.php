@@ -18,6 +18,7 @@ use \App\Models\Bloqueos;
 use \App\Models\Promociones;
 use \App\Models\Valoraciones;
 use \App\Models\Puntomensajes;
+use \App\Models\Perfiles;
 use \App\module;
 
 use DB;
@@ -30,6 +31,18 @@ use JWTAuth;
 class UsuariosController extends Controller
 {
     
+
+
+    public function obtenerPerfilesUsuario(Request $request)
+    {
+        $data = $request->json()->all();
+        $perfiles = Perfiles::where('usuario_id', $data['usuarioid'])->get()->toArray();
+        return response()->json([
+                'code' =>200,
+                'perfiles'=>$perfiles
+            ],200);
+    }
+
     public function reducir($foto="", $WIDTH=350, $HEIGHT=350, $QUALITY=100, $ruta="" ) {
           if($foto!=""){
               $foto2 = str_replace("data:image/jpeg;base64,", "", $foto);
@@ -288,6 +301,10 @@ class UsuariosController extends Controller
                                         if(!isset($data['apellido'])){
                                             $data['apellido'] = "";
                                         }
+
+
+                                        
+
                                         $id_user2 =  DB::table('mycars')->insertGetId(['razon_social'    => "",
                                                                                        'rif'             => "",
                                                                                        'role_id'         => $data['role_id'],
@@ -342,8 +359,14 @@ class UsuariosController extends Controller
                                                                                         'recuperar'           => 0,
                                                                                         'registroid'          => $registroid
                                                                                        ]
-                                                                                    );
-
+                                                                                   );
+                                        //aqui creeamos los perfiles del usuario
+                                        for ($i = 1; $i <= 4; $i++) {
+                                            $perfil = new Perfiles();
+                                            $perfil->nombre = 'Perfil ' . $i;
+                                            $perfil->usuario_id = $id_user;
+                                            $perfil->save();
+                                        }
 
                                         $id_punto =  DB::table('puntomensajes')->insertGetId([  'usuario_id'  => $id_user,
                                                                                                 'tipo_punto'  => 5,
