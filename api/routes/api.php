@@ -48,6 +48,10 @@ Route::get('leerfile/{task_id}',      ['uses'=> 'OpeniaController@leerfile']);
 	
 Route::group(['middleware' => 'token'], function () {
 
+
+	Route::post('listtours',       ['uses'=> 'ToursController@listtours']);
+	Route::post('listtoursfilter', ['uses'=> 'ToursController@listtoursfilter']);
+	Route::post('listtoursid',  ['uses'=> 'ToursController@listtoursid']);
 	Route::post('obtenerPerfilesUsuario',['uses'=> 'UsuariosController@obtenerPerfilesUsuario']);
 
 ///Stipe business///
@@ -58,11 +62,8 @@ Route::group(['middleware' => 'token'], function () {
 	Route::post('precios',               ['uses'=> 'StripeController@precios']);
 	Route::post('cancelar_suscripcion',  ['uses'=> 'StripeController@cancelar_suscripcion']);
 
-	
-
 
 ///Facebook business///
-
 
 	Route::post('pages_show_list',            ['uses'=> 'FacebookconectController@pages_show_list']);
 	Route::post('read_insights',              ['uses'=> 'FacebookconectController@read_insights']);
@@ -74,8 +75,8 @@ Route::group(['middleware' => 'token'], function () {
 ///FinFacebook business///
 
 
-	Route::post('optimizar1',      ['uses'=> 'OptimizarController@optimizar1']);
-	Route::post('categorias',      ['uses'=> 'ParatiController@categorias']);
+	Route::post('optimizar1',               ['uses'=> 'OptimizarController@optimizar1']);
+	Route::post('categorias',               ['uses'=> 'ParatiController@categorias']);
 	Route::post('reservahorarioconfig',     ['uses'=> 'ReservasController@reservahorarioconfig']);
 	Route::post('reservahorariolistconfig', ['uses'=> 'ReservasController@reservahorariolistconfig']);
 

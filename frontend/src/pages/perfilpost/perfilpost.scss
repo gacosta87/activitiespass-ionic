@@ -7,6 +7,12 @@
     margin-top: 20px;
 }
 
+:host(.in-item) {
+    position: static;
+    max-width: 100% !important;
+    color: #000 !important;
+}
+
 ion-textarea{
     width: 100%;
     height: 150px;

@@ -1082,3 +1082,197 @@ if (!function_exists('json_last_error_msg')) {
 	}
 
 }
+
+
+
+function mascara_id_afiliado($id, $ret=null){
+	$ver = $id;
+	if($ret!=null){
+        $id  = $ver[0].$ver[1].$ver[2].$ver[3].$ver[5].$ver[6].$ver[7].$ver[8].$ver[10].$ver[11].$ver[12].$ver[13].$ver[15].$ver[16].$ver[17].$ver[18];
+	}else{
+		$id  = $ver[0].$ver[1].$ver[2].$ver[3]."-".$ver[4].$ver[5].$ver[6].$ver[7]."-".$ver[8].$ver[9].$ver[10].$ver[11]."-".$ver[12].$ver[13].$ver[14].$ver[15];
+	}
+	
+  return $id;
+}
+
+
+/**
+     *
+     *@param $monto  monto el cual se va a dar formato
+     *@param $tipo  1=para guardar en base de datos, 2=mostrar al usuario
+     */
+    function Formato($monto=null, $tipo=2, $decimales=2) {
+
+    	//TIPO 1 ES SOLO CON SEPARADOR DECIMAL EL PUNTO
+    	//TIPO 2 ES SOLO CON SEPARADOR DECIMAL ES LA COMA
+
+    	if($monto<0){$negativo=1;}else{$negativo=0;}
+
+		if($decimales==2){
+		    	if($tipo==1){
+			    		$aux = $monto.'';
+					    for($i=0; $i<strlen($aux); $i++){if($aux[$i]==','){if(isset($aux[$i+3])){ if($aux[$i+3]=='5'){$monto += 0.001; break;}}}}//fin
+					    $monto = preg_replace("/[^0-9\.]/", "", str_replace(',','.',$monto));
+					    if (substr($monto,-3,1)=='.') {
+					        $sents = '.'.substr($monto,-2);
+					        $monto = substr($monto,0,strlen($monto)-3);
+					    } elseif (substr($monto,-2,1)=='.') {
+					        $sents = '.'.substr($monto,-1);
+					        $monto = substr($monto,0,strlen($monto)-2);
+					    } else {
+					    	   $sents = '.00';
+					    }
+					    $monto = preg_replace("/[^0-9]/", "", $monto);
+					    $var = number_format($monto.$sents,2,'.','');
+		    	}else{
+			    		$aux = $monto.'';
+				        $monto =  sprintf("%01.3f",$monto);
+				        for($i=0; $i<strlen($aux); $i++){
+				        	  if($aux[$i]=='.'){
+				        	  	 if(isset($aux[$i+3])){
+				        	  	 	if($aux[$i+3]=='5'){$monto += 0.001; break;}
+				        	  	 	}
+				        	  	 }
+				        	  }//fin for
+				    	$var = number_format($monto,2,",",".");
+		    	}//fin else
+		}else{
+                 if($tipo==1){
+			                 	$monto = preg_replace("/[^0-9\.]/", "", str_replace(',','.',$monto));
+							    if (substr($monto,-4,1)=='.') {
+							        $sents = '.'.substr($monto,-3);
+							        $monto = substr($monto,0,strlen($monto)-4);
+							    } elseif (substr($monto,-3,1)=='.') {
+							        $sents = '.'.substr($monto,-1);
+							        $monto = substr($monto,0,strlen($monto)-4);
+							    } else {
+							    	   $sents = '.000';
+							    }
+							    $monto = preg_replace("/[^0-9]/", "", $monto);
+							    $var = number_format($monto.$sents,3,'.','');
+		    	}else{
+					    		$monto = preg_replace("/[^0-9\.]/", "", str_replace(',','.',$monto));
+							    if (substr($monto,-4,1)=='.') {
+							        $sents = '.'.substr($monto,-3);
+							        $monto = substr($monto,0,strlen($monto)-4);
+							    } elseif (substr($monto,-3,1)=='.') {
+							        $sents = '.'.substr($monto,-1);
+							        $monto = substr($monto,0,strlen($monto)-3);
+							    } else {
+							        $sents = '.000';
+							    }
+							   if($sents==".000"){
+							   	   	$var = number_format($monto,3,',','.');
+							   }else{
+							     $monto = preg_replace("/[^0-9]/", "", $monto);
+							     $var   = number_format($monto.$sents,3,',','.');
+				               }//fin else
+		    	}//fin else
+		}//fin else
+	   if($negativo==1){$var = "-".$var;}
+       return $var;
+    }//fin function
+
+    function sacar_cump($dat=null){
+    	echo  $dat." <br>";
+    	$porciones = explode("/", $dat);
+    	$dia = $porciones[0];
+    	$mes = $porciones[1];
+    	$ano = $porciones[2];
+    	return $ano.'-'.$mes.'-'.$dia;
+    	/*
+              if($mes=="ene"){ $mes = "01";
+        }else if($mes=="feb"){ $mes = "02";
+        }else if($mes=="mar"){ $mes = "03";
+        }else if($mes=="abr"){ $mes = "04";
+        }else if($mes=="may"){ $mes = "05";
+        }else if($mes=="jun"){ $mes = "06";
+        }else if($mes=="jul"){ $mes = "07";
+        }else if($mes=="ago"){ $mes = "08";
+        }else if($mes=="sep"){ $mes = "09";
+        }else if($mes=="oct"){ $mes = "10";
+        }else if($mes=="nov"){ $mes = "11";
+        }else if($mes=="dic"){ $mes = "12";
+        //INGLES
+        }else if($mes=="jan"){ $mes = "01";
+        }else if($mes=="apr"){ $mes = "04";
+        }else if($mes=="aug"){ $mes = "08";
+        }else if($mes=="oct"){ $mes = "10";
+        }else if($mes=="dec"){ $mes = "12";
+        }
+        return date("Y").'-'.$mes.'-'.$dia;
+        */
+	}
+
+	function sacar_venc($dat=null){
+		if($dat!=null){
+			if($dat==""){
+				$ano = date("Y");
+		    	$mes = date("m");
+			}else{
+				$porciones = explode("/", $dat);
+		    	$ano = "20".$porciones[1];
+		    	$mes = $porciones[0];
+	    	}
+	        return $ano.'-'.$mes.'-01';
+
+
+		}else{
+			$ano = date("Y");
+	    	$mes = date("m");
+            return $ano.'-'.$mes.'-01';
+		}
+	}
+
+	function fecha_venc_reporte($dat=null){
+		if($dat!=null){
+            $fecha = $dat[0].$dat[1]."/".$dat[2].$dat[3];
+            return $fecha;
+		}else{
+            return "";
+		}
+	}
+	
+//1111-1111-1111-1111
+	function ultimo_4($dat=null){
+		if($dat!=null){
+            $num = $dat[15].$dat[16].$dat[17].$dat[18];
+            return $num;
+		}else{
+            return "";
+		}
+	}
+
+	function mes_text(){
+		         $mes = date('m'); 
+		      if($mes==1){  $mes2 = "Enero";
+        }else if($mes==2){  $mes2 = "Febrero";
+        }else if($mes==3){  $mes2 = "Marzo";
+        }else if($mes==4){  $mes2 = "Abril";
+        }else if($mes==5){  $mes2 = "Mayo";
+        }else if($mes==6){  $mes2 = "Junio";
+        }else if($mes==7){  $mes2 = "Julio";
+        }else if($mes==8){  $mes2 = "Agosto";
+        }else if($mes==9){  $mes2 = "Septiembre";
+        }else if($mes==10){ $mes2 = "Octubre";
+        }else if($mes==11){ $mes2 = "Noviembre";
+        }else if($mes==12){ $mes2 = "Diciembre";}
+		return $mes2;
+	}
+
+	function mes_text_devuelve($mes = null){
+		      if($mes==1){  $mes2 = "Enero";
+        }else if($mes==2){  $mes2 = "Febrero";
+        }else if($mes==3){  $mes2 = "Marzo";
+        }else if($mes==4){  $mes2 = "Abril";
+        }else if($mes==5){  $mes2 = "Mayo";
+        }else if($mes==6){  $mes2 = "Junio";
+        }else if($mes==7){  $mes2 = "Julio";
+        }else if($mes==8){  $mes2 = "Agosto";
+        }else if($mes==9){  $mes2 = "Septiembre";
+        }else if($mes==10){ $mes2 = "Octubre";
+        }else if($mes==11){ $mes2 = "Noviembre";
+        }else if($mes==12){ $mes2 = "Diciembre";}
+		return $mes2;
+	}

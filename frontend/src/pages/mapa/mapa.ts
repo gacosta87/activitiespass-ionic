@@ -35,6 +35,7 @@ export class Mapa implements  OnInit {
   public estado= "" ;
   public municipio = "";
   public version_exporar = "";
+  public inf = "";
 
   public directionsDisplay: any = null;
   public directionsService: any = null;
@@ -134,6 +135,7 @@ export class Mapa implements  OnInit {
                               this.provider_mapas.mapalistar(this.pais, this.estado, this.municipio, myLatLng.lat, myLatLng.lng).subscribe((response) => {  
                                          // google.maps.event.addListenerOnce(this.map, 'idle', () => {
                                                   let datos  = response['datos'];
+                                                  this.inf  = response['datos'];
                                                   datos.forEach(resultado => {
                                                       if(resultado['foto2']!=""){
                                                               this.marker = new MarkerWithLabel({ 
@@ -186,6 +188,78 @@ export class Mapa implements  OnInit {
                               });//FIN LOADING DISS
           }).catch((error) => {
                
+
+                              //var MarkerWithLabel = require('markerwithlabel')(google.maps);
+                                        this.provider_mapas.mapalistar(this.pais, this.estado, this.municipio, null, null).subscribe((response) => {  
+
+                                                    let latLng = new google.maps.LatLng(response['latitud'], response['longitud']);
+                                                    let mapOptions = {
+                                                      center: latLng,
+                                                      zoom: 17,
+                                                      mapTypeId: google.maps.MapTypeId.ROADMAP
+                                                    }
+                                                    this.directionsDisplay.setMap(this.map);
+                                                    let myLatLng = { lat: response['latitud'], lng: response['longitud'] };
+                                                    let mapEle: HTMLElement = document.getElementById('map');
+                                                    this.map = new google.maps.Map(mapEle, mapOptions);
+                                                    this.marker = new google.maps.Marker({
+                                                          position:  new google.maps.LatLng(myLatLng),
+                                                          map: this.map,
+                                                          title: 'Mi Posición',
+                                                          draggable: false
+                                                    });
+                                                   // google.maps.event.addListenerOnce(this.map, 'idle', () => {
+                                                            let datos  = response['datos'];
+                                                            datos.forEach(resultado => {
+                                                                if(resultado['foto2']!=""){
+                                                                        this.marker = new MarkerWithLabel({ 
+                                                                            position:  new google.maps.LatLng(resultado['latitud'],resultado['longitud']),
+                                                                            map: this.map,
+                                                                            title: resultado['razon_social'], 
+                                                                            draggable: false,
+                                                                            icon: {
+                                                                              url: "./assets/icon/icon_mpas.png",
+                                                                              scaledSize: new google.maps.Size(90, 90),
+                                                                            },
+                                                                            labelContent: "<img src='"+resultado['foto2']+"'>",
+                                                                            labelClass: "label-img",
+                                                                            labelAnchor: new google.maps.Point(35, 89),
+                                                                            //labelClass: "my-custom-class-for-label", // the CSS class for the label
+                                                                            labelInBackground:  true,
+                                                                        }); 
+                                                                }
+                                                                // fin del marcador
+                                                                var that = this;
+                                                                //this.marker.classList.add('label-img');
+                                                                this.marker.addListener('click', function() {
+                                                                that.ventanapunto(  resultado['usuario_id'], 
+                                                                                    resultado['razon_social'], 
+                                                                                    '<div>' +resultado['descripcion']+'<br><br></div>', 
+                                                                                    resultado['latitud'], 
+                                                                                    resultado['longitud'], 
+                                                                                    myLatLng
+                                                                              );
+                                                                });//fin ventapunto
+                                                            });//fin foreach
+                                                    //});//fin fatos
+                                                    mapEle.classList.add('show-map');
+                                        },error => {
+                                                    ////console.log('error de mapalistar: '+ JSON.stringify({error}) );
+                                                    const alert = this.alertCtrl.create({ cssClass:'my-custom-class-alert',
+                                                    subHeader: this.idiomapalabras.aviso,
+                                                    message: this.idiomapalabras.noservidor,
+                                                    buttons: [
+                                                      {
+                                                          text: this.idiomapalabras.reintentar,
+                                                          role: 'cancel',
+                                                          cssClass:'ion-aceptar',
+                                                          handler: data => {
+                                                              this.ionViewDidEnter();
+                                                          }
+                                                      }
+                                                    ]
+                                                    }).then(alert => alert.present());
+                                        });//FIN LOADING DISS
           });
   }//fin function
 

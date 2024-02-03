@@ -32,6 +32,42 @@ export class Home{ //Se define la clase
         }
 
 
+        listtours(lat, lon){
+                return  this._http.post(
+                                this.url.getApivar()+"listtours",  
+                                JSON.stringify({
+                                    'lat':lat,
+                                    'lon':lon
+                                }), 
+                                this.httpHeader
+                            );
+        }
+
+
+        listtoursfilter(lat, lon, var1, var2){
+                return  this._http.post(
+                                this.url.getApivar()+"listtoursfilter",  
+                                JSON.stringify({
+                                    'lat':lat,
+                                    'lon':lon,
+                                    'selectedDistance':var1,
+                                    'selectedCategory':var2
+                                }), 
+                                this.httpHeader
+                            );
+        }
+
+
+
+        listtoursid(id){
+                return  this._http.post(
+                                this.url.getApivar()+"listtoursid",  
+                                JSON.stringify({
+                                    'id':id,
+                                }), 
+                                this.httpHeader
+                            );
+        }
         
 
         obtenerPerfilesUsuario(dato1){

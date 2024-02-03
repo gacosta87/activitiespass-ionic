@@ -17,7 +17,43 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-grid no-padding style="margin-top: 15px;">
+  <div  id="map2" style="width: 100%; height: 70%"></div>
+  <div style="width:100%; height:30%;"> 
+  <br>
+    <ion-row style="border: 1px solid #9e9e9ee0; font-size: 16px; margin: 10px;">
+          <ion-col col-12>
+              Discover Things to Do <b>Start Your Adventure</b>
+          </ion-col>
+          <ion-col col-4>
+                <ion-select placeholder="Distance" [(ngModel)]="selectedDistance" role="button" aria-haspopup="listbox" aria-label="Distance (in miles):" class="md  hydrated">
+                    <ion-select-option value="all" role="option" id="ion-selopt-6715" class="md hydrated">All</ion-select-option>
+                    <ion-select-option value="1" role="option" id="ion-selopt-6716" class="md hydrated">1 mile</ion-select-option>
+                    <ion-select-option value="5" role="option" id="ion-selopt-6717" class="md hydrated">5 miles</ion-select-option>
+                    <ion-select-option value="10" role="option" id="ion-selopt-6718" class="md hydrated">10 miles</ion-select-option>
+                    <ion-select-option value="20" role="option" id="ion-selopt-6719" class="md hydrated">20 miles</ion-select-option>
+                    <ion-select-option value="30" role="option" id="ion-selopt-6720" class="md hydrated">30 miles</ion-select-option>
+                    <ion-select-option value="40" role="option" id="ion-selopt-6721" class="md hydrated">40 miles</ion-select-option>
+                    <ion-select-option value="50" role="option" id="ion-selopt-6722" class="md hydrated">50 miles</ion-select-option>
+                </ion-select>
+          </ion-col>
+          <ion-col col-4>
+                <ion-select  placeholder="Categories" [(ngModel)]="selectedCategory" role="button" aria-haspopup="listbox" aria-label="Category:" class="md  hydrated">
+                    <ion-select-option *ngFor="let category of categories" role="option" id="ion-selopt-6714" class="md hydrated" value="{{ category.Categories__id }}">{{ category.Categories__name }}</ion-select-option>
+                </ion-select>
+          </ion-col>
+          <ion-col col-4>
+            <ion-button type="Button" (click)='buscar()' expand=""  style="margin-top: 5px; height: 25px; width: 100px;" color="secondary">{{'Buscar' | translate }}</ion-button>
+          </ion-col>
+    </ion-row>
     
-	</ion-grid>
+    <div *ngFor="let item of this.datostour;" padding>
+        <ion-row>
+            <ion-col col-2><b>Nombre:</b></ion-col>
+            <ion-col col-6>{{item.name}}</ion-col>
+            <ion-col col-2><ion-button type="Button" (click)='irhashtag(item.id)' expand=""  style="margin-top: 5px; height: 25px; width: 100px;" color="secondary">{{'ver' | translate }}</ion-button></ion-col>
+        </ion-row>
+    </div>
+
+
+  </div>
 </ion-content>

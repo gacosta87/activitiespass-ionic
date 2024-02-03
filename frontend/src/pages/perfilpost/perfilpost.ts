@@ -44,6 +44,9 @@ export class Perfilpost implements  OnInit{
     public directionsDisplay: any = null;
     public directionsService: any = null;
     public pais: string;
+    public selectedDistance: string; 
+    public selectedCategory: string;
+    public categories: any;
     public estado: string;
     public municipio: string;
     public datos: any;
@@ -91,7 +94,9 @@ export class Perfilpost implements  OnInit{
     }
     public myLatLng: any;
     public map: any;
+    public map2: any;
     public marker: any;
+    public datostour: any;
     public address: string;
     public latitud_ng_2: number;
     public longitud_ng_2: number;
@@ -110,8 +115,8 @@ export class Perfilpost implements  OnInit{
     public latitudeusuario  = "";
     public longitudeusuario = "";
 
-    public latitud_ng: string;
-    public longitud_ng: string;
+    public latitud_ng: number;
+    public longitud_ng: number;
     public pais_ng      = "";
     public municipio_ng = "";
     public estado_ng    = "";
@@ -207,22 +212,247 @@ export class Perfilpost implements  OnInit{
 
 
 
+  actualizar_pais(var1, var2){
+      //console.log(var1+' - '+var2);
+      this.provider_mapas.mapalocalizar(var1, var2).subscribe((response_aux) => {
+                        /*for(var i=0; i<6 ; i++) { 
+                            if(response_aux['results'][0]['address_components'][i]){
+                                if (response_aux['results'][0]['address_components'][i]['types'][0] == 'country' ) {                      
+                                      this.pais_ng  = response_aux['results'][0]['address_components'][i]['long_name']; 
+                                }
+                                if (response_aux['results'][0]['address_components'][i]['types'][0] == 'locality' ) {                     
+                                      this.municipio_ng = response_aux['results'][0]['address_components'][i]['long_name']; 
+                                } 
+                            }
+                        }*/
+      });
+      this.latitud_ng  = var1;
+      this.longitud_ng = var2;
+      ////console.log('pais_editar'+this.pais_ng);
+  }
+
+
+  buscar(){
+
+    this.username      = localStorage.getItem('USUARIO');
+    this.fotodeperfil  = localStorage.getItem('FOTOPERFIL');
+    this.pais_ng       = localStorage.getItem('ISOMONEDA');
+    this.usuarioid     = localStorage.getItem('IDUSER');
+    this.mycarid       = localStorage.getItem('MYCARID');
+    //this.selectedDistance
+    //this.selectedCategory
+
+
+
+    this.latitud_ng          = null;
+    this.longitud_ng         = null;
+
+
+        const loader = this.loadingCtrl.create({
+          ////duration: 10000
+          //message: "Un momento, por favor..."
+        }).then(load => {
+                        load.present();
+
+                        this.geolocation.getCurrentPosition().then((resp) => {
+
+                              console.log('position 1');
+                              console.log(resp);
+
+                              this.latitud_ng          = resp.coords.latitude;
+                              this.longitud_ng         = resp.coords.longitude;
+
+                        }).catch((error) => {
+                            console.log('position 2');
+                            console.log(error);
+
+                              this.latitud_ng          = null;
+                              this.longitud_ng         = null;
+                        
+                        });
+
+                        this.provider.listtoursfilter(this.latitud_ng, this.longitud_ng, this.selectedDistance, this.selectedCategory).subscribe((response) => {  
+                              this.loadingCtrl.getTop().then(loader => {if(loader!=undefined) {this.loadingCtrl.dismiss();} 
+                              this.latitud_ng          = response['latitud'];
+                              this.longitud_ng         = response['longitud'];
+                              this.categories          = response['listcategorias'];
+                              console.log("categoria: ");
+                              console.log(this.categories);
+                                  
+                                this.actualizar_pais(this.latitud_ng, this.longitud_ng);
+                                let latLng = new google.maps.LatLng(this.latitud_ng, this.longitud_ng);
+                                let mapOptions = {
+                                  center: latLng,
+                                  zoom: 13,
+                                  scrollwheel: false,
+                                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                                } 
+                                this.directionsDisplay.setMap(this.map);
+                                let mapEle: HTMLElement = document.getElementById('map2');
+                                this.map    = new google.maps.Map(mapEle, mapOptions);
+                                this.marker = new google.maps.Marker({
+                                      position:  new google.maps.LatLng(this.latitud_ng,  this.longitud_ng),
+                                      map: this.map,
+                                      title: 'Mi Posicion',
+                                      draggable: true,
+                                      animation: google.maps.Animation.DROP,
+                                });
+                                var that = this;
+                                this.marker.addListener('dragend', function() {
+                                    that.actualizar_pais(this.getPosition().lat(), this.getPosition().lng());
+                                });
+
+                                this.datostour = response['datos'];
+                                this.datostour.forEach(function (value) {
+                                      console.log(value.name+' -- '+value.lat+' -- '+value.lon);
+                                      const contentString = '<div id="content">' +
+                                                            '<div id="siteNotice">' +
+                                                            "</div>" +
+                                                            '<div id="bodyContent">' +
+                                                            '<p>'+
+                                                              '<b>Name:</b> '+value.name+' <br>'+
+                                                              '<b>Description:</b> '+value.description+' <br>'+
+                                                              '<b>Address:</b> '+value.address+' <br>'+
+                                                            '</p>'+
+                                                            '<br>'+
+                                                            '<a href="/#/perfilmycar/'+value.id+'"><b>ir al perfil</b></a>'+
+                                                            '</div>';
+                                      const infowindow = new google.maps.InfoWindow({
+                                        content: contentString,
+                                        ariaLabel: value.name,
+                                      });
+                                      const marker = new google.maps.Marker({
+                                            position:  new google.maps.LatLng(value.lat,  value.lon),
+                                            map: that.map,
+                                            title: value.name,
+                                      });
+                                      marker.addListener("click", () => {
+                                        infowindow.open({
+                                          anchor: marker,
+                                          map: that.map
+                                        });
+                                      });
+                                      
+                                });
+                                mapEle.classList.add('show-map');
+
+                          });//FIN LOADING DISS
+                      });
+
+
+        });//FIn LOADING 
+
+  }
 
    
   ionViewDidEnter(){ 
 
-      //this.loadingCtrl.getTop().then(loader => {if(loader!=undefined) {this.loadingCtrl.dismiss();} });
       this.username      = localStorage.getItem('USUARIO');
       this.fotodeperfil  = localStorage.getItem('FOTOPERFIL');
       this.pais_ng       = localStorage.getItem('ISOMONEDA');
       this.usuarioid     = localStorage.getItem('IDUSER');
       this.mycarid       = localStorage.getItem('MYCARID');
+
+      this.latitud_ng          = null;
+      this.longitud_ng         = null;
+
+      
+
+            this.geolocation.getCurrentPosition().then((resp) => {
+
+                  console.log('position 1');
+                  console.log(resp);
+
+                  this.latitud_ng          = resp.coords.latitude;
+                  this.longitud_ng         = resp.coords.longitude;
+
+             }).catch((error) => {
+                console.log('position 2');
+                console.log(error);
+
+                  this.latitud_ng          = null;
+                  this.longitud_ng         = null;
+             
+            });
+
+            this.provider.listtours(this.latitud_ng, this.longitud_ng).subscribe((response) => {  
+
+                  this.latitud_ng          = response['latitud'];
+                  this.longitud_ng         = response['longitud'];
+                  this.categories          = response['listcategorias'];
+                  console.log("categoria: ");
+                  console.log(this.categories);
+                      
+                    this.actualizar_pais(this.latitud_ng, this.longitud_ng);
+                    let latLng = new google.maps.LatLng(this.latitud_ng, this.longitud_ng);
+                    let mapOptions = {
+                      center: latLng,
+                      zoom: 13,
+                      scrollwheel: false,
+                      mapTypeId: google.maps.MapTypeId.ROADMAP
+                    } 
+                    this.directionsDisplay.setMap(this.map);
+                    let mapEle: HTMLElement = document.getElementById('map2');
+                    this.map    = new google.maps.Map(mapEle, mapOptions);
+                    this.marker = new google.maps.Marker({
+                          position:  new google.maps.LatLng(this.latitud_ng,  this.longitud_ng),
+                          map: this.map,
+                          title: 'Mi Posicion',
+                          draggable: true,
+                          animation: google.maps.Animation.DROP,
+                    });
+                    var that = this;
+                    this.marker.addListener('dragend', function() {
+                        that.actualizar_pais(this.getPosition().lat(), this.getPosition().lng());
+                    });
+
+                    this.datostour = response['datos'];
+                    this.datostour.forEach(function (value) {
+                          console.log(value.name+' -- '+value.lat+' -- '+value.lon);
+                          const contentString = '<div id="content">' +
+                                                '<div id="siteNotice">' +
+                                                "</div>" +
+                                                '<div id="bodyContent">' +
+                                                '<p>'+
+                                                  '<b>Name:</b> '+value.name+' <br>'+
+                                                  '<b>Description:</b> '+value.description+' <br>'+
+                                                  '<b>Address:</b> '+value.address+' <br>'+
+                                                '</p>'+
+                                                '<br>'+
+                                                '<a href="/#/perfilmycar/'+value.id+'"><b>ir al perfil</b></a>'+
+                                                '</div>';
+                          const infowindow = new google.maps.InfoWindow({
+                            content: contentString,
+                            ariaLabel: value.name,
+                          });
+                          const marker = new google.maps.Marker({
+                                position:  new google.maps.LatLng(value.lat,  value.lon),
+                                map: that.map,
+                                title: value.name,
+                          });
+                          marker.addListener("click", () => {
+                            infowindow.open({
+                              anchor: marker,
+                              map: that.map
+                            });
+                          });
+                          
+                    });
+                    mapEle.classList.add('show-map');
+                    
+          });
+      
      
   }
 
   
   close(){
     this.navController.back();
+  }
+
+
+  irhashtag(v){
+      this.navController.navigateForward("/perfilmycar/"+v);  
   }
 
 
