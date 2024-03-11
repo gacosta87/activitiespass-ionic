@@ -96,7 +96,7 @@ export class Suscripcion implements  OnInit{
                   load.present();
 
                   this.provider.precios().subscribe((response) => {  
-                      this.precio = response['precio'];
+                      this.precio = response['precios'];
                   });
                   this.provider.miperfil(this.mycarid, this.usuarioid, 1).subscribe((response) => {  
                               this.loadingCtrl.getTop().then(loader => {if(loader!=undefined) {this.loadingCtrl.dismiss();} 
@@ -133,6 +133,9 @@ export class Suscripcion implements  OnInit{
   }
  
 
+  plan(){
+    
+  }
 
 
   enviarformulario() {

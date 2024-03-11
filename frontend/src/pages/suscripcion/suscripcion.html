@@ -11,14 +11,20 @@
                     <div style="height: 100px; width: 100%; margin-bottom: 100px; text-align: center;">
                           <img style="width: 100%; height: auto;" class="" src="./assets/logos/fondo_suscription.jpg" height="300px" width="300px;">
                     </div>
-                    <div padding style="padding-top: 50px;padding-bottom: 0px;">
+                    
+                    <br><br><br><br>
+
+                    <div padding style="padding-top: 20px;padding-bottom: 0px;" *ngFor="let item1 of this.precio">
+                                
+                                <div class="titulo"><span style="margin-right: 10px;">★</span>PLAN: {{ item1.Memberships__name }}<span style="margin-left: 10px;">★</span></div>
+                                <div class="precio">PRICE: ${{ item1.Memberships__price }} USD / MONTH</div>
+                                <div class="precio">PROFILE: {{ item1.Memberships__profile }}</div>
                                 <br>
-                                <div class="titulo"><span style="margin-right: 10px;">★</span>{{'suscripcion1' | translate }}<span style="margin-left: 10px;">★</span></div>
-                                <div class="precio">${{ this.precio }} USD / MONTH</div>
-                                <span style="white-space: normal; padding: 16px;line-height: 27px; font-size: 16px;">{{'configurarasistente23' | translate }}</span>
-                                <div class="subtitulo">{{'diasgratris' | translate }}</div>
+                                <ion-button expand="block" type="submit" id="boton_envio" style="text-transform: none;" color="secondary" (click)="plan()">
+                                    <ion-label style="font-size: 12px;">{{'suscripcion2' | translate }}</ion-label>
+                                </ion-button>
+                                
                     </div>
-                    <br><br><br><br><br><br><br><br><br><br><br>
           </ion-grid>
 </ion-content>
 <ion-footer class="ion-no-border">  

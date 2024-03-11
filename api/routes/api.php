@@ -214,10 +214,15 @@ Route::group(['middleware' => 'token'], function () {
 	
 
 	//FAVORITO
-	Route::post('perfilmycarsfavadd',         ['uses'=> 'FavoritoController@perfilmycarsfavadd']);
-	Route::post('perfilmycarsfavadd_buscar',  ['uses'=> 'FavoritoController@perfilmycarsfavadd_buscar']);
-	Route::post('perfilmycarsfavaddsug',      ['uses'=> 'FavoritoController@perfilmycarsfavaddsug']);
-	Route::post('perfilmycarsfavdel',         ['uses'=> 'FavoritoController@perfilmycarsfavdel']);
+	Route::post('favadd',      ['uses'=> 'FavoritoController@add']);
+	Route::post('favdel',      ['uses'=> 'FavoritoController@del']);
+	Route::post('favlis',      ['uses'=> 'FavoritoController@lis']);
+
+	//Recenttours
+	Route::post('recentadd',      ['uses'=> 'RecenttoursController@add']);
+	Route::post('recentdel',      ['uses'=> 'RecenttoursController@del']);
+	Route::post('recentlis',      ['uses'=> 'RecenttoursController@lis']);
+
 	//LOGEAR
 	Route::post('login1',                ['uses'=> 'UsuariosController@login1']);
 	
