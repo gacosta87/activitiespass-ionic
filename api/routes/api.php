@@ -10,7 +10,17 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+
+//ORDENES
+
+
+Route::get('consultarordenes',      ['uses'=> 'OrdenesController@consultarordenes']);
+Route::get('disponibilidad',        ['uses'=> 'OrdenesController@disponibilidad']);
+
+
 //PROMOCIONES
+
 
 Route::get('actualizarfotosusuarios/{id}',      ['uses'=> 'ActualizarController@actualizarfotosusuarios']);
 Route::get('actualizarfotosusuarios_respaldo',  ['uses'=> 'ActualizarController@actualizarfotosusuarios_respaldo']);
